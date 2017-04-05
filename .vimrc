@@ -55,7 +55,7 @@ set lazyredraw
 set novisualbell
 set showtabline=2
 set nobackup noswapfile
-set synmaxcol=0 cc=0
+set synmaxcol=0 cc=120
 set completeopt=longest,menuone
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set wildignore+=*/.git/*,*/node_modules/*,*/.sass-cache/*,*/vendor/*
