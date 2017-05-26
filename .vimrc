@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'gcmt/taboo.vim'
 Plug 'rhysd/clever-f.vim'
+Plug 'jwalton512/vim-blade'
 
 " Auto-completion
 if has('nvim')
@@ -251,3 +252,6 @@ imap <leader>r <esc>kddko
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
+
+" Change the mouse cursor to underline
+set guicursor=a:hor20-Cursor
