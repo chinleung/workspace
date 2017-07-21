@@ -239,6 +239,10 @@ nmap <leader>i gg=G<cr>
 " Lazy tab
 nmap <tab> Hi<tab><esc>
 
+" Splits
+nmap <leader>hs :split<cr>
+nmap <leader>vs :vsplit<cr>
+
 " Lazy var dumps
 nmap <leader>v ivar_dump(); die;<esc>6hi
 imap <leader>v var_dump(); die;<esc>6hi
