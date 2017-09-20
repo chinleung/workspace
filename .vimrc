@@ -21,6 +21,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'gcmt/taboo.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'jwalton512/vim-blade'
+Plug 'terryma/vim-multiple-cursors'
 
 " Auto-completion
 if has('nvim')
