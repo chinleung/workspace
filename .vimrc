@@ -234,6 +234,7 @@ endfunction
 hi SignColumn ctermbg=237
 hi CursorLineNr ctermbg=235
 hi TabLineFill ctermbg=235
+hi TabLineSel ctermfg=yellow
 
 " Auto indentation
 nmap <leader>i gg=G<cr>
