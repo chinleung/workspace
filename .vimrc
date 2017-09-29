@@ -60,6 +60,15 @@ let g:javascript_conceal_super = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "ƒ"
 let g:javascript_conceal_underscore_arrow_function = "ƒ"
+let g:javascript_conceal_double_equal = "≈"
+let g:javascript_conceal_triple_equal = "≡"
+let g:javascript_conceal_or_operator = "∨"
+let g:javascript_conceal_and_operator = "∧"
+let g:javascript_conceal_not_operator = "¬"
+let g:javascript_conceal_greater_equal_operator = "≥"
+let g:javascript_conceal_less_equal_operator = "≤"
+let g:javascript_conceal_not_equal_operator = "≠"
+let g:javascript_conceal_not_strict_equal_operator = "≢"
 
 filetype plugin indent on
 
