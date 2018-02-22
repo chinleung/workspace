@@ -22,6 +22,8 @@ alias vhost='cd ~/Desktop/Projects/.vhosts/'
 alias vhosts='cd ~/Desktop/Projects/.vhosts/'
 alias vim='nvim $1'
 alias weather='curl -4 http://wttr.in'
+alias p='phpunit'
+alias pf='phpunit --filter $1'
 
 # Change the color of the listing
 export CLICOLOR=1
