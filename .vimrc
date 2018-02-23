@@ -22,6 +22,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'aperezdc/vim-template'
 
 " Auto-completion
 if has('nvim')
@@ -303,3 +304,21 @@ function! Multiple_cursors_after()
         exe 'NeoCompleteUnlock'
     endif
 endfunction
+
+" Update the path of templates
+let g:templates_no_builtin_templates = 1
+let g:templates_directory = "~/.vim/templates/"
+let g:templates_global_name_prefix = ""
+
+" Shortcuts for templates
+nmap <leader>-ltc :TemplateHere laravel-test-class.php<cr>
+imap <leader>-ltc <esc>:TemplateHere laravel-test-class.php<cr>
+nmap <leader>-ptf :TemplateHere test.php<cr>i
+imap <leader>-ptf <esc>:TemplateHere test.php<cr>i
+nmap <leader>-pf :TemplateHere function.php<cr>i
+imap <leader>-pf <esc>:TemplateHere function.php<cr>i
+nmap <leader>-pcpf :TemplateHere public-function.php<cr>i
+imap <leader>-pcpf <esc>:TemplateHere public-function.php<cr>i
+
+" Set the default shell to zsh
+ set shell=zsh
