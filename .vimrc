@@ -235,7 +235,8 @@ hi GitGutterAdd guibg=#282828 ctermbg=237 guifg=#b8bb26 ctermfg=142
 hi GitGutterChange guibg=#282828 ctermbg=237 guifg=#8ec07c ctermfg=108
 hi GitGutterDelete guibg=#282828 ctermbg=237 guifg=#fb4934 ctermfg=167
 hi GitGutterChangeDelete guibg=#282828 ctermbg=237  guifg=#8ec07c ctermfg=108
-autocmd BufEnter * execute 'GitGutterAll'
+autocmd BufWritePost * execute 'GitGutter'
+autocmd BufEnter * execute 'GitGutter'
 autocmd BufEnter * sign define DefaultColumnSign
 autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
 
