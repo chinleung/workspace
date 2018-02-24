@@ -106,7 +106,10 @@ if !has('nvim')
 endif
 
 if has("unix")
-    set shell=zsh
+    if(!empty(glob("/bin/zsh")))
+        set shell=zsh
+    else
+        set shell=bash
 endif
 " }}}
 
