@@ -347,7 +347,7 @@ function RefreshTagbar()
 endfunction
 autocmd CursorHold * call RefreshTagbar()
 autocmd CursorHoldI * call RefreshTagbar()
-autocmd BufEnter * nested :call tagbar#autoopen(0)
+autocmd BufEnter,BufFilePost * nested :call tagbar#autoopen(0)
 
 " PHP CS Fixer configuration
 let g:php_cs_fixer_level = "psr2"
