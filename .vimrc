@@ -311,8 +311,10 @@ let g:templates_directory = "~/.vim/templates/"
 let g:templates_global_name_prefix = ""
 
 " Shortcuts for templates
-nmap <leader>-ltc :TemplateHere laravel-test-class.php<cr>
-imap <leader>-ltc <esc>:TemplateHere laravel-test-class.php<cr>
+nmap <leader>-ltc :Template laravel-test-class.php<cr>
+imap <leader>-ltc <esc>:Template laravel-test-class.php<cr>
+nmap <leader>-pc :Template class.php<cr>
+imap <leader>-pc <esc>:Template class.php<cr>
 nmap <leader>-ptf :TemplateHere test.php<cr>i
 imap <leader>-ptf <esc>:TemplateHere test.php<cr>i
 nmap <leader>-pf :TemplateHere function.php<cr>i
