@@ -341,7 +341,7 @@ imap <leader>-pcpf. <esc>:TemplateHere public-function.php<cr>i
 
  " Tagbar configuration
 let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-function RefreshTagbar()
+function! RefreshTagbar()
     execute ':TagbarClose'
     execute ':TagbarOpen'
 endfunction
