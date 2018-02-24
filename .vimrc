@@ -320,6 +320,8 @@ nmap <leader>-ptf :TemplateHere test.php<cr>i
 imap <leader>-ptf <esc>:TemplateHere test.php<cr>i
 nmap <leader>-pf :TemplateHere function.php<cr>i
 imap <leader>-pf <esc>:TemplateHere function.php<cr>i
+nmap <leader>-pfc :TemplateHere function-constructor.php<cr>i
+imap <leader>-pfc <esc>:TemplateHere function-constructor.php<cr>i
 nmap <leader>-pcpf :TemplateHere public-function.php<cr>i
 imap <leader>-pcpf <esc>:TemplateHere public-function.php<cr>i
 
