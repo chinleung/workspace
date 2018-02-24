@@ -98,7 +98,7 @@ if !has('nvim')
 endif
 
 if has("unix")
-    set shell=/bin/bash
+    set shell=zsh
 endif
 " }}}
 
@@ -312,22 +312,15 @@ let g:templates_directory = "~/.vim/templates/"
 let g:templates_global_name_prefix = ""
 
 " Shortcuts for templates
-nmap <leader>-ltc :Template laravel-test-class.php<cr>
-imap <leader>-ltc <esc>:Template laravel-test-class.php<cr>
-nmap <leader>-pc :Template class.php<cr>
-imap <leader>-pc <esc>:Template class.php<cr>
-nmap <leader>-ptf :TemplateHere test.php<cr>i
-imap <leader>-ptf <esc>:TemplateHere test.php<cr>i
-nmap <leader>-pf :TemplateHere function.php<cr>i
-imap <leader>-pf <esc>:TemplateHere function.php<cr>i
-nmap <leader>-pfc :TemplateHere function-constructor.php<cr>i
-imap <leader>-pfc <esc>:TemplateHere function-constructor.php<cr>i
-nmap <leader>-pcpf :TemplateHere public-function.php<cr>i
-imap <leader>-pcpf <esc>:TemplateHere public-function.php<cr>i
-
-" Set the default shell to zsh
- set shell=zsh
-
- " Tagbar configuration
- let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
- autocmd BufEnter * nested :call tagbar#autoopen(0)
+nmap <leader>-ltc. :Template laravel-test-class.php<cr>
+imap <leader>-ltc. <esc>:Template laravel-test-class.php<cr>
+nmap <leader>-pc. :Template class.php<cr>
+imap <leader>-pc. <esc>:Template class.php<cr>
+nmap <leader>-ptf. :TemplateHere test.php<cr>i
+imap <leader>-ptf. <esc>:TemplateHere test.php<cr>i
+nmap <leader>-pf. :TemplateHere function.php<cr>i
+imap <leader>-pf. <esc>:TemplateHere function.php<cr>i
+nmap <leader>-pfc. :TemplateHere function-constructor.php<cr>i
+imap <leader>-pfc. <esc>:TemplateHere function-constructor.php<cr>i
+nmap <leader>-pcpf. :TemplateHere public-function.php<cr>i
+imap <leader>-pcpf. <esc>:TemplateHere public-function.php<cr>i
