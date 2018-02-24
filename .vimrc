@@ -23,6 +23,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'aperezdc/vim-template'
+Plug 'majutsushi/tagbar'
 
 " Auto-completion
 if has('nvim')
@@ -324,3 +325,7 @@ imap <leader>-pcpf <esc>:TemplateHere public-function.php<cr>i
 
 " Set the default shell to zsh
  set shell=zsh
+
+ " Tagbar configuration
+ let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+ autocmd BufEnter * nested :call tagbar#autoopen(0)
