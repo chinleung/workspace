@@ -110,6 +110,7 @@ if has("unix")
         set shell=zsh
     else
         set shell=bash
+    endif
 endif
 " }}}
 
