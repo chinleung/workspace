@@ -343,8 +343,6 @@ function! RefreshTagbar()
     execute ':TagbarClose'
     execute ':TagbarOpen'
 endfunction
-autocmd CursorHold * call RefreshTagbar()
-autocmd CursorHoldI * call RefreshTagbar()
 autocmd BufEnter,BufFilePost * nested :call tagbar#autoopen(0)
 
 " PHP CS Fixer configuration
