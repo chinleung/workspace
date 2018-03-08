@@ -29,7 +29,6 @@ Plug 'stephpy/vim-php-cs-fixer'
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-projectionist'
-Plug 'roxma/nvim-completion-manager'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 
@@ -188,7 +187,7 @@ map <leader><esc> :nohlsearch<cr>
 let g:EasyMotion_leader_key = '<Leader>'
 
 " SuperTab configuration
-"let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Neocomplete/Deoplete configuration
 if has('nvim')
@@ -343,7 +342,11 @@ function! RefreshTagbar()
     execute ':TagbarClose'
     execute ':TagbarOpen'
 endfunction
-autocmd BufEnter,BufFilePost * nested :call tagbar#autoopen(0)
+nmap <leader>br :call RefreshTagbar()<cr>
+imap <leader>br <esc>:call RefreshTagbar()<cr>i
+nmap <leader>bt :TagbarToggle<cr>
+imap <leader>bt <esc>:TagbarOpen<cr>i
+autocmd BufWritePost * nested :call tagbar#autoopen(0)
 
 " PHP CS Fixer configuration
 let g:php_cs_fixer_level = "psr2"
