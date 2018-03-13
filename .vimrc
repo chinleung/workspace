@@ -248,16 +248,11 @@ hi GitGutterAdd guibg=#282828 ctermbg=237 guifg=#b8bb26 ctermfg=142
 hi GitGutterChange guibg=#282828 ctermbg=237 guifg=#8ec07c ctermfg=108
 hi GitGutterDelete guibg=#282828 ctermbg=237 guifg=#fb4934 ctermfg=167
 hi GitGutterChangeDelete guibg=#282828 ctermbg=237  guifg=#8ec07c ctermfg=108
-autocmd BufWritePost * execute 'GitGutter'
-autocmd BufEnter * execute 'GitGutter'
-autocmd BufEnter * sign define DefaultColumnSign
-autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
 
 " NERDCommenter configuration
 map <leader>c :NERDComToggleComment<cr>
 
 " Erase trailing line at the end of file
-autocmd BufWritePre *.php,*.py,*.js,*.css,*.txt,*.md,*.rb :call <SID>StripEOFLines()
 function! <SID>StripEOFLines()
     let _s=@/
     let l = line(".")
@@ -346,8 +341,26 @@ nmap <leader>br :call RefreshTagbar()<cr>
 imap <leader>br <esc>:call RefreshTagbar()<cr>i
 nmap <leader>bt :TagbarToggle<cr>
 imap <leader>bt <esc>:TagbarOpen<cr>i
-autocmd BufWritePost * nested :call tagbar#autoopen(0)
 
 " PHP CS Fixer configuration
 let g:php_cs_fixer_level = "psr2"
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
+" Automatic commands
+augroup AutoCommands
+    autocmd!
+
+    " GitGutter
+    autocmd BufWritePost * execute 'GitGutter'
+    autocmd BufEnter * execute 'GitGutter'
+    autocmd BufEnter * sign define DefaultColumnSign
+    autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
+
+    " Strip end of line
+    autocmd BufWritePre *.php,*.py,*.js,*.css,*.txt,*.md,*.rb :call <SID>StripEOFLines()
+
+    " TagBar
+    autocmd BufWritePost * nested :call tagbar#autoopen(0)
+
+    " PHP CS Fixer
+    autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+augroup END
