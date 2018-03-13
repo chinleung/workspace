@@ -345,6 +345,14 @@ imap <leader>bt <esc>:TagbarOpen<cr>i
 " PHP CS Fixer configuration
 let g:php_cs_fixer_level = "psr2"
 
+" Split management
+set splitbelow
+set splitright
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+
 " Automatic commands
 augroup AutoCommands
     autocmd!
