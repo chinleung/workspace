@@ -150,8 +150,8 @@ set background=dark
 colorscheme gruvbox
 
 " Map vimrc files edition
-map <leader>ev :e $MYVIMRC<cr>
-map <leader>eg :e $MYGVIMRC<cr>
+map <leader>ev :tabedit $MYVIMRC<cr>
+map <leader>eg :tabedit $MYGVIMRC<cr>
 map <leader>sv :source $MYVIMRC<cr>
 map <leader>sg :source $MYGVIMRC<cr>
 
