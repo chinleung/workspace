@@ -25,6 +25,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'aperezdc/vim-template'
 Plug 'majutsushi/tagbar'
 Plug 'stephpy/vim-php-cs-fixer'
+Plug 'scrooloose/nerdtree'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -353,6 +354,9 @@ nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
+" NERDTree
+nmap <leader>n :NERDTreeToggle<CR>
+
 " Automatic commands
 augroup AutoCommands
     autocmd!
@@ -371,4 +375,8 @@ augroup AutoCommands
 
     " PHP CS Fixer
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
+    " Open NERDTree automatically when open empty file
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 augroup END
