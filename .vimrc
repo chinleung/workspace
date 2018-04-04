@@ -359,8 +359,8 @@ imap <leader><leader>pa <esc>:!p<cr>
 nmap <leader><leader>pa :!p<cr>
 
 " Vim HTTP
-nmap <leader><leader>hn :tabedit | set filetype=http<cr>
-imap <leader><leader>hn <esc>:tabedit set filetype=http<cr>
+nmap <leader><leader>hn :tabedit \| set filetype=http<cr>
+imap <leader><leader>hn <esc>:tabedit \| set filetype=http<cr>
 nmap <leader><leader>hs K:HTTPClientDoRequest<cr>
 imap <leader><leader>hs <esc>K:HTTPClientDoRequest<cr>
 
