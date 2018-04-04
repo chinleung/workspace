@@ -24,6 +24,7 @@ alias vim='nvim $1'
 alias weather='curl -4 http://wttr.in'
 alias p='phpunit'
 alias pf='phpunit --filter $1'
+alias tinker='clear && php artisan tinker'
 
 # Change the color of the listing
 export CLICOLOR=1

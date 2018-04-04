@@ -22,10 +22,11 @@ Plug 'gcmt/taboo.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'aperezdc/vim-template'
 Plug 'majutsushi/tagbar'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'scrooloose/nerdtree'
+Plug 'posva/vim-vue'
+"Plug 'SirVer/ultisnips'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -313,25 +314,6 @@ function! Multiple_cursors_after()
     endif
 endfunction
 
-" Update the path of templates
-let g:templates_no_builtin_templates = 1
-let g:templates_directory = "~/.vim/templates/"
-let g:templates_global_name_prefix = ""
-
-" Shortcuts for templates
-nmap <leader>-ltc. :Template laravel-test-class.php<cr>
-imap <leader>-ltc. <esc>:Template laravel-test-class.php<cr>
-nmap <leader>-pc. :Template class.php<cr>
-imap <leader>-pc. <esc>:Template class.php<cr>
-nmap <leader>-ptf. :TemplateHere test.php<cr>i
-imap <leader>-ptf. <esc>:TemplateHere test.php<cr>i
-nmap <leader>-pf. :TemplateHere function.php<cr>i
-imap <leader>-pf. <esc>:TemplateHere function.php<cr>i
-nmap <leader>-pfc. :TemplateHere function-constructor.php<cr>i
-imap <leader>-pfc. <esc>:TemplateHere function-constructor.php<cr>i
-nmap <leader>-pcpf. :TemplateHere public-function.php<cr>i
-imap <leader>-pcpf. <esc>:TemplateHere public-function.php<cr>i
-
  " Tagbar configuration
 let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 function! RefreshTagbar()
@@ -357,6 +339,24 @@ nmap <C-L> <C-W><C-L>
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 
+" Ultisnips
+"let g:UltiSnipsExpandTrigger="."
+"let g:UltiSnipsJumpForwardTrigger="/"
+"let g:UltiSnipsJumpBackwardTrigger=","
+
+" Laravel Commands
+nmap <leader>la :!php artisan<space>
+nmap <leader>lm :!php artisan make:
+nmap <leader>lr :tabedit routes/web.php<cr>
+nmap <leader><leader>mr :Artisan migrate:refresh --seed<cr>
+nmap <leader><leader>ca :!composer dump-autoload<cr>
+
+" Unit Testing
+imap <leader><leader>pf <esc>:!pf<space>
+nmap <leader><leader>pf :!pf<space>
+imap <leader><leader>pa <esc>:!p<cr>
+nmap <leader><leader>pa :!p<cr>
+
 " Automatic commands
 augroup AutoCommands
     autocmd!
@@ -371,7 +371,7 @@ augroup AutoCommands
     autocmd BufWritePre *.php,*.py,*.js,*.css,*.txt,*.md,*.rb :call <SID>StripEOFLines()
 
     " TagBar
-    autocmd BufWritePost * nested :call tagbar#autoopen(0)
+    " autocmd BufWritePost * nested :call tagbar#autoopen(0)
 
     " PHP CS Fixer
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
