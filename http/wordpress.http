@@ -1,0 +1,2 @@
+POST http://domain.com/wp-admin/admin-ajax.php
+action=
