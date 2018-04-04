@@ -26,6 +26,7 @@ Plug 'majutsushi/tagbar'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'scrooloose/nerdtree'
 Plug 'posva/vim-vue'
+Plug 'aquach/vim-http-client'
 "Plug 'SirVer/ultisnips'
 
 " Dependencies for vim-laravel
@@ -356,6 +357,12 @@ imap <leader><leader>pf <esc>:!pf<space>
 nmap <leader><leader>pf :!pf<space>
 imap <leader><leader>pa <esc>:!p<cr>
 nmap <leader><leader>pa :!p<cr>
+
+" Vim HTTP
+nmap <leader><leader>hn :tabedit | set filetype=http<cr>
+imap <leader><leader>hn <esc>:tabedit set filetype=http<cr>
+nmap <leader><leader>hs K:HTTPClientDoRequest<cr>
+imap <leader><leader>hs <esc>K:HTTPClientDoRequest<cr>
 
 " Automatic commands
 augroup AutoCommands
