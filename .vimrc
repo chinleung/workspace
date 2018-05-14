@@ -26,7 +26,6 @@ Plug 'majutsushi/tagbar'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'scrooloose/nerdtree'
 Plug 'posva/vim-vue'
-Plug 'aquach/vim-http-client'
 "Plug 'SirVer/ultisnips'
 
 " Dependencies for vim-laravel
@@ -355,14 +354,14 @@ nmap <leader><leader>ca :!composer dump-autoload<cr>
 " Unit Testing
 imap <leader><leader>pf <esc>:!pf<space>
 nmap <leader><leader>pf :!pf<space>
+nmap <leader><leader>pm [[2wvf(h,y:!pf<space><C-R>"<cr>
+imap <leader><leader>pm <esc>[[2wvf(h,y:!pf<space><C-R>"<cr>
+nmap <leader><leader>pc K/class<cr>,<esc>wve,y:!pf<space><C-R>"<cr>
+imap <leader><leader>pc <esc>K/class<cr>,<esc>wve,y:!pf<space><C-R>"<cr>
+map <leader><leader>pl :!pf<Up><cr>
+imap <leader><leader>pl <esc>:!pf<Up><cr>
 imap <leader><leader>pa <esc>:!p<cr>
 nmap <leader><leader>pa :!p<cr>
-
-" Vim HTTP
-nmap <leader><leader>hn :tabedit ~/.vim/http<cr>
-imap <leader><leader>hn <esc>:tabedit ~/.vim/http<cr>
-nmap <leader><leader>hs K:HTTPClientDoRequest<cr>
-imap <leader><leader>hs <esc>K:HTTPClientDoRequest<cr>
 
 " Automatic commands
 augroup AutoCommands
