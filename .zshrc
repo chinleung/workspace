@@ -25,6 +25,8 @@ alias weather='curl -4 http://wttr.in'
 alias p='phpunit'
 alias pf='phpunit --filter $1'
 alias tinker='clear && php artisan tinker'
+alias tinx='clear && php artisan tinx'
+alias so='cd ~/Desktop/Projects/baka/stackoverflow/'
 
 # Change the color of the listing
 export CLICOLOR=1
@@ -32,5 +34,11 @@ export LSCOLORS=cxexcxdxbxegedabagacad
 
 # Laravel
 export PATH=~/.composer/vendor/bin:$PATH
+export NODE_PATH=/usr/local/lib/node_modules:$PATH
+
+# Function to update the title of the currenttab
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

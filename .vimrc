@@ -26,6 +26,7 @@ Plug 'majutsushi/tagbar'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'scrooloose/nerdtree'
 Plug 'posva/vim-vue'
+Plug 'kien/tabman.vim'
 "Plug 'SirVer/ultisnips'
 
 " Dependencies for vim-laravel
@@ -166,6 +167,7 @@ map K gg
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 nnoremap tn :tabnew<CR>
+nnoremap to :tabo<CR>
 
 " Airline configuration
 let g:airline_powerline_fonts = 1
@@ -347,7 +349,9 @@ nmap <leader>n :NERDTreeToggle<CR>
 " Laravel Commands
 nmap <leader>la :!php artisan<space>
 nmap <leader>lm :!php artisan make:
+nmap <leader>ln :!php artisan nova:
 nmap <leader>lr :tabedit routes/web.php<cr>
+nmap <leader>lt :Console<cr>
 nmap <leader><leader>mr :Artisan migrate:refresh --seed<cr>
 nmap <leader><leader>ca :!composer dump-autoload<cr>
 
@@ -382,3 +386,9 @@ augroup AutoCommands
     " PHP CS Fixer
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 augroup END
+
+" Custom blade directives
+let g:blade_custom_directives_pairs = {
+    \    'header': 'endheader',
+    \    'input': 'endinput',
+    \  }
