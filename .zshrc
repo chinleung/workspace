@@ -28,6 +28,15 @@ alias tinker='clear && php artisan tinker'
 alias tinx='clear && php artisan tinx'
 alias so='cd ~/Desktop/Projects/baka/stackoverflow/'
 
+# Git
+alias gp='git pull'
+alias gs='git status'
+alias gg='git push'
+alias ga='git add $1'
+
+# Laravel
+alias mrs='php artisan migrate:refresh --seed'
+
 # Change the color of the listing
 export CLICOLOR=1
 export LSCOLORS=cxexcxdxbxegedabagacad
