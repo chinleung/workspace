@@ -12,7 +12,6 @@ Plug 'Shougo/vimproc.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wincent/ferret'
-Plug 'docteurklein/php-getter-setter.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ervandew/supertab'
@@ -27,7 +26,8 @@ Plug 'stephpy/vim-php-cs-fixer'
 Plug 'scrooloose/nerdtree'
 Plug 'posva/vim-vue'
 Plug 'kien/tabman.vim'
-"Plug 'SirVer/ultisnips'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -92,7 +92,7 @@ set lazyredraw
 set novisualbell
 set showtabline=2
 set nobackup noswapfile
-set synmaxcol=0 cc=120
+set synmaxcol=0 cc=80
 set completeopt=longest,menuone
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set wildignore+=*/.git/*,*/node_modules/*,*/.sass-cache/*,*/vendor/*
@@ -142,20 +142,16 @@ if has("gui_running")
 endif
 " }}}
 
-" Reset leader key to comma
-let mapleader=","
-let maplocalleader="\\"
-
 " Color scheme configuration
 set t_Co=256
 set background=dark
 colorscheme gruvbox
 
 " Map vimrc files edition
-map <leader>ev :tabedit $MYVIMRC<cr>
-map <leader>eg :tabedit $MYGVIMRC<cr>
-map <leader>sv :source $MYVIMRC<cr>
-map <leader>sg :source $MYGVIMRC<cr>
+map <Leader>ev :tabedit $MYVIMRC<cr>
+map <Leader>eg :tabedit $MYGVIMRC<cr>
+map <Leader>sv :source $MYVIMRC<cr>
+map <Leader>sg :source $MYGVIMRC<cr>
 
 " Remap shift on homerow
 map H ^
@@ -185,7 +181,7 @@ inoremap <Down> <nop>
 inoremap <Right> <nop>
 
 " Map to remove search highlight
-map <leader><esc> :nohlsearch<cr>
+map <Leader><esc> :nohlsearch<cr>
 
 " EasyMotion configuration
 let g:EasyMotion_leader_key = '<Leader>'
@@ -211,9 +207,9 @@ endif
 
 " CtrlP configuration
 if has('nvim')
-    map <leader>t :FZF --reverse<cr>
+    map <Leader>t :FZF --reverse<cr>
 else
-    map <leader>t :CtrlPCurWD<cr>
+    map <Leader>t :CtrlPCurWD<cr>
     if has("unix")
        let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     endif
@@ -226,14 +222,14 @@ else
 endif
 
 " Fugitive configuration
-map <leader>ga :silent Git add %<cr>
-map <leader>gw :Gwrite<cr>
-map <leader>gs :Gstatus<cr>
-map <leadeR>gc :Gcommit<cr>
-map <leader>gd :Gdiff<cr>
-map <leader>gp :Gpull<cr>
-map <leader>gg :Gpush<cr>
-map <leader>gm :Git mergetool<cr>
+map <Leader>ga :silent Git add %<cr>
+map <Leader>gw :Gwrite<cr>
+map <Leader>gs :Gstatus<cr>
+map <Leader>gc :Gcommit<cr>
+map <Leader>gd :Gdiff<cr>
+map <Leader>gp :Gpull<cr>
+map <Leader>gg :Gpush<cr>
+map <Leader>gm :Git mergetool<cr>
 
 " Syntastic configuration
 let g:syntastic_enable_balloons = 1
@@ -254,7 +250,7 @@ hi GitGutterDelete guibg=#282828 ctermbg=237 guifg=#fb4934 ctermfg=167
 hi GitGutterChangeDelete guibg=#282828 ctermbg=237  guifg=#8ec07c ctermfg=108
 
 " NERDCommenter configuration
-map <leader>c :NERDComToggleComment<cr>
+map <Leader>c :NERDComToggleComment<cr>
 
 " Erase trailing line at the end of file
 function! <SID>StripEOFLines()
@@ -273,27 +269,31 @@ hi TabLineFill ctermbg=235
 hi TabLineSel ctermfg=yellow
 
 " Auto indentation
-nmap <leader>i gg=G<cr>
+nmap <Leader>i gg=G<cr>
 
 " Lazy tab
 nmap <tab> Hi<tab><esc>
 
 " Splits
-nmap <leader>hs :split<cr>
-nmap <leader>vs :vsplit<cr>
+nmap <Leader>hs :split<cr>
+nmap <Leader>vs :vsplit<cr>
 
 " Lazy var dumps
-nmap <leader>v ivar_dump(); die;<esc>6hi
-imap <leader>v var_dump(); die;<esc>6hi
-nmap <leader>c iconsole.log();<esc>hi
-imap <leader>c console.log();<esc>hi
+nmap <Leader>v ivar_dump(); die;<esc>6hi
+imap <Leader>v var_dump(); die;<esc>6hi
+nmap <Leader>c iconsole.log();<esc>hi
+imap <Leader>c console.log();<esc>hi
 
 " Lazy reindentation
-nmap <leader>r ddko
-imap <leader>r <esc>kddko
+nmap <Leader>r ddko
+imap <Leader>r <esc>kddko
+
+" Lazy refresh buffer
+nmap <Leader><Leader>r :edit<cr>
+imap <Leader><Leader>r <esc>:edit<cr>
 
 " Copy to clipboard
-vnoremap  <leader>y  "+y
+vnoremap  <Leader>y  "+y
 
 " Change the mouse cursor to underline
 set guicursor=a:hor20-Cursor
@@ -322,10 +322,10 @@ function! RefreshTagbar()
     execute ':TagbarClose'
     execute ':TagbarOpen'
 endfunction
-nmap <leader>br :call RefreshTagbar()<cr>
-imap <leader>br <esc>:call RefreshTagbar()<cr>i
-nmap <leader>bt :TagbarToggle<cr>
-imap <leader>bt <esc>:TagbarOpen<cr>i
+nmap <Leader>br :call RefreshTagbar()<cr>
+imap <Leader>br <esc>:call RefreshTagbar()<cr>i
+nmap <Leader>bt :TagbarToggle<cr>
+imap <Leader>bt <esc>:TagbarOpen<cr>i
 
 " PHP CS Fixer configuration
 let g:php_cs_fixer_level = "psr2"
@@ -339,7 +339,7 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 " NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
 
 " Ultisnips
 "let g:UltiSnipsExpandTrigger="."
@@ -347,35 +347,30 @@ nmap <leader>n :NERDTreeToggle<CR>
 "let g:UltiSnipsJumpBackwardTrigger=","
 
 " Laravel Commands
-nmap <leader>la :!php artisan<space>
-nmap <leader>lm :!php artisan make:
-nmap <leader>ln :!php artisan nova:
-nmap <leader>lr :tabedit routes/web.php<cr>
-nmap <leader>lt :Console<cr>
-nmap <leader><leader>mr :Artisan migrate:refresh --seed<cr>
-nmap <leader><leader>ca :!composer dump-autoload<cr>
+nmap <Leader>la :!php artisan<space>
+nmap <Leader>lm :!php artisan make:
+nmap <Leader>ln :!php artisan nova:
+nmap <Leader>lr :tabedit routes/web.php<cr>
+nmap <Leader>lt :Console<cr>
+nmap <Leader><Leader>mr :Artisan migrate:refresh --seed<cr>
+nmap <Leader><Leader>mf :Artisan migrate:fresh --seed<cr>
+nmap <Leader><Leader>ca :!composer dump-autoload<cr>
 
 " Unit Testing
-imap <leader><leader>pf <esc>:!pf<space>
-nmap <leader><leader>pf :!pf<space>
-nmap <leader><leader>pm [[2wvf(h,y:!pf<space><C-R>"<cr>
-imap <leader><leader>pm <esc>[[2wvf(h,y:!pf<space><C-R>"<cr>
-nmap <leader><leader>pc K/class<cr>,<esc>wve,y:!pf<space><C-R>"<cr>
-imap <leader><leader>pc <esc>K/class<cr>,<esc>wve,y:!pf<space><C-R>"<cr>
-map <leader><leader>pl :!pf<Up><cr>
-imap <leader><leader>pl <esc>:!pf<Up><cr>
-imap <leader><leader>pa <esc>:!p<cr>
-nmap <leader><leader>pa :!p<cr>
+imap <Leader><Leader>pf <esc>:!pf<space>
+nmap <Leader><Leader>pf :!pf<space>
+nmap <Leader><Leader>pm [[2wvf(h<leader>y:!pf<space><C-R>"<cr>
+imap <Leader><Leader>pm <esc>[[2wvf(h<leader>y:!pf<space><C-R>"<cr>
+nmap <Leader><Leader>pc K/class<cr><leader><esc>wve<leader>y:!pf<space><C-R>"<cr>
+imap <Leader><Leader>pc <esc>K/class<cr><leader><esc>wve<leader>y:!pf<space><C-R>"<cr>
+map <Leader><Leader>pl :!pf<Up><cr>
+imap <Leader><Leader>pl <esc>:!pf<Up><cr>
+imap <Leader><Leader>pa <esc>:!p<cr>
+nmap <Leader><Leader>pa :!p<cr>
 
 " Automatic commands
 augroup AutoCommands
     autocmd!
-
-    " GitGutter
-    autocmd BufWritePost * execute 'GitGutter'
-    autocmd BufEnter * execute 'GitGutter'
-    autocmd BufEnter * sign define DefaultColumnSign
-    autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
 
     " Strip end of line
     autocmd BufWritePre *.php,*.py,*.js,*.css,*.txt,*.md,*.rb :call <SID>StripEOFLines()
@@ -385,6 +380,15 @@ augroup AutoCommands
 
     " PHP CS Fixer
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
+    " Sort PHP Namespaces
+    autocmd BufWritePost *.php silent! call PhpSortUse()
+
+    " GitGutter
+    autocmd BufWritePost * execute 'GitGutter'
+    autocmd BufEnter * execute 'GitGutter'
+    autocmd BufEnter * sign define DefaultColumnSign
+    autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
 augroup END
 
 " Custom blade directives
@@ -392,3 +396,14 @@ let g:blade_custom_directives_pairs = {
     \    'header': 'endheader',
     \    'input': 'endinput',
     \  }
+
+" PHP Namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" GutenTags Status
+set statusline+=%{gutentags#statusline()}
