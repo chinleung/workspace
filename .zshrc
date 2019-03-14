@@ -12,7 +12,6 @@ prompt gruvbox
 sh ~/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh
 
 # Alias
-alias akufen='cd ~/Desktop/Projects/akufen/'
 alias baka='cd ~/Desktop/Projects/baka/'
 alias hosts='sudo nvim /etc/hosts'
 alias ll='clear && ls -al'
@@ -36,9 +35,11 @@ alias gp='git pull'
 alias gs='git status'
 alias gg='git push $1 $2'
 alias ga='git add $1'
+alias gd='git diff $1'
 alias gc='git commit -m $1'
 
 # Laravel
+alias a='php artisan'
 alias mfs='php artisan migrate:fresh --seed'
 alias mrs='php artisan migrate:refresh --seed'
 
