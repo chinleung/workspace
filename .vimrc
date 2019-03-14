@@ -28,6 +28,7 @@ Plug 'posva/vim-vue'
 Plug 'kien/tabman.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'SirVer/ultisnips'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -211,14 +212,14 @@ if has('nvim')
 else
     map <Leader>t :CtrlPCurWD<cr>
     if has("unix")
-       let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+        let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     endif
     let g:ctrlp_match_window = 'bottom,order:ttb'
     let g:ctrlp_working_path_mode = 'rw'
     let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("e")': [],
-      \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
-      \ }
+                \ 'AcceptSelection("e")': [],
+                \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+                \ }
 endif
 
 " Fugitive configuration
@@ -316,7 +317,7 @@ function! Multiple_cursors_after()
     endif
 endfunction
 
- " Tagbar configuration
+" Tagbar configuration
 let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 function! RefreshTagbar()
     execute ':TagbarClose'
@@ -359,8 +360,8 @@ nmap <Leader><Leader>ca :!composer dump-autoload<cr>
 " Unit Testing
 imap <Leader><Leader>pf <esc>:!pf<space>
 nmap <Leader><Leader>pf :!pf<space>
-nmap <Leader><Leader>pm [[2wvf(h<leader>y:!pf<space><C-R>"<cr>
-imap <Leader><Leader>pm <esc>[[2wvf(h<leader>y:!pf<space><C-R>"<cr>
+nmap <Leader><Leader>pm /@test<cr>Nf/<leader><esc>3wve<leader>y:!pf<space><C-R>"<cr>
+imap <Leader><Leader>pm <esc>/@test<cr>Nf/<leader><esc>3wve<leader>y:!pf<space><C-R>"<cr>
 nmap <Leader><Leader>pc K/class<cr><leader><esc>wve<leader>y:!pf<space><C-R>"<cr>
 imap <Leader><Leader>pc <esc>K/class<cr><leader><esc>wve<leader>y:!pf<space><C-R>"<cr>
 map <Leader><Leader>pl :!pf<Up><cr>
@@ -393,9 +394,9 @@ augroup END
 
 " Custom blade directives
 let g:blade_custom_directives_pairs = {
-    \    'header': 'endheader',
-    \    'input': 'endinput',
-    \  }
+            \    'header': 'endheader',
+            \    'input': 'endinput',
+            \  }
 
 " PHP Namespace
 function! IPhpInsertUse()
@@ -407,3 +408,12 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " GutenTags Status
 set statusline+=%{gutentags#statusline()}
+let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", ".git", "node_modules", "*.vim/bundle/*"]
+
+" Persistent Undo
+set undodir=~/.vim/undo
+set undofile
+
+" Snippets configuration
+map <Leader>es :UltiSnipsEdit<cr>
+let g:UltiSnipsExpandTrigger="--"

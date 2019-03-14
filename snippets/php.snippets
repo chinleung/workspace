@@ -1,0 +1,155 @@
+snippet if "If case"
+if ($1) {
+	$2
+}
+endsnippet
+
+snippet foreach "Foreach loop"
+foreach ($$1 as $${2:index} => $${3:instance}) {
+	$4
+}
+endsnippet
+
+snippet foreach: "HTML Foreach loop"
+<?php foreach ($$1 as $${2:index} => $${3:instance}): ?>
+	$4
+<?php endforeach; ?>
+endsnippet
+
+snippet if: "HTML If case"
+<?php if ($1): ?>
+endsnippet
+
+snippet endif "HTML End if case"
+<?php endif; ?>
+endsnippet
+
+snippet echo "Echo"
+<?php echo $1; ?>
+endsnippet
+
+snippet test "Test case"
+/**
+ * $2
+ *
+ * @test
+ * @return void
+ */
+public function $1() : void
+{
+	$3
+}
+endsnippet
+
+snippet factoryc "Laravel Factory create"
+factory($1::class)->create($2)$3
+endsnippet
+
+snippet factorym "Laravel Factory make"
+factory($1::class)->make($2)$3
+endsnippet
+
+snippet callback "Callback Function"
+function ($1) {
+	$2
+}
+endsnippet
+
+snippet function "Function"
+/**
+ * ${4: undocumented function.}
+ *
+ * @return ${5:void}
+ */
+${1:public} function $2(${3:$param}) : $5
+{
+	$6
+}
+endsnippet
+
+snippet pufunction "Public Function"
+/**
+ * ${3: undocumented function.}
+ *
+ * @return ${4:void}
+ */
+public function $1(${2:$param}) : $4
+{
+	$5
+}
+endsnippet
+
+snippet pusfunction "Public Static Function"
+/**
+ * ${3: undocumented function.}
+ *
+ * @return ${4:void}
+ */
+public static function $1(${2:$param}) : $4
+{
+	$5
+}
+endsnippet
+
+snippet profunction "Protected Function"
+/**
+ * ${3: undocumented function.}
+ *
+ * @return ${4:void}
+ */
+protected function $1(${2:$param}) : $4
+{
+	$5
+}
+endsnippet
+
+snippet prifunction "Private Function"
+/**
+ * ${3: undocumented function.}
+ *
+ * @return ${4:void}
+ */
+private function $1(${2:$param}) : $4
+{
+	$5
+}
+endsnippet
+
+snippet property "Property"
+/**
+ * ${4: undocumented property.}
+ *
+ * @var ${5:string}
+ */
+${1:protected} ${2:property} = $3;
+endsnippet
+
+snippet fillable "Laravel Fillable"
+/**
+ * The list of attributes that are mass assignable.
+ *
+ * @var array
+ */
+protected $fillable = [
+	'$1',
+];
+endsnippet
+
+snippet translatable "Spatie Translatable Attribute"
+/**
+ * The list of attributes that are translatable.
+ *
+ * @var array
+ */
+public $translatable = [
+	'$1',
+];
+endsnippet
+
+snippet foreign "Laravel Foreign Key"
+$table->foreign('${1:user_id}')
+	->references('${2:id}')
+	->on('${3:table}')
+	->onUpdate('${4:cascade}')
+	->onDelete('${5:cascade}');
+endsnippet

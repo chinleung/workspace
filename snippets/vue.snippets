@@ -1,0 +1,113 @@
+snippet template "Template"
+<template>
+	$1
+</template>
+endsnippet
+
+snippet script "Script"
+<script>
+export default {
+	$1
+}
+</script>
+endsnippet
+
+snippet import "Import"
+import $1 from '$2';
+endsnippet
+
+snippet mixins "Mixins"
+mixins: [
+	$1,
+],
+endsnippet
+
+snippet methods "Methods"
+methods: {
+	$1
+},
+endsnippet
+
+snippet method "Method"
+/**
+ * $3
+ *
+ * @return ${4:void}
+ */
+$1 ($2) {
+	$5
+},
+endsnippet
+
+snippet props "Properties"
+props: {
+	$1
+},
+endsnippet
+
+snippet prop "Property"
+$1: {
+	type: ${2:String},
+},
+endsnippet
+
+snippet mounted "Mounted"
+mounted () {
+	$1
+},
+endsnippet
+
+snippet computed "Computed"
+computed: {
+	/**
+	 * $2
+	 *
+	 * @return ${3:string}
+	 */
+	$1: function () {
+		$4
+	},
+},
+endsnippet
+
+snippet vfor "For Loop"
+v-for="($1, ${2:index}) in $3"
+endsnippet
+
+snippet vif "V-if"
+v-if="$1"
+endsnippet
+
+snippet rl "Router Link Element"
+<router-link :to="{ name: '$1' }">
+	$2
+</router-link>
+endsnippet
+
+snippet __ "Translation"
+{{ __('$1') }}
+endsnippet
+
+snippet div "DIV Element"
+<div>
+	$1
+</div>
+endsnippet
+
+snippet divc "DIV Element with Class"
+<div class="$1">
+	$2
+</div>
+endsnippet
+
+snippet class "Class"
+class="$1"
+endsnippet
+
+snippet i "I Element"
+<i class="$1"></i>
+endsnippet
+
+snippet option "Option Element"
+<option value="$1">$2</option>
+endsnippet
