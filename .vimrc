@@ -245,10 +245,10 @@ let g:syntastic_warning_symbol = '🔸'
 
 " GitGutter configuration
 let g:gitgutter_sign_modified_removed = '*'
-hi GitGutterAdd guibg=#282828 ctermbg=237 guifg=#b8bb26 ctermfg=142
-hi GitGutterChange guibg=#282828 ctermbg=237 guifg=#8ec07c ctermfg=108
-hi GitGutterDelete guibg=#282828 ctermbg=237 guifg=#fb4934 ctermfg=167
-hi GitGutterChangeDelete guibg=#282828 ctermbg=237  guifg=#8ec07c ctermfg=108
+hi GitGutterAdd guibg=#282828 ctermbg=235 guifg=#b8bb26 ctermfg=142
+hi GitGutterChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
+hi GitGutterDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167
+hi GitGutterChangeDelete guibg=#282828 ctermbg=235  guifg=#8ec07c ctermfg=108
 
 " NERDCommenter configuration
 map <Leader>c :NERDComToggleComment<cr>
@@ -264,7 +264,7 @@ function! <SID>StripEOFLines()
 endfunction
 
 " ColorScheme adjustments
-hi SignColumn ctermbg=237
+hi SignColumn ctermbg=235
 hi CursorLineNr ctermbg=235
 hi TabLineFill ctermbg=235
 hi TabLineSel ctermfg=yellow
