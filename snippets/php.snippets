@@ -1,3 +1,6 @@
+snippet _w: "WordPress Translation"
+<?php _e('$1', '${2:Swoo}'); ?>
+endsnippet
 snippet if "If case"
 if ($1) {
 	$2
@@ -149,7 +152,7 @@ endsnippet
 snippet foreign "Laravel Foreign Key"
 $table->foreign('${1:user_id}')
 	->references('${2:id}')
-	->on('${3:table}')
+	->on('${3:users}')
 	->onUpdate('${4:cascade}')
 	->onDelete('${5:cascade}');
 endsnippet
