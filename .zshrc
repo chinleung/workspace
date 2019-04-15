@@ -23,6 +23,7 @@ alias so='cd ~/Desktop/Projects/so/'
 alias b='blink1-tool --off'
 alias es='vim ~/.zshrc'
 alias ss='source ~/.zshrc'
+alias bs='browser-sync start --proxy ${PWD##*/}.test --files="*.php"'
 
 # Git
 alias gp='git pull'
