@@ -12,13 +12,7 @@ prompt gruvbox
 sh ~/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh
 
 # Alias
-alias baka='cd ~/Desktop/Projects/baka/'
-alias hosts='sudo nvim /etc/hosts'
 alias ll='clear && ls -al'
-alias projects='cd ~/Desktop/Projects/'
-alias swoo='cd ~/Desktop/Projects/swoo/'
-alias vhost='cd ~/Desktop/Projects/.vhosts/'
-alias vhosts='cd ~/Desktop/Projects/.vhosts/'
 alias vim='nvim $1'
 alias weather='curl -4 http://wttr.in'
 alias p='phpunit'
