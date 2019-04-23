@@ -24,6 +24,8 @@ alias b='blink1-tool --off'
 alias es='vim ~/.zshrc'
 alias ss='source ~/.zshrc'
 alias bs='browser-sync start --proxy ${PWD##*/}.test --files="*.php"'
+alias t='cd wp-content/themes/${PWD##*/}'
+alias r='cd ../../..';
 
 # Git
 alias gp='git pull'
