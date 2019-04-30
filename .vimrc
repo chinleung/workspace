@@ -29,6 +29,7 @@ Plug 'kien/tabman.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
+Plug 'chinleung/vim-cute-php'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
