@@ -30,6 +30,7 @@ Plug 'arnaud-lb/vim-php-namespace'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
 Plug 'chinleung/vim-cute-php'
+Plug 'janko-m/vim-test'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -41,6 +42,7 @@ Plug 'noahfrederick/vim-laravel'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    tmap <C-o> <C-\><C-n>
 else
     Plug 'Shougo/neocomplete.vim'
     Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlPCurWD' }
@@ -358,18 +360,6 @@ nmap <Leader><Leader>mr :Artisan migrate:refresh --seed<cr>
 nmap <Leader><Leader>mf :Artisan migrate:fresh --seed<cr>
 nmap <Leader><Leader>ca :!composer dump-autoload<cr>
 
-" Unit Testing
-imap <Leader><Leader>pf <esc>:!pf<space>
-nmap <Leader><Leader>pf :!pf<space>
-nmap <Leader><Leader>pm /@test<cr>Nf/<leader><esc>3wve<leader>y:!pf<space><C-R>"<cr>
-imap <Leader><Leader>pm <esc>/@test<cr>Nf/<leader><esc>3wve<leader>y:!pf<space><C-R>"<cr>
-nmap <Leader><Leader>pc K/class<cr><leader><esc>wve<leader>y:!pf<space><C-R>"<cr>
-imap <Leader><Leader>pc <esc>K/class<cr><leader><esc>wve<leader>y:!pf<space><C-R>"<cr>
-map <Leader><Leader>pl :!pf<Up><cr>
-imap <Leader><Leader>pl <esc>:!pf<Up><cr>
-imap <Leader><Leader>pa <esc>:!p<cr>
-nmap <Leader><Leader>pa :!p<cr>
-
 " Automatic commands
 augroup AutoCommands
     autocmd!
@@ -418,3 +408,12 @@ set undofile
 " Snippets configuration
 map <Leader>es :UltiSnipsEdit<cr>
 let g:UltiSnipsExpandTrigger="--"
+
+" Unit Testing
+let test#strategy = "neovim"
+nmap <leader><leader>tf :TestFile<cr>
+nmap <leader><leader>ts :TestSuite<cr>
+nmap <leader><leader>tn :TestNearest<cr>
+nmap <leader><leader>tl :TestLast<cr>
+nmap <leader><leader>tv :TestVisit<cr>
+
