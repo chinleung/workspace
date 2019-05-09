@@ -23,8 +23,7 @@ alias so='cd ~/Desktop/Projects/so/'
 alias b='blink1-tool --off'
 alias es='vim ~/.zshrc'
 alias ss='source ~/.zshrc'
-alias bs='clear && browser-sync start --proxy ${PWD##*/}.test --no-notify --files="**/*.php" --ignore="vendor"'
-alias bss='clear && browser-sync start --proxy https://${PWD##*/}.test --no-notify --https --files="**/*.php" --ignore="vendor"'
+alias bs='clear && browser-sync start --proxy https://${PWD##*/}.test --no-notify --https --files="**/*.php" --ignore="vendor"'
 alias t='cd wp-content/themes/${PWD##*/}'
 alias r='cd ../../..';
 
