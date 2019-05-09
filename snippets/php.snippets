@@ -44,12 +44,25 @@ public function $1() : void
 }
 endsnippet
 
-snippet factoryc "Laravel Factory create"
+snippet factoryc "Laravel Factory Create"
 factory($1::class)->create($2)$3
 endsnippet
 
-snippet factorym "Laravel Factory make"
+snippet factorym "Laravel Factory Make"
 factory($1::class)->make($2)$3
+endsnippet
+
+snippet scope "Scope"
+/**
+ * $3
+ *
+ * @param  \Illuminate\Database\Query\Builder  $query
+ * @return \Illuminate\Database\Query\Builder
+ */
+public function scope$1($query$2) : Builder
+{
+	return $query->where($4);
+}
 endsnippet
 
 snippet callback "Callback Function"
