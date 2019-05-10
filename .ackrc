@@ -1,0 +1,2 @@
+--ignore-file=is:tags
+--ignore-file=is:.php_cs.cache
