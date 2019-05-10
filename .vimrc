@@ -282,7 +282,7 @@ nmap <tab> Hi<tab><esc>
 nmap <Leader>hs :split<cr>
 nmap <Leader>vs :vsplit<cr>
 
-" Lazy var dumps
+" Lazy var dumps and logs
 nmap <Leader>v ivar_dump(); die;<esc>6hi
 imap <Leader>v var_dump(); die;<esc>6hi
 nmap <Leader>c iconsole.log();<esc>hi
@@ -291,6 +291,9 @@ imap <Leader>c console.log();<esc>hi
 " Lazy reindentation
 nmap <Leader>r ddko
 imap <Leader>r <esc>kddko
+
+" Lazy close buffer
+nmap <Leader><Leader>q :bd!<cr>
 
 " Lazy refresh buffer
 nmap <Leader><Leader>r :edit<cr>
