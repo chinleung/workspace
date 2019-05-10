@@ -1,6 +1,7 @@
 snippet _w: "WordPress Translation"
 <?php _e('$1', '${2:Swoo}'); ?>
 endsnippet
+
 snippet if "If case"
 if ($1) {
 	$2
@@ -168,4 +169,40 @@ $table->foreign('${1:user_id}')
 	->on('${3:users}')
 	->onUpdate('${4:cascade}')
 	->onDelete('${5:cascade}');
+endsnippet
+
+snippet belongsTo "Laravel BelongsTo Relation"
+/**
+ * Relationship with the ${1:table_name} table.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+ */
+public function $1() : BelongsTo
+{
+	return $this->belongsTo($2::class);
+}
+endsnippet
+
+snippet hasManyThrough "Laravel HasManyThrough Relation"
+/**
+ * Relationship with the ${4:table_name} table.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+ */
+public function $1() : HasManyThrough
+{
+	return $this->hasManyThrough($2::class, $3::class);
+}
+endsnippet
+
+snippet belongsToMany "Laravel BelongsToMany Relation"
+/**
+ * Relationship with the ${3:table_name} table.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+ */
+public function $1() : BelongsToMany
+{
+	return $this->belongsToMany($2::class);
+}
 endsnippet
