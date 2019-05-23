@@ -36,7 +36,7 @@ alias gd='git diff $1'
 alias gc='git commit -m $1'
 
 # Laravel
-alias a='php artisan'
+alias a='clear && php artisan'
 alias mfs='php artisan migrate:fresh --seed'
 alias mrs='php artisan migrate:refresh --seed'
 
