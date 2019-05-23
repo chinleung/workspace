@@ -6,7 +6,6 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/vimproc.vim'
 Plug 'bronson/vim-trailing-whitespace'
@@ -31,6 +30,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
 Plug 'chinleung/vim-cute-php'
 Plug 'janko-m/vim-test'
+Plug 'w0rp/ale'
+Plug 'phpstan/vim-phpstan'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -173,6 +174,7 @@ nnoremap to :tabo<CR>
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#ale#enabled = 1
 
 " Gotta stop cheating (disabled arrow mapping for my own good)
 noremap <Up> <nop>
@@ -235,16 +237,16 @@ map <Leader>gp :Gpull<cr>
 map <Leader>gg :Gpush<cr>
 map <Leader>gm :Git mergetool<cr>
 
-" Syntastic configuration
-let g:syntastic_enable_balloons = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_error_symbol = '❗️'
-let g:syntastic_warning_symbol = '🔸'
+" Ale Configuration
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_sign_error = '❗️'
+let g:ale_sign_warning = '🔸'
+let g:ale_linters = {
+\   'php': ['php'],
+\   'javascript': ['eslint'],
+\   'html': ['htmlhint'],
+\}
 
 " GitGutter configuration
 let g:gitgutter_sign_modified_removed = '*'
@@ -348,11 +350,6 @@ nmap <C-L> <C-W><C-L>
 " NERDTree
 nmap <Leader>n :NERDTreeToggle<CR>
 
-" Ultisnips
-"let g:UltiSnipsExpandTrigger="."
-"let g:UltiSnipsJumpForwardTrigger="/"
-"let g:UltiSnipsJumpBackwardTrigger=","
-
 " Laravel Commands
 nmap <Leader>la :!php artisan<space>
 nmap <Leader>lm :!php artisan make:
@@ -362,6 +359,7 @@ nmap <Leader>lt :Console<cr>
 nmap <Leader><Leader>mr :Artisan migrate:refresh --seed<cr>
 nmap <Leader><Leader>mf :Artisan migrate:fresh --seed<cr>
 nmap <Leader><Leader>ca :!composer dump-autoload<cr>
+nmap <leader><leader>i1 :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
 
 " Automatic commands
 augroup AutoCommands
@@ -384,6 +382,10 @@ augroup AutoCommands
     autocmd BufEnter * execute 'GitGutter'
     autocmd BufEnter * sign define DefaultColumnSign
     autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
+
+    " PHP Imports
+    autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+    autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 augroup END
 
 " Custom blade directives
@@ -397,8 +399,6 @@ function! IPhpInsertUse()
     call PhpInsertUse()
     call feedkeys('a', 'n')
 endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " GutenTags Status
 set statusline+=%{gutentags#statusline()}
@@ -410,7 +410,7 @@ set undofile
 
 " Snippets configuration
 map <Leader>es :UltiSnipsEdit<cr>
-let g:UltiSnipsExpandTrigger="--"
+let g:UltiSnipsExpandTrigger="-="
 
 " Unit Testing
 let test#strategy = "neovim"
@@ -420,3 +420,5 @@ nmap <leader><leader>tn :TestNearest<cr>
 nmap <leader><leader>tl :TestLast<cr>
 nmap <leader><leader>tv :TestVisit<cr>
 
+" PHPStan
+nmap <leader>ps :PHPStanAnalyse<space>
