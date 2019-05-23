@@ -408,7 +408,7 @@ set undofile
 
 " Snippets configuration
 map <Leader>es :UltiSnipsEdit<cr>
-let g:UltiSnipsExpandTrigger="-="
+let g:UltiSnipsExpandTrigger="-<cr>"
 
 " Unit Testing
 let test#strategy = "neovim"
