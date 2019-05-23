@@ -294,12 +294,10 @@ imap <Leader>c console.log();<esc>hi
 nmap <Leader><tab> ddko
 imap <Leader><tab> <esc>kddko
 
-" Lazy close buffer
-nmap <Leader>q :bd!<cr>
-
-" Lazy refresh buffer
-nmap <Leader>r :edit<cr>
-imap <Leader>r <esc>:edit<cr>
+" Lazy buffer handling
+map <Leader>q :bd!<cr>
+map <Leader>r :edit<cr>
+map <Leader>w :w<cr>
 
 " Copy to clipboard
 vnoremap  <Leader>y  "+y
