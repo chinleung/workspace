@@ -14,9 +14,15 @@ foreach ($$1 as $${2:index} => $${3:instance}) {
 }
 endsnippet
 
-snippet foreach: "HTML Foreach loop"
+snippet foreachi: "HTML Foreach loop"
 <?php foreach ($$1 as $${2:index} => $${3:instance}): ?>
 	$4
+<?php endforeach; ?>
+endsnippet
+
+snippet foreach: "HTML Foreach loop"
+<?php foreach ($$1 as $${2:instance}): ?>
+	$3
 <?php endforeach; ?>
 endsnippet
 
