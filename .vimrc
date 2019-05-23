@@ -243,7 +243,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_sign_error = '❗️'
 let g:ale_sign_warning = '🔸'
 let g:ale_linters = {
-\   'php': ['php'],
+\   'php': ['php', 'htmlhint'],
 \   'javascript': ['eslint'],
 \   'html': ['htmlhint'],
 \}
@@ -291,8 +291,8 @@ nmap <Leader>c iconsole.log();<esc>hi
 imap <Leader>c console.log();<esc>hi
 
 " Lazy reindentation
-nmap <Leader>r ddko
-imap <Leader>r <esc>kddko
+nmap <Leader><tab> ddko
+imap <Leader><tab> <esc>kddko
 
 " Lazy close buffer
 nmap <Leader>q :bd!<cr>
