@@ -213,9 +213,9 @@ endif
 
 " CtrlP configuration
 if has('nvim')
-    map <Leader>t :FZF --reverse<cr>
+    map <Leader>/ :FZF --reverse<cr>
 else
-    map <Leader>t :CtrlPCurWD<cr>
+    map <Leader>/ :CtrlPCurWD<cr>
     if has("unix")
         let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     endif
@@ -295,11 +295,11 @@ nmap <Leader>r ddko
 imap <Leader>r <esc>kddko
 
 " Lazy close buffer
-nmap <Leader><Leader>q :bd!<cr>
+nmap <Leader>q :bd!<cr>
 
 " Lazy refresh buffer
-nmap <Leader><Leader>r :edit<cr>
-imap <Leader><Leader>r <esc>:edit<cr>
+nmap <Leader>r :edit<cr>
+imap <Leader>r <esc>:edit<cr>
 
 " Copy to clipboard
 vnoremap  <Leader>y  "+y
@@ -414,11 +414,11 @@ let g:UltiSnipsExpandTrigger="-="
 
 " Unit Testing
 let test#strategy = "neovim"
-nmap <leader><leader>tf :TestFile<cr>
-nmap <leader><leader>ts :TestSuite<cr>
-nmap <leader><leader>tn :TestNearest<cr>
-nmap <leader><leader>tl :TestLast<cr>
-nmap <leader><leader>tv :TestVisit<cr>
+nmap <leader>tf :TestFile<cr>
+nmap <leader>ts :TestSuite<cr>
+nmap <leader>tn :TestNearest<cr>
+nmap <leader>tl :TestLast<cr>
+nmap <leader>tv :TestVisit<cr>
 
 " PHPStan
 nmap <leader>ps :PHPStanAnalyse<space>
