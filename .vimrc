@@ -300,7 +300,7 @@ map <Leader>r :edit<cr>
 map <Leader>w :w<cr>
 
 " Copy to clipboard
-vnoremap  <Leader>y  "+y
+vnoremap <Leader>y "+y
 
 " Change the mouse cursor to underline
 set guicursor=a:hor20-Cursor
