@@ -66,3 +66,9 @@ alias phpunit='function __phpunit() {
 }; __phpunit'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+###-tns-completion-start-###
+if [ -f /Users/chin/.tnsrc ]; then 
+    source /Users/chin/.tnsrc 
+fi
+###-tns-completion-end-###
