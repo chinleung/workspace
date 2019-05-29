@@ -294,9 +294,15 @@ nmap <Leader><tab> ddko
 imap <Leader><tab> <esc>kddko
 
 " Lazy buffer handling
-map <Leader>q :bd!<cr>
+map <Leader>qw :q!<cr>
+map <Leader>qa :qa<cr>
+map <Leader>qb :bd!<cr>
 map <Leader>r :edit<cr>
 map <Leader>w :w<cr>
+
+" Moving lines
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
 
 " Copy to clipboard
 vnoremap <Leader>y "+y
