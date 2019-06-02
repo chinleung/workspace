@@ -59,6 +59,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'lunaru/vim-less', { 'for': 'less' }
+Plug 'evidens/vim-twig', { 'for': 'twig' }
 
 call plug#end()
 
