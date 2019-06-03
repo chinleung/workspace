@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/vimproc.vim'
