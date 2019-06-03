@@ -381,6 +381,10 @@ augroup AutoCommands
     " Sort PHP Namespaces
     autocmd BufWritePost *.php silent! call PhpSortUse()
 
+    " Cursor line on insert mode
+    autocmd InsertEnter * set cul
+    autocmd InsertLeave * set nocul
+
     " GitGutter
     autocmd BufWritePost * execute 'GitGutter'
     autocmd BufEnter * execute 'GitGutter'
