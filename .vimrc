@@ -31,6 +31,7 @@ Plug 'chinleung/vim-cute-php'
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 Plug 'phpstan/vim-phpstan'
+Plug 'rhysd/clever-f.vim'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -232,6 +233,7 @@ map <Leader>ga :silent Git add %<cr>
 map <Leader>gw :Gwrite<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>
+nmap <Leader>gw :wq<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gp :Gpull<cr>
 map <Leader>gg :Gpush<cr>
@@ -429,3 +431,6 @@ nmap <leader>tv :TestVisit<cr>
 
 " PHPStan
 nmap <leader>ps :PHPStanAnalyse<space>
+
+" Fix the guicursor glitch
+let g:clever_f_hide_cursor_on_cmdline = 0
