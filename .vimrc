@@ -302,6 +302,10 @@ map <Leader>qb :bd!<cr>
 map <Leader>r :edit<cr>
 map <Leader>w :w<cr>
 
+" Terminal mode
+map <Leader><Leader>ts :tabnew \| :term<cr>i
+tnoremap <Leader><Esc> <C-\><C-n>
+
 " Moving lines
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
