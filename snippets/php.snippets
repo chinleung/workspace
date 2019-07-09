@@ -153,7 +153,7 @@ snippet property "Property"
 ${1:protected} ${2:property} = $3;
 endsnippet
 
-snippet fillable "Laravel Fillable"
+snippet fillable "Laravel Fillable Attribute"
 /**
  * The list of attributes that are mass assignable.
  *
@@ -161,6 +161,17 @@ snippet fillable "Laravel Fillable"
  */
 protected $fillable = [
 	'$1',
+];
+endsnippet
+
+snippet casts "Laravel Casts Attribute"
+/**
+ * The attributes that should be casted to another type.
+ *
+ * @var array
+ */
+protected $casts = [
+	'$1' => '$2',
 ];
 endsnippet
 
