@@ -196,13 +196,13 @@ endsnippet
 
 snippet belongsTo "Laravel BelongsTo Relation"
 /**
- * Relationship with the ${1:table_name} table.
+ * Relationship with the ${1:table_name}s table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
  */
-public function $1() : BelongsTo
+public function ${2:$1}() : BelongsTo
 {
-	return $this->belongsTo($2::class);
+	return $this->belongsTo($3::class);
 }
 endsnippet
 
