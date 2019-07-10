@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Check if PHPUnit is available in the project
+if [ -f ./vendor/bin/phpunit ]; then
+    ./vendor/bin/phpunit
+
+    # Prevent the commit if some tests are failing
+    if [ $? -ne 0 ]; then
+        echo "\nCannot commit as some tests are failing!"
+        exit 1
+    fi
+fi
