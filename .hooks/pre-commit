@@ -2,7 +2,12 @@
 
 # Check if PHPUnit is available in the project
 if [ -f ./vendor/bin/phpunit ]; then
-    ./vendor/bin/phpunit
+    # Check if Paratest is available in the project
+    if [ -f ./vendor/bin/paratest ]; then
+        ./vendor/bin/paratest
+    else
+        ./vendor/bin/phpunit
+    fi
 
     # Prevent the commit if some tests are failing
     if [ $? -ne 0 ]; then

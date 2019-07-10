@@ -438,3 +438,8 @@ nmap <leader>ps :PHPStanAnalyse<space>
 
 " Fix the guicursor glitch
 let g:clever_f_hide_cursor_on_cmdline = 0
+
+" ParaTest
+if filereadable('./vendor/bin/paratest')
+    let test#php#phpunit#executable = './vendor/bin/paratest'
+endif
