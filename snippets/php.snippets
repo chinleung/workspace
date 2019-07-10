@@ -186,10 +186,10 @@ public $translatable = [
 ];
 endsnippet
 
-snippet foreign "Laravel Foreign Key"
-$table->foreign('${1:user_id}')
+snippet foreign "Laravel Migration Foreign Key"
+$table->foreign('${1:user}_id')
 	->references('${2:id}')
-	->on('${3:users}')
+	->on('${3:$1s}')
 	->onUpdate('${4:cascade}')
 	->onDelete('${5:cascade}');
 endsnippet
