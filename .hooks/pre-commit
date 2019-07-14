@@ -4,9 +4,9 @@
 if [ -f ./vendor/bin/phpunit ]; then
     # Check if Paratest is available in the project
     if [ -f ./vendor/bin/paratest ]; then
-        ./vendor/bin/paratest
+        ./vendor/bin/paratest --exclude-group slow
     else
-        ./vendor/bin/phpunit
+        ./vendor/bin/phpunit --exclude-group slow
     fi
 
     # Prevent the commit if some tests are failing
