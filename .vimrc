@@ -435,7 +435,7 @@ nmap <leader>tv :TestVisit<cr>
 
 " ParaTest
 if filereadable('./vendor/bin/paratest')
-    let test#php#phpunit#executable = './vendor/bin/paratest'
+    let test#php#phpunit#executable = './vendor/bin/paratest -f'
 endif
 
 " PHPStan
