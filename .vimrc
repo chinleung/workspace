@@ -361,7 +361,6 @@ nmap <Leader>lr :tabedit routes/web.php<cr>
 nmap <Leader>lt :Console<cr>
 nmap <Leader><Leader>mr :Artisan migrate:refresh --seed<cr>
 nmap <Leader><Leader>mf :Artisan migrate:fresh --seed<cr>
-nmap <Leader><Leader>ca :!composer dump-autoload<cr>
 nmap <leader><leader>i1 :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
 
 " Automatic commands
