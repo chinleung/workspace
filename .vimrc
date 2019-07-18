@@ -33,6 +33,7 @@ Plug 'w0rp/ale'
 Plug 'phpstan/vim-phpstan'
 Plug 'rhysd/clever-f.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
