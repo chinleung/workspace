@@ -35,6 +35,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'Yggdroot/indentLine'
+Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -45,6 +46,7 @@ Plug 'noahfrederick/vim-laravel'
 " Auto-completion
 if has('nvim')
     Plug 'Shougo/deoplete.nvim'
+    Plug 'kristijanhusak/deoplete-phpactor', { 'for': 'php' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     tmap <C-o> <C-\><C-n>
 else
@@ -148,8 +150,8 @@ set background=dark
 colorscheme gruvbox
 
 " Map vimrc files edition
-map <Leader>ev :tabedit $MYVIMRC<cr>
-map <Leader>eg :tabedit $MYGVIMRC<cr>
+map <Leader><Leader>ev :tabedit $MYVIMRC<cr>
+map <Leader><Leader>eg :tabedit $MYGVIMRC<cr>
 map <Leader>sv :source $MYVIMRC<cr>
 map <Leader>sg :source $MYGVIMRC<cr>
 
@@ -395,6 +397,9 @@ augroup AutoCommands
 
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
+
+    " Omni complete
+    autocmd FileType php setlocal omnifunc=phpactor#Complete
 augroup END
 
 " Custom blade directives
@@ -445,3 +450,12 @@ function! PhpSyntaxOverride()
     hi! link phpDocTags phpDefine
     hi! link phpDocParam phpType
 endfunction
+
+" PHPActor
+nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+nmap <Leader>K :call phpactor#Hover()<CR>
+nmap <Leader>mc :call phpactor#ContextMenu()<CR>
+nmap <Leader>mn :call phpactor#Navigate()<CR>
+nmap <silent><Leader>ev :call phpactor#ExtractExpression(v:false)<CR>
+vmap <silent><Leader>ev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
