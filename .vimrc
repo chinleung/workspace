@@ -396,9 +396,6 @@ augroup AutoCommands
 
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
-
-    " Omni complete
-    autocmd FileType php setlocal omnifunc=phpactor#Complete
 augroup END
 
 " Custom blade directives
