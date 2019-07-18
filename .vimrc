@@ -34,7 +34,6 @@ Plug 'phpstan/vim-phpstan'
 Plug 'rhysd/clever-f.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
-Plug 'Yggdroot/indentLine'
 Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
 
 " Dependencies for vim-laravel
