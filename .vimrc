@@ -391,6 +391,9 @@ augroup AutoCommands
     " PHP Imports
     autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
     autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+    " Load custom syntax highlight
+    autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
 " Custom blade directives
@@ -435,3 +438,9 @@ nmap <leader>ps :PHPStanAnalyse<space>
 
 " Fix the guicursor glitch
 let g:clever_f_hide_cursor_on_cmdline = 0
+
+" Custom syntax highlight for PHP
+function! PhpSyntaxOverride()
+    hi! link phpDocTags phpDefine
+    hi! link phpDocParam phpType
+endfunction
