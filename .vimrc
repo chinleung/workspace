@@ -32,6 +32,7 @@ Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 Plug 'phpstan/vim-phpstan'
 Plug 'rhysd/clever-f.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -51,15 +52,6 @@ endif
 
 " Color schemes
 Plug 'morhetz/gruvbox'
-
-" Syntax highlight
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'lunaru/vim-less', { 'for': 'less' }
-Plug 'evidens/vim-twig', { 'for': 'twig' }
 
 call plug#end()
 
