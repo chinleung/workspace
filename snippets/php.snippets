@@ -220,13 +220,37 @@ endsnippet
 
 snippet hasManyThrough "Laravel HasManyThrough Relation"
 /**
- * Relationship with the ${4:table_name} table.
+ * Relationship with the ${1:table_name} table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+ public function $1() : HasManyThrough
  */
-public function $1() : HasManyThrough
 {
 	return $this->hasManyThrough($2::class, $3::class);
+}
+endsnippet
+
+snippet morphMany "Laravel MorphMany Relation"
+/**
+ * Relationship with the ${1:table_name} table.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+ */
+public function $1() : MorphMany
+{
+	return $this->morphMany(${2:$class}, ${3:$slug});
+}
+endsnippet
+
+snippet morphTo "Laravel MorphTo Relation"
+/**
+ * Retrieve the $1 object instance.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+ */
+public function $1() : MorphTo
+{
+	return $this->morphTo();
 }
 endsnippet
 
