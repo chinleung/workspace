@@ -1,22 +1,35 @@
-# workspace-config
-My workspace configurations.
+# Workspace Configuration
+
+The configurations of my workspace.
+
+## Contents
+
+- [Git Hooks](#git-hooks)
 
 ## Git Hooks
+  
+You have tell Git where the hooks directory is located by running **one** of the two commands below.
 
-You have tell Git where the hooks directory is located by running one of the two commands below. 
-
-### Global
+<details>
+  <summary>Global</summary>
 
 Use the hooks for all repositories.
 
 ```sh
 git config --global core.hooksPath /path/to/.hooks
 ```
+</details>
 
-### Single Repo
-
+<details>
+<summary>Single Repository</summary>
+  
 Use the hooks for a single repository.
 
 ```sh
-git config core.hooksPath /path/to/.hooks
+git config core.hooksPath /path/to/.hooks⃗
 ```
+</details>
+
+### pre-commit
+
+Prevents a commit if there's a PHPUnit test is failing.
