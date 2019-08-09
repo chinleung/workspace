@@ -57,15 +57,31 @@ public function $1() : void
 }
 endsnippet
 
+snippet factory "Laravel Factory"
+factory($1::class)->${2:create}($3)${4:;}
+endsnippet
+
 snippet factoryc "Laravel Factory Create"
-factory($1::class)->create($2)$3
+factory($1::class)->create($2)${3:;}
+endsnippet
+
+snippet factoryca "Laravel Factory Create with Arguments"
+factory($1::class)->create([
+	'$2' => ${3:''},
+])${4:;}
 endsnippet
 
 snippet factorym "Laravel Factory Make"
-factory($1::class)->make($2)$3
+factory($1::class)->make($2)${3:;}
 endsnippet
 
-snippet scope "Scope"
+snippet factoryma "Laravel Factory Make with Arguments"
+factory($1::class)->make([
+	'$2' => ${3:''},
+])${4:;}
+endsnippet
+
+snippet scope "Eloquent Scope"
 /**
  * $3
  *
