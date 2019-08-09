@@ -242,6 +242,18 @@ snippet hasManyThrough "Laravel HasManyThrough Relation"
 }
 endsnippet
 
+snippet morphOne "Laravel MorphOne Relation"
+/**
+ * Relationship with the ${1:table_name}s table.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+ */
+public function $1() : MorphOne
+{
+	return $this->morphMany(${2:$class}, ${3:$slug});
+}
+endsnippet
+
 snippet morphMany "Laravel MorphMany Relation"
 /**
  * Relationship with the ${1:table_name} table.
