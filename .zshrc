@@ -34,6 +34,7 @@ alias gg='git push $1 $2'
 alias ga='git add $1'
 alias gd='git diff $1'
 alias gc='git commit -m $1'
+alias gcs='git commit --no-verify -m $1'
 
 # Laravel
 alias a='clear && php artisan'
