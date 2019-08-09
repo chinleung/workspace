@@ -266,7 +266,7 @@ snippet morphOne "Laravel MorphOne Relation"
  */
 public function $1() : MorphOne
 {
-	return $this->morphMany(${2:ClassName}::class, ${3:$slug});
+	return $this->morphOne(${2:ClassName}::class, ${3:$slug});
 }
 endsnippet
 
