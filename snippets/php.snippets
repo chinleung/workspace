@@ -329,3 +329,21 @@ public function get$1Attribute() : $2
 	$5
 }
 endsnippet
+
+snippet sendRequset "Send Request method for a test case"
+/**
+ * ${5:Send the request to the server.}
+ *
+ * @param  \App\Company  $company
+ * @param  array  $payload
+ * @return \Illuminate\Foundation\Testing\TestResponse
+ */
+protected function sendRequest() : TestResponse
+{
+	return $this->json(
+		'$1',
+		${2:route}(${3:$name}),
+		${4:$payload}
+	);
+}
+endsnippet
