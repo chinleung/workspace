@@ -240,9 +240,9 @@ snippet hasMany "Laravel HasMany Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasMany
  */
-public function $1() : HasMany
+public function ${2:$1}() : HasMany
 {
-	return $this->hasMany($2::class);
+	return $this->hasMany($3::class);
 }
 endsnippet
 
@@ -309,8 +309,6 @@ endsnippet
 snippet construct "Class Constructor"
 /**
  * Constructor of the class.
- *
- * @return void
  */
 public function __construct($1)
 {
@@ -344,4 +342,15 @@ protected function sendRequest() : TestResponse
 		${4:$payload}
 	);
 }
+endsnippet
+
+snippet dates "Eloquent dates property"
+/**
+ * The attributes that should be mutated to dates.
+ *
+ * @var array
+ */
+protected $dates = [
+	'$1', $2
+];
 endsnippet
