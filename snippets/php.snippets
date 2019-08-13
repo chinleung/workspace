@@ -1,6 +1,6 @@
-snippet _w: "WordPress Translation"
-<?php _e('$1', '${2:Swoo}'); ?>
-endsnippet
+######################################################
+# PHP Snippets
+######################################################
 
 snippet if "If case"
 if ($1) {
@@ -57,40 +57,17 @@ public function $1() : void
 }
 endsnippet
 
-snippet factory "Laravel Factory"
-factory($1::class)->${2:create}($3)${4:;}
-endsnippet
+######################################################
+# PHP MVC Snippets
+######################################################
 
-snippet factoryc "Laravel Factory Create"
-factory($1::class)->create()${2:;}
-endsnippet
-
-snippet factoryca "Laravel Factory Create with Arguments"
-factory($1::class)->create([
-	'$2' => ${3:''},
-])${4:;}
-endsnippet
-
-snippet factorym "Laravel Factory Make"
-factory($1::class)->make()${2:;}
-endsnippet
-
-snippet factoryma "Laravel Factory Make with Arguments"
-factory($1::class)->make([
-	'$2' => ${3:''},
-])${4:;}
-endsnippet
-
-snippet scope "Eloquent Scope"
+snippet construct "Class Constructor"
 /**
- * $3
- *
- * @param  \Illuminate\Database\Eloquent\Builder  $query
- * @return \Illuminate\Database\Eloquent\Builder
+ * Constructor of the class.
  */
-public function scope$1(Builder $query$2) : Builder
+public function __construct($1)
 {
-	return $query->where($4);
+	$2
 }
 endsnippet
 
@@ -169,7 +146,64 @@ snippet property "Property"
 ${1:protected} $${2:property};
 endsnippet
 
-snippet fillable "Laravel Fillable Attribute"
+######################################################
+# Laravel Helpers Snippets
+######################################################
+
+snippet factory "Laravel Factory"
+factory($1::class)->${2:create}($3)${4:;}
+endsnippet
+
+snippet factoryc "Laravel Factory Create"
+factory($1::class)->create()${2:;}
+endsnippet
+
+snippet factoryca "Laravel Factory Create with Arguments"
+factory($1::class)->create([
+	'$2' => ${3:''},
+])${4:;}
+endsnippet
+
+snippet factorym "Laravel Factory Make"
+factory($1::class)->make()${2:;}
+endsnippet
+
+snippet factoryma "Laravel Factory Make with Arguments"
+factory($1::class)->make([
+	'$2' => ${3:''},
+])${4:;}
+endsnippet
+
+######################################################
+# Laravel Migration Snippets
+######################################################
+
+snippet foreign "Laravel Migration Foreign Key"
+$table->foreign('${1:user}_id')
+	->references('${2:id}')
+	->on('${3:$1s}')
+	->onUpdate('${4:cascade}')
+	->onDelete('${5:cascade}');
+endsnippet
+
+######################################################
+# Laravel Eloquent Snippets
+######################################################
+
+snippet scope "Eloquent Scope"
+/**
+ * $3
+ *
+ * @param  \Illuminate\Database\Eloquent\Builder  $query
+ * @return \Illuminate\Database\Eloquent\Builder
+ */
+public function scope$1(Builder $query$2) : Builder
+{
+	return $query->where($4);
+}
+endsnippet
+
+snippet fillable "Eloquent Fillable Attribute"
 /**
  * The list of attributes that are mass assignable.
  *
@@ -180,7 +214,7 @@ protected $fillable = [
 ];
 endsnippet
 
-snippet casts "Laravel Casts Attribute"
+snippet casts "Eloquent Casts Attribute"
 /**
  * The attributes that should be casted to another type.
  *
@@ -191,24 +225,32 @@ protected $casts = [
 ];
 endsnippet
 
-snippet translatable "Spatie Translatable Attribute"
+snippet dates "Eloquent dates property"
 /**
- * The list of attributes that are translatable.
+ * The attributes that should be mutated to dates.
  *
  * @var array
  */
-public $translatable = [
-	'$1',
+protected $dates = [
+	'$1', $2
 ];
 endsnippet
 
-snippet foreign "Laravel Migration Foreign Key"
-$table->foreign('${1:user}_id')
-	->references('${2:id}')
-	->on('${3:$1s}')
-	->onUpdate('${4:cascade}')
-	->onDelete('${5:cascade}');
+snippet attribute "Eloquent Class Accessor"
+/**
+ * ${3:Retrieve the attribute.}
+ *
+ * @return $2
+ */
+public function get$1Attribute() : $2
+{
+	$5
+}
 endsnippet
+
+######################################################
+# Eloquent Relations Snippets
+######################################################
 
 snippet belongsTo "Laravel BelongsTo Relation"
 /**
@@ -219,6 +261,18 @@ snippet belongsTo "Laravel BelongsTo Relation"
 public function ${2:$1}() : BelongsTo
 {
 	return $this->belongsTo($3::class);
+}
+endsnippet
+
+snippet belongsToMany "Laravel BelongsToMany Relation"
+/**
+ * Relationship with the ${3:$1} table.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+ */
+public function $1() : BelongsToMany
+{
+	return $this->belongsToMany($2::class);
 }
 endsnippet
 
@@ -294,41 +348,11 @@ public function $1() : MorphTo
 }
 endsnippet
 
-snippet belongsToMany "Laravel BelongsToMany Relation"
-/**
- * Relationship with the ${3:$1} table.
- *
- * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
- */
-public function $1() : BelongsToMany
-{
-	return $this->belongsToMany($2::class);
-}
-endsnippet
+######################################################
+# Laravel Tests Snippets
+######################################################
 
-snippet construct "Class Constructor"
-/**
- * Constructor of the class.
- */
-public function __construct($1)
-{
-	$2
-}
-endsnippet
-
-snippet attribute "Laravel Class Mutator"
-/**
- * ${3:Retrieve the attribute.}
- *
- * @return $2
- */
-public function get$1Attribute() : $2
-{
-	$5
-}
-endsnippet
-
-snippet sendRequest "Send Request method for a test case"
+snippet sendRequest "Laravel Test sendRequest Method"
 /**
  * ${5:Send the request to the server.}
  *
@@ -344,13 +368,25 @@ protected function sendRequest() : TestResponse
 }
 endsnippet
 
-snippet dates "Eloquent dates property"
+######################################################
+# Spatie Snippets
+######################################################
+
+snippet translatable "Spatie Translatable Attribute"
 /**
- * The attributes that should be mutated to dates.
+ * The list of attributes that are translatable.
  *
  * @var array
  */
-protected $dates = [
-	'$1', $2
+public $translatable = [
+	'$1',
 ];
+endsnippet
+
+######################################################
+# WordPress Snippets
+######################################################
+
+snippet _w: "WordPress Translation"
+<?php _e('$1', '${2:Swoo}'); ?>
 endsnippet
