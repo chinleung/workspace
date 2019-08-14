@@ -356,9 +356,10 @@ snippet sendRequest "Laravel Test sendRequest Method"
 /**
  * ${5:Send the request to the server.}
  *
+ * @param  array  $payload
  * @return \Illuminate\Foundation\Testing\TestResponse
  */
-protected function sendRequest() : TestResponse
+protected function sendRequest(array $payload = []) : TestResponse
 {
 	return $this->json(
 		'$1',
