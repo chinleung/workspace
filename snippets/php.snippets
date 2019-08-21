@@ -305,8 +305,8 @@ snippet hasManyThrough "Laravel HasManyThrough Relation"
  * Relationship with the ${1:table_name} table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
- public function $1() : HasManyThrough
  */
+public function $1() : HasManyThrough
 {
 	return $this->hasManyThrough($2::class, $3::class);
 }
