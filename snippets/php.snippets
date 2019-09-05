@@ -44,7 +44,26 @@ snippet echo "Echo"
 <?php echo $1; ?>
 endsnippet
 
-snippet test "Test case"
+######################################################
+# Laravel Test Snippets
+######################################################
+snippet belongsToT "Test belongsTo relationship"
+/**
+ * ${8:Assert that $1 $2 belongs to $3 $4.}
+ *
+ * @test
+ * @return void
+ */
+public function ${1:a}_${2:model}_must_belongs_to_${3:a}_${4:model}() : void
+{
+	$this->assertInstanceOf(
+		${5:Model}::class,
+		factory(${6:Model}::class)->create()->${7:$4}
+	);
+}
+endsnippet
+
+snippet test "Test Case"
 /**
  * $2
  *
