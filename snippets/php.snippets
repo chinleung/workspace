@@ -70,7 +70,7 @@ snippet test "Test Case"
  * @test
  * @return void
  */
-public function $1() : void
+function $1() : void
 {
 	${3:// TODO:}
 }
@@ -198,11 +198,13 @@ endsnippet
 ######################################################
 
 snippet foreign "Laravel Migration Foreign Key"
-$table->foreign('${1:user}_id')
+$table
+	->foreign('${1:user}_id')
 	->references('${2:id}')
 	->on('${3:$1s}')
 	->onUpdate('${4:cascade}')
-	->onDelete('${5:cascade}');
+	->onDelete('${5:cascade}')
+;
 endsnippet
 
 ######################################################
