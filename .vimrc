@@ -202,7 +202,10 @@ endif
 
 "" FZF configuration
 if has('nvim')
-    let g:fzf_action = { 'enter': 'tab split' }
+    let g:fzf_action = {
+        \ 'enter': 'tab split',
+        \ 'space': 'edit'
+        \ }
     let g:fzf_height = '25%'
     let $FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 endif
