@@ -458,3 +458,6 @@ nmap <Leader>mn :call phpactor#Navigate()<CR>
 nmap <silent><Leader>ev :call phpactor#ExtractExpression(v:false)<CR>
 vmap <silent><Leader>ev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
 vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+
+" Builds
+nmap <Leader><Leader>bs tn<Leader><Leader>tsyarn run watch<CR><Leader><esc>
