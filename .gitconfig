@@ -1,0 +1,14 @@
+[user]
+	email = hello@chinleung.com
+	name = Chin Leung
+[core]
+	excludesfile = /Users/chin/.gitignore
+	editor = /usr/local/bin/nvim
+	hooksPath = /Users/chin/.workspace-config/.hooks
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[alias]
+	clean-branches = !git branch | grep -v master | xargs git branch -D
