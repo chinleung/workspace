@@ -393,10 +393,6 @@ augroup AutoCommands
     autocmd BufEnter * sign define DefaultColumnSign
     autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
 
-    " PHP Imports
-    autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-    autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
@@ -438,9 +434,6 @@ if filereadable('./vendor/bin/paratest')
     let test#php#phpunit#executable = './vendor/bin/paratest -f'
 endif
 
-" PHPStan
-nmap <leader>ps :PHPStanAnalyse<space>
-
 " Fix the guicursor glitch
 let g:clever_f_hide_cursor_on_cmdline = 0
 
@@ -451,13 +444,15 @@ function! PhpSyntaxOverride()
 endfunction
 
 " PHPActor
-nmap <Leader>o :call phpactor#GotoDefinition()<CR>
-nmap <Leader>K :call phpactor#Hover()<CR>
-nmap <Leader>mc :call phpactor#ContextMenu()<CR>
-nmap <Leader>mn :call phpactor#Navigate()<CR>
-nmap <silent><Leader>ev :call phpactor#ExtractExpression(v:false)<CR>
-vmap <silent><Leader>ev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
-vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+nmap <Leader>pdt :call phpactor#GotoDefinitionTab()<CR>
+nmap <Leader>pdv :call phpactor#GotoDefinitionVsplit()<CR>
+nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
+nmap <Leader>pmf :call phpactor#MoveFile()<CR>
+nmap <Leader>pu :call phpactor#UseAdd()<CR>
+nmap <Leader>pn :call phpactor#Navigate()<CR>
+nmap <silent><Leader>pev :call phpactor#ExtractExpression(v:false)<CR>
+vmap <silent><Leader>pev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+vmap <silent><Leader>pem :<C-U>call phpactor#ExtractMethod()<CR>
 
 " Builds
 nmap <Leader><Leader>bs tn<Leader><Leader>tsyarn run watch<CR><Leader><esc>
