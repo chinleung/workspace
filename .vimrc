@@ -243,6 +243,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_sign_error = '❗️'
 let g:ale_sign_warning = '🔸'
 let g:ale_linters = {
+\   'json': ['jsonlint'],
 \   'php': ['php'],
 \   'html': ['htmlhint'],
 \}
@@ -345,6 +346,7 @@ imap <Leader>bt <esc>:TagbarOpen<cr>i
 
 " PHP CS Fixer configuration
 let g:php_cs_fixer_level = "psr2"
+let g:php_cs_fixer_rules="no_unused_imports,ordered_imports"
 
 " Split management
 set splitbelow
