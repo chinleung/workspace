@@ -345,7 +345,7 @@ nmap <Leader>bt :TagbarToggle<cr>
 imap <Leader>bt <esc>:TagbarOpen<cr>i
 
 " PHP CS Fixer configuration
-let g:php_cs_fixer_rules="@PSR2,no_unused_imports,ordered_imports"
+let g:php_cs_fixer_config_file=$HOME."/.workspace-config/.php_cs.dist"
 
 " Split management
 set splitbelow
