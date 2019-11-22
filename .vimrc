@@ -231,7 +231,6 @@ map <Leader>ga :silent Git add %<cr>
 map <Leader>gw :Gwrite<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gc :Gcommit<cr>
-nmap <Leader>gw :wq<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gp :Gpull<cr>
 map <Leader>gg :Gpush<cr>
@@ -295,11 +294,12 @@ nmap <Leader><tab> ddko
 imap <Leader><tab> <esc>kddko
 
 " Lazy buffer handling
-map <Leader>qw :q!<cr>
+map <Leader>qf :q!<cr>
 map <Leader>qa :qa<cr>
 map <Leader>qb :bd!<cr>
 map <Leader>r :edit<cr>
 map <Leader>w :w<cr>
+map <Leader>qw :wq<cr>
 
 " Terminal mode
 map <Leader><Leader>ts :tabnew \| :term<cr>i
