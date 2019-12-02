@@ -294,7 +294,7 @@ nmap <Leader><tab> ddko
 imap <Leader><tab> <esc>kddko
 
 " Lazy buffer handling
-map <Leader>qf :q!<cr>
+map <Leader>qt :q!<cr>
 map <Leader>qa :qa<cr>
 map <Leader>qb :bd!<cr>
 map <Leader>r :edit<cr>
