@@ -275,13 +275,13 @@ endsnippet
 
 snippet belongsTo "Laravel BelongsTo Relation"
 /**
- * Relationship with the ${1:table_name}s table.
+ * Relationship with the ${3:$1}s table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
  */
-public function ${2:$1}() : BelongsTo
+public function ${1:belongsTo}() : BelongsTo
 {
-	return $this->belongsTo($3::class);
+	return $this->belongsTo(${2:Model}::class);
 }
 endsnippet
 
@@ -291,81 +291,98 @@ snippet belongsToMany "Laravel BelongsToMany Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
  */
-public function $1() : BelongsToMany
+public function ${1:belongsToMany}() : BelongsToMany
 {
-	return $this->belongsToMany($2::class);
+	return $this->belongsToMany(${2:Model}::class);
 }
 endsnippet
 
 snippet hasOne "Laravel HasOne Relation"
 /**
- * Relationship with the ${1:table_name}s table.
+ * Relationship with the ${3:$1}s table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasOne
  */
-public function ${2:$1}() : HasOne
+public function ${1:hasOne}() : HasOne
 {
-	return $this->hasOne($3::class);
+	return $this->hasOne(${2:Model}::class);
 }
 endsnippet
 
 snippet hasMany "Laravel HasMany Relation"
 /**
- * Relationship with the ${1:table_name} table.
+ * Relationship with the ${3:$1} table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasMany
  */
-public function ${2:$1}() : HasMany
+public function ${1:hasMany}() : HasMany
 {
-	return $this->hasMany($3::class);
+	return $this->hasMany(${2:Model}::class);
 }
 endsnippet
 
 snippet hasManyThrough "Laravel HasManyThrough Relation"
 /**
- * Relationship with the ${1:table_name} table.
+ * Relationship with the ${4:$1} table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
  */
-public function $1() : HasManyThrough
+public function ${1:hasManyThrough}() : HasManyThrough
 {
-	return $this->hasManyThrough($2::class, $3::class);
+	return $this->hasManyThrough(${2:Model}::class, ${3:Through}::class);
 }
 endsnippet
 
 snippet morphOne "Laravel MorphOne Relation"
 /**
- * Relationship with the ${1:table_name}s table.
+ * Relationship with the ${4:$1}s table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphOne
  */
-public function $1() : MorphOne
+public function ${1:morphOne}() : MorphOne
 {
-	return $this->morphOne(${2:ClassName}::class, ${3:$slug});
+	return $this->morphOne(${2:Model}::class, ${3:'slug'});
 }
 endsnippet
 
 snippet morphMany "Laravel MorphMany Relation"
 /**
- * Relationship with the ${1:table_name} table.
+ * Relationship with the ${4:$1} table.
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphMany
  */
-public function $1() : MorphMany
+public function ${1:morphMany}() : MorphMany
 {
-	return $this->morphMany(${2:ClassName}::class, ${3:$slug});
+	return $this->morphMany(${2:Model}::class, ${3:'slug'});
 }
 endsnippet
 
 snippet morphTo "Laravel MorphTo Relation"
 /**
- * Retrieve the $1 object instance.
+ * Retrieve the ${2:$1} object instance.
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphTo
  */
-public function $1() : MorphTo
+public function ${1:morphTo}() : MorphTo
 {
 	return $this->morphTo();
+}
+endsnippet
+
+######################################################
+# Laravel Policy Snippets
+######################################################
+
+snippet policy "Policy Method"
+/**
+ * Check if the user is authorized to ${3:$1} the resource.
+ *
+ * @param  \App\User  $user
+ * @return bool
+ */
+public function $1(User $user) : bool
+{
+	return ${2:true};
 }
 endsnippet
 
