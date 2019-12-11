@@ -27,7 +27,7 @@ Plug 'kien/tabman.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
-Plug 'chinleung/vim-cute-php'
+Plug 'chinleung/vim-pretty-php', { 'for': 'php' }
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 Plug 'phpstan/vim-phpstan'
