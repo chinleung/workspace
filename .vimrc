@@ -445,6 +445,7 @@ function! PhpSyntaxOverride()
 endfunction
 
 " PHPActor
+let g:phpactorBranch = "develop"
 nmap <Leader>pdt :call phpactor#GotoDefinitionTab()<CR>
 nmap <Leader>pdv :call phpactor#GotoDefinitionVsplit()<CR>
 nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
