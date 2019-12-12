@@ -2,6 +2,10 @@
 
 The configurations of my workspace.
 
+## Dependencies
+
+- [Color LS](https://github.com/athityakumar/colorls#installation)
+
 ## Contents
 
 - [Git Alias](#git-alias)
