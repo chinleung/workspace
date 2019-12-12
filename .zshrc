@@ -13,7 +13,7 @@ sh ~/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh
 
 # Alias
 alias vim='nvim $1'
-alias ll='clear && ls -al'
+alias ll='clear && colorls -1 -A --dark'
 alias weather='curl -4 http://wttr.in'
 alias p='phpunit'
 alias pf='phpunit --filter $1'
