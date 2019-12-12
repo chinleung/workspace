@@ -1,11 +1,5 @@
 {
-  "Ansi 5 Color" : {
-    "Red Component" : 0.69803929328918457,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.52156859636306763,
-    "Alpha Component" : 1,
-    "Green Component" : 0.3999999463558197
-  },
+  "Custom Directory" : "Recycle",
   "Working Directory" : "\/Users\/chin",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -388,8 +382,8 @@
   },
   "Semantic History" : {
     "editor" : "com.sublimetext.3",
-    "text" : "",
-    "action" : "best editor"
+    "action" : "best editor",
+    "text" : ""
   },
   "Ambiguous Double Width" : false,
   "Background Image Mode" : 0,
@@ -402,8 +396,8 @@
     "Green Component" : 0.15686270594596863
   },
   "Blur" : false,
-  "Vertical Spacing" : 2,
   "Normal Font" : "DankMono-Regular 18",
+  "Vertical Spacing" : 2,
   "Ansi 7 Color" : {
     "Red Component" : 0.66274517774581909,
     "Color Space" : "sRGB",
@@ -448,7 +442,7 @@
     "Green Component" : 0.15686270594596863
   },
   "Screen" : -1,
-  "Non Ascii Font" : "3270MediumNerdFontComplete-Medium 16",
+  "Non Ascii Font" : "HackNerdFontCompleteM-Regular 20",
   "Ansi 13 Color" : {
     "Red Component" : 0.83529418706893921,
     "Color Space" : "sRGB",
@@ -458,7 +452,13 @@
   },
   "Columns" : 80,
   "Visual Bell" : true,
-  "Custom Directory" : "Recycle",
-  "Thin Strokes" : 4,
-  "ASCII Ligatures" : true
+  "ASCII Ligatures" : true,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.69803929328918457,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.52156859636306763,
+    "Alpha Component" : 1,
+    "Green Component" : 0.3999999463558197
+  },
+  "Thin Strokes" : 4
 }
