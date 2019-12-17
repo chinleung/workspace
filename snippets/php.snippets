@@ -341,7 +341,7 @@ snippet morphOne "Laravel MorphOne Relation"
  */
 public function ${1:morphOne}() : MorphOne
 {
-	return $this->morphOne(${2:Model}::class, ${3:'slug'});
+	return $this->morphOne(${2:Model}::class, ${3:'model'});
 }
 endsnippet
 
@@ -353,7 +353,7 @@ snippet morphMany "Laravel MorphMany Relation"
  */
 public function ${1:morphMany}() : MorphMany
 {
-	return $this->morphMany(${2:Model}::class, ${3:'slug'});
+	return $this->morphMany(${2:Model}::class, ${3:'model'});
 }
 endsnippet
 
