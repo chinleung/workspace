@@ -255,9 +255,6 @@ hi GitGutterChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
 hi GitGutterDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167
 hi GitGutterChangeDelete guibg=#282828 ctermbg=235  guifg=#8ec07c ctermfg=108
 
-" NERDCommenter configuration
-map <Leader>c :NERDComToggleComment<cr>
-
 " Erase trailing line at the end of file
 function! <SID>StripEOFLines()
     let _s=@/
