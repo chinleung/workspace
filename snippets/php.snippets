@@ -54,7 +54,7 @@ snippet belongsToT "Test belongsTo relationship"
  * @test
  * @return void
  */
-public function ${1:a}_${2:model}_must_belongs_to_${3:a}_${4:model}() : void
+public function ${1:a}_${2:model}_must_belongs_to_${3:a}_${4:model}(): void
 {
 	$this->assertInstanceOf(
 		${5:Model}::class,
@@ -70,7 +70,7 @@ snippet test "Test Case"
  * @test
  * @return void
  */
-public function $1() : void
+public function $1(): void
 {
 	${3:// TODO:}
 }
@@ -102,7 +102,7 @@ snippet function "Function"
  *
  * @return ${5:void}
  */
-${1:public} function $2(${3:$param}) : $5
+${1:public} function $2(${3:$param}): $5
 {
 	$6
 }
@@ -114,7 +114,7 @@ snippet pufunction "Public Function"
  *
  * @return ${4:void}
  */
-public function $1(${2:$param}) : $4
+public function $1(${2:$param}): $4
 {
 	$5
 }
@@ -126,7 +126,7 @@ snippet pusfunction "Public Static Function"
  *
  * @return ${4:void}
  */
-public static function $1(${2:$param}) : $4
+public static function $1(${2:$param}): $4
 {
 	$5
 }
@@ -138,7 +138,7 @@ snippet profunction "Protected Function"
  *
  * @return ${4:void}
  */
-protected function $1(${2:$param}) : $4
+protected function $1(${2:$param}): $4
 {
 	$5
 }
@@ -150,7 +150,7 @@ snippet prifunction "Private Function"
  *
  * @return ${4:void}
  */
-private function $1(${2:$param}) : $4
+private function $1(${2:$param}): $4
 {
 	$5
 }
@@ -218,7 +218,7 @@ snippet scope "Eloquent Scope"
  * @param  \Illuminate\Database\Eloquent\Builder  $query
  * @return \Illuminate\Database\Eloquent\Builder
  */
-public function scope$1(Builder $query$2) : Builder
+public function scope$1(Builder $query$2): Builder
 {
 	return $query->where($4);
 }
@@ -263,7 +263,7 @@ snippet accessor "Eloquent Class Accessor"
  *
  * @return $2
  */
-public function get$1Attribute() : $2
+public function get$1Attribute(): $2
 {
 	$5
 }
@@ -279,7 +279,7 @@ snippet belongsTo "Laravel BelongsTo Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
  */
-public function ${1:belongsTo}() : BelongsTo
+public function ${1:belongsTo}(): BelongsTo
 {
 	return $this->belongsTo(${2:Model}::class);
 }
@@ -291,7 +291,7 @@ snippet belongsToMany "Laravel BelongsToMany Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
  */
-public function ${1:belongsToMany}() : BelongsToMany
+public function ${1:belongsToMany}(): BelongsToMany
 {
 	return $this->belongsToMany(${2:Model}::class);
 }
@@ -303,7 +303,7 @@ snippet hasOne "Laravel HasOne Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasOne
  */
-public function ${1:hasOne}() : HasOne
+public function ${1:hasOne}(): HasOne
 {
 	return $this->hasOne(${2:Model}::class);
 }
@@ -315,7 +315,7 @@ snippet hasMany "Laravel HasMany Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasMany
  */
-public function ${1:hasMany}() : HasMany
+public function ${1:hasMany}(): HasMany
 {
 	return $this->hasMany(${2:Model}::class);
 }
@@ -327,7 +327,7 @@ snippet hasManyThrough "Laravel HasManyThrough Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
  */
-public function ${1:hasManyThrough}() : HasManyThrough
+public function ${1:hasManyThrough}(): HasManyThrough
 {
 	return $this->hasManyThrough(${2:Model}::class, ${3:Through}::class);
 }
@@ -339,7 +339,7 @@ snippet morphOne "Laravel MorphOne Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphOne
  */
-public function ${1:morphOne}() : MorphOne
+public function ${1:morphOne}(): MorphOne
 {
 	return $this->morphOne(${2:Model}::class, ${3:'model'});
 }
@@ -351,7 +351,7 @@ snippet morphMany "Laravel MorphMany Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphMany
  */
-public function ${1:morphMany}() : MorphMany
+public function ${1:morphMany}(): MorphMany
 {
 	return $this->morphMany(${2:Model}::class, ${3:'model'});
 }
@@ -363,7 +363,7 @@ snippet morphTo "Laravel MorphTo Relation"
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphTo
  */
-public function ${1:morphTo}() : MorphTo
+public function ${1:morphTo}(): MorphTo
 {
 	return $this->morphTo();
 }
@@ -380,7 +380,7 @@ snippet policy "Policy Method"
  * @param  \App\User  $user
  * @return bool
  */
-public function $1(User $user) : bool
+public function $1(User $user): bool
 {
 	return ${2:true};
 }
@@ -397,7 +397,7 @@ snippet sendRequest "Laravel Test sendRequest Method"
  * @param  array  $payload
  * @return \Illuminate\Foundation\Testing\TestResponse
  */
-protected function sendRequest(array $payload = []) : TestResponse
+protected function sendRequest(array $payload = []): TestResponse
 {
 	return $this->json(
 		'$1',
