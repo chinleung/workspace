@@ -36,6 +36,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
 Plug 'kyuhi/vim-emoji-complete'
+Plug 'mhinz/vim-startify'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
