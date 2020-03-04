@@ -453,6 +453,7 @@ nmap <Leader>pdv :call phpactor#GotoDefinitionVsplit()<CR>
 nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
 nmap <Leader>pmf :call phpactor#MoveFile()<CR>
 nmap <Leader>pu :call phpactor#UseAdd()<CR>
+nmap <Leader>pia :call phpactor#ImportMissingClasses()<CR>
 nmap <Leader>pn :call phpactor#Navigate()<CR>
 nmap <silent><Leader>pev :call phpactor#ExtractExpression(v:false)<CR>
 vmap <silent><Leader>pev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
