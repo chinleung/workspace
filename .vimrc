@@ -448,6 +448,8 @@ endfunction
 
 " PHPActor
 let g:phpactorBranch = "develop"
+let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
+let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'
 nmap <Leader>pdt :call phpactor#GotoDefinitionTab()<CR>
 nmap <Leader>pdv :call phpactor#GotoDefinitionVsplit()<CR>
 nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
