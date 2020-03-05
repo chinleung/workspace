@@ -454,6 +454,7 @@ nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
 nmap <Leader>pcv :call phpactor#ChangeVisibility()<CR>
 nmap <Leader>pdt :call phpactor#GotoDefinitionTab()<CR>
 nmap <Leader>pdv :call phpactor#GotoDefinitionVsplit()<CR>
+nmap <Leader>pec :call phpactor#ClassExpand()<CR>
 nmap <Leader>pia :call phpactor#ImportMissingClasses()<CR>
 nmap <Leader>pmf :call phpactor#MoveFile()<CR>
 nmap <Leader>pn :call phpactor#Navigate()<CR>
