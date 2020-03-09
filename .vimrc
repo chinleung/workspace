@@ -49,7 +49,6 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim'
     Plug 'kristijanhusak/deoplete-phpactor', { 'for': 'php' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    tmap <C-o> <C-\><C-n>
 else
     Plug 'Shougo/neocomplete.vim'
     Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlPCurWD' }
@@ -398,6 +397,9 @@ augroup AutoCommands
 
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
+
+    " Stop insert mode for Terminals
+    autocmd TermOpen * stopinsert
 augroup END
 
 " Custom blade directives
@@ -425,17 +427,15 @@ map <Leader>es :UltiSnipsEdit<cr>
 let g:UltiSnipsExpandTrigger="-<cr>"
 
 " Unit Testing
+let test#neovim#term_position = "vert botright 81"
+let test#php#phpunit#executable = 'php artisan test'
 let test#strategy = "neovim"
 nmap <leader>tf :TestFile<cr>
 nmap <leader>ts :TestSuite<cr>
 nmap <leader>tn :TestNearest<cr>
 nmap <leader>tl :TestLast<cr>
 nmap <leader>tv :TestVisit<cr>
-
-" ParaTest
-if filereadable('./vendor/bin/paratest')
-    let test#php#phpunit#executable = './vendor/bin/paratest -f'
-endif
+tmap <Esc> <C-\><C-n>
 
 " Fix the guicursor glitch
 let g:clever_f_hide_cursor_on_cmdline = 0
