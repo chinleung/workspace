@@ -397,9 +397,6 @@ augroup AutoCommands
 
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
-
-    " Stop insert mode for Terminals
-    autocmd TermOpen * stopinsert
 augroup END
 
 " Custom blade directives
