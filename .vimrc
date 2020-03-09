@@ -304,7 +304,6 @@ map <Leader>qw :wq<cr>
 
 " Terminal mode
 map <Leader><Leader>ts :tabnew \| :term<cr>i
-tnoremap <Leader><Esc> <C-\><C-n>
 
 " Moving lines
 nnoremap <leader>k :m-2<cr>==
@@ -432,7 +431,7 @@ nmap <leader>ts :TestSuite<cr>
 nmap <leader>tn :TestNearest<cr>
 nmap <leader>tl :TestLast<cr>
 nmap <leader>tv :TestVisit<cr>
-tmap <Esc> <C-\><C-n>
+tmap <C-o> <C-\><C-n>
 
 " Fix the guicursor glitch
 let g:clever_f_hide_cursor_on_cmdline = 0
