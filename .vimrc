@@ -36,6 +36,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
 Plug 'kyuhi/vim-emoji-complete'
+Plug 'mhinz/vim-startify'
 
 " Dependencies for vim-laravel
 Plug 'tpope/vim-dispatch'
@@ -48,7 +49,6 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim'
     Plug 'kristijanhusak/deoplete-phpactor', { 'for': 'php' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    tmap <C-o> <C-\><C-n>
 else
     Plug 'Shougo/neocomplete.vim'
     Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlPCurWD' }
@@ -301,7 +301,6 @@ map <Leader>qw :wq<cr>
 
 " Terminal mode
 map <Leader><Leader>ts :tabnew \| :term<cr>i
-tnoremap <Leader><Esc> <C-\><C-n>
 
 " Moving lines
 nnoremap <leader>k :m-2<cr>==
@@ -421,17 +420,15 @@ map <Leader>es :UltiSnipsEdit<cr>
 let g:UltiSnipsExpandTrigger="-<cr>"
 
 " Unit Testing
+let test#neovim#term_position = "vert botright 81"
+let test#php#phpunit#executable = 'php artisan test'
 let test#strategy = "neovim"
 nmap <leader>tf :TestFile<cr>
 nmap <leader>ts :TestSuite<cr>
 nmap <leader>tn :TestNearest<cr>
 nmap <leader>tl :TestLast<cr>
 nmap <leader>tv :TestVisit<cr>
-
-" ParaTest
-if filereadable('./vendor/bin/paratest')
-    let test#php#phpunit#executable = './vendor/bin/paratest -f'
-endif
+tmap <C-o> <C-\><C-n>
 
 " Fix the guicursor glitch
 let g:clever_f_hide_cursor_on_cmdline = 0
@@ -444,12 +441,18 @@ endfunction
 
 " PHPActor
 let g:phpactorBranch = "develop"
+let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
+let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'
+nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
+nmap <Leader>pcv :call phpactor#ChangeVisibility()<CR>
 nmap <Leader>pdt :call phpactor#GotoDefinitionTab()<CR>
 nmap <Leader>pdv :call phpactor#GotoDefinitionVsplit()<CR>
-nmap <Leader>pcm :call phpactor#ContextMenu()<CR>
+nmap <Leader>pec :call phpactor#ClassExpand()<CR>
+nmap <Leader>pia :call phpactor#ImportMissingClasses()<CR>
 nmap <Leader>pmf :call phpactor#MoveFile()<CR>
-nmap <Leader>pu :call phpactor#UseAdd()<CR>
 nmap <Leader>pn :call phpactor#Navigate()<CR>
+nmap <Leader>pt :call phpactor#Transform()<CR>
+nmap <Leader>pu :call phpactor#UseAdd()<CR>
 nmap <silent><Leader>pev :call phpactor#ExtractExpression(v:false)<CR>
 vmap <silent><Leader>pev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
 vmap <silent><Leader>pem :<C-U>call phpactor#ExtractMethod()<CR>
