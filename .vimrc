@@ -255,9 +255,6 @@ hi GitGutterChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
 hi GitGutterDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167
 hi GitGutterChangeDelete guibg=#282828 ctermbg=235  guifg=#8ec07c ctermfg=108
 
-" NERDCommenter configuration
-map <Leader>c :NERDComToggleComment<cr>
-
 " Erase trailing line at the end of file
 function! <SID>StripEOFLines()
     let _s=@/
@@ -287,8 +284,8 @@ nmap <Leader>vs :vsplit<cr>
 " Lazy var dumps and logs
 nmap <Leader>v ivar_dump(); die;<esc>6hi
 imap <Leader>v var_dump(); die;<esc>6hi
-nmap <Leader>c iconsole.log();<esc>hi
-imap <Leader>c console.log();<esc>hi
+nmap <Leader>cl iconsole.log();<esc>hi
+imap <Leader>cl console.log();<esc>hi
 
 " Lazy reindentation
 nmap <Leader><tab> ddko
@@ -462,3 +459,7 @@ vmap <silent><Leader>pem :<C-U>call phpactor#ExtractMethod()<CR>
 
 " Builds
 nmap <Leader><Leader>bs :tabnew \| terminal npm run watch<CR>th
+
+" Composer
+nmap <Leader>co :Composer<space>
+nmap <Leader>cr :Composer require<space>
