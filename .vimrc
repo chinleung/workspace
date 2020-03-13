@@ -463,3 +463,6 @@ nmap <Leader><Leader>bs :tabnew \| terminal npm run watch<CR>th
 " Composer
 nmap <Leader>co :Composer<space>
 nmap <Leader>cr :Composer require<space>
+
+" Startify
+let g:startify_change_to_vcs_root = 1
