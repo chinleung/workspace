@@ -359,13 +359,13 @@ nmap <C-L> <C-W><C-L>
 nmap <Leader>n :NERDTreeToggle<CR>
 
 " Laravel Commands
-nmap <Leader>la :!php artisan<space>
-nmap <Leader>lm :!php artisan make:
-nmap <Leader>ln :!php artisan nova:
+nmap <Leader>la :split \| terminal php artisan<space>
+nmap <Leader>lm :split \| terminal php artisan make:
+nmap <Leader>ln :split \| terminal php artisan nova:
 nmap <Leader>lr :tabedit routes/web.php<cr>
-nmap <Leader>lt :Console<cr>
-nmap <Leader><Leader>mr :Artisan migrate:refresh --seed<cr>
-nmap <Leader><Leader>mf :Artisan migrate:fresh --seed<cr>
+nmap <Leader>lt :split \| terminal php artisan tinker<cr>i
+nmap <Leader><Leader>mr :split \| terminal php artisan migrate:refresh --seed<cr>i
+nmap <Leader><Leader>mf :split \| terminal php artisan migrate:fresh --seed<cr>i
 nmap <leader><leader>i1 :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
 
 " Automatic commands
@@ -461,4 +461,4 @@ vmap <silent><Leader>pev :<C-U>call phpactor#ExtractExpression(v:true)<CR>
 vmap <silent><Leader>pem :<C-U>call phpactor#ExtractMethod()<CR>
 
 " Builds
-nmap <Leader><Leader>bs tn<Leader><Leader>tsyarn run watch<CR><Leader><esc>
+nmap <Leader><Leader>bs :tabnew \| terminal npm run watch<CR>th
