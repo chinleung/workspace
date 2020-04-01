@@ -300,7 +300,8 @@ map <Leader>w :w<cr>
 map <Leader>qw :wq<cr>
 
 " Terminal mode
-map <Leader><Leader>ts :tabnew \| :term<cr>i
+map <Leader><Leader>ts :split \| terminal<cr>i
+map <Leader><Leader>tv :vsplit \| terminal<cr>i
 
 " Moving lines
 nnoremap <leader>k :m-2<cr>==
