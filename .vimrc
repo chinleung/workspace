@@ -362,6 +362,7 @@ nmap <Leader>lm :split \| terminal php artisan make:
 nmap <Leader>ln :split \| terminal php artisan nova:
 nmap <Leader>lr :tabedit routes/web.php<cr>
 nmap <Leader>lt :split \| terminal php artisan tinker<cr>i
+nmap <Leader><Leader>lt :split \| terminal php ~/Projects/so/artisan tinker<cr>i
 nmap <Leader><Leader>mr :split \| terminal php artisan migrate:refresh --seed<cr>i
 nmap <Leader><Leader>mf :split \| terminal php artisan migrate:fresh --seed<cr>i
 nmap <leader><leader>i1 :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
