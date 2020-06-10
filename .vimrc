@@ -94,7 +94,7 @@ set lazyredraw
 set novisualbell
 set showtabline=2
 set nobackup noswapfile
-set synmaxcol=0 cc=80
+set synmaxcol=0 cc=81
 set completeopt=longest,menuone
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set wildignore+=*/.git/*,*/node_modules/*,*/.sass-cache/*,*/vendor/*
@@ -129,18 +129,8 @@ if has("gui_running")
     " Set default lines and columns
     set lines=50 columns=98
 
-    " Detect unix operating system
-    if has("unix")
-        " Retrieve the operating system name
-        let s:uname = system("uname -s")
-
-        " Set font according to system
-        if s:uname == "Darwin"
-            set guifont=Monaco\ for\ Powerline\ Plus\ Nerd\ File\ Types:h13
-        else
-            set guifont=Monaco\ for\ Powerline\ Plus\ Nerd\ File\ Types:h13
-        endif
-    endif
+    set guifont=DankMono\ Nerd\ Font:h18
+    set linespace=20
 endif
 " }}}
 
@@ -302,6 +292,7 @@ map <Leader>qw :wq<cr>
 " Terminal mode
 map <Leader><Leader>ts :split \| terminal<cr>i
 map <Leader><Leader>tv :vsplit \| terminal<cr>i
+map <Leader><Leader>te :split \| terminal<space>
 
 " Moving lines
 nnoremap <leader>k :m-2<cr>==
@@ -463,8 +454,8 @@ vmap <silent><Leader>pem :<C-U>call phpactor#ExtractMethod()<CR>
 nmap <Leader><Leader>bs :tabnew \| terminal npm run watch<CR>th
 
 " Composer
-nmap <Leader>co :Composer<space>
-nmap <Leader>cr :Composer require<space>
+nmap <Leader>co :split \| terminal composer<space>
+nmap <Leader>cr :split \| terminal composer require<space>
 
 " Startify
 let g:startify_change_to_vcs_root = 1
