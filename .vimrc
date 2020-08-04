@@ -1,28 +1,21 @@
 call plug#begin('~/.vim/plugins')
 
 " Utilities
-Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
-Plug 'Shougo/vimproc.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wincent/ferret'
-Plug 'schickling/vim-bufonly'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
-Plug 'gcmt/taboo.vim'
-Plug 'jwalton512/vim-blade'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'majutsushi/tagbar'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'scrooloose/nerdtree'
-Plug 'posva/vim-vue'
 Plug 'kien/tabman.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'ludovicchabant/vim-gutentags'
@@ -35,14 +28,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
-Plug 'kyuhi/vim-emoji-complete'
-Plug 'mhinz/vim-startify'
-
-" Dependencies for vim-laravel
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
-Plug 'noahfrederick/vim-composer'
-Plug 'noahfrederick/vim-laravel'
 
 " Auto-completion
 if has('nvim')
@@ -135,9 +120,18 @@ endif
 " }}}
 
 " Color scheme configuration
+if has('termguicolors')
+  set termguicolors
+endif
+
 set t_Co=256
 set background=dark
 colorscheme gruvbox
+
+hi SignColumn guibg=#282828 ctermbg=235
+hi CursorLineNr guibg=#282828 ctermbg=235
+hi TabLineFill guibg=#282828 ctermbg=235
+hi TabLineSel guibg=#282828 ctermfg=yellow
 
 " Map vimrc files edition
 map <Leader><Leader>ev :tabedit $MYVIMRC<cr>
@@ -243,7 +237,7 @@ let g:gitgutter_sign_modified_removed = '*'
 hi GitGutterAdd guibg=#282828 ctermbg=235 guifg=#b8bb26 ctermfg=142
 hi GitGutterChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
 hi GitGutterDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167
-hi GitGutterChangeDelete guibg=#282828 ctermbg=235  guifg=#8ec07c ctermfg=108
+hi GitGutterChangeDelete guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
 
 " Erase trailing line at the end of file
 function! <SID>StripEOFLines()
@@ -254,12 +248,6 @@ function! <SID>StripEOFLines()
     let @/=_s
     call cursor(l, c)
 endfunction
-
-" ColorScheme adjustments
-hi SignColumn ctermbg=235
-hi CursorLineNr ctermbg=235
-hi TabLineFill ctermbg=235
-hi TabLineSel ctermfg=yellow
 
 " Auto indentation
 nmap <Leader>i gg=G<cr>
