@@ -1,4 +1,8 @@
 {
-    "list.maxHeight": 50,
-    "phpls.path": "/usr/local/Cellar/node/14.1.0/lib/node_modules/intelephense"
+    "diagnostic.errorSign": "❗️",
+    "diagnostic.warningSign": "🔸",
+    "phpls.path": "/usr/local/Cellar/node/14.1.0/lib/node_modules/intelephense",
+    "suggest.enablePreview": true,
+    "suggest.numberSelect": true,
+    "suggest.triggerAfterInsertEnter": true
 }

@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'chinleung/vim-pretty-php', { 'for': 'php' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -19,8 +18,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'wincent/ferret'
 
-Plug 'Shougo/vimproc.vim'
-
 " Global Styling
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
@@ -28,12 +25,24 @@ Plug 'sheerun/vim-polyglot'
 
 " PHP Packages
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'chinleung/vim-pretty-php', {'for': 'php'}
+Plug 'mattn/emmet-vim'
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
+
+" COC Packages
+Plug 'antoinemadec/coc-fzf'
+Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'weirongxu/coc-calc', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 call plug#end()
 
 " =============== Basic Configuration ===============
 
+syntax on
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set guicursor=a:hor20-Cursor
 set hidden
@@ -116,6 +125,10 @@ nmap <Leader><Leader>mrs :split \| terminal php artisan migrate:refresh --seed<c
 nmap <Leader><Leader>mfs :split \| terminal php artisan migrate:fresh --seed<cr>i
 nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
 
+" Line Movement
+nmap <Leader><tab> ddko
+imap <Leader><tab> <esc>kddko
+
 " Prepend a <tab>
 nmap <tab> Hi<tab><esc>
 
@@ -192,7 +205,7 @@ hi GitGutterChangeDelete guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
 
 " UI
 hi CursorLineNr guibg=#282828 ctermbg=235
-hi SignColumn guibg=#282828 ctermbg=235
+hi! SignColumn guibg=#282828 ctermbg=235
 hi TabLineFill guibg=#282828 ctermbg=235
 hi TabLineSel guibg=#282828 ctermfg=yellow
 
@@ -204,19 +217,19 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#ale#enabled = 1
 
+" Emmet
+let g:user_emmet_leader_key='<Leader>'
+
 " FZF
 let g:fzf_action = {
     \ 'enter': 'tab split',
     \ 'space': 'edit'
     \ }
-let g:fzf_height = '25%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let $FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
 " PHP CS Fixer
 let g:php_cs_fixer_config_file=$HOME."/.workspace-config/.php_cs.dist"
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="-<cr>"
 
 " Vim Test
 let test#neovim#term_position = "vert botright 81"
@@ -275,6 +288,12 @@ augroup END
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+hi CocErrorLine guibg=#ce2c28
+hi CocErrorSign ctermbg=235 guibg=#282828
+hi CocWarningSign ctermbg=235 guibg=#282828
+hi CocInfoSign ctermbg=235 guibg=#282828
+hi CocHintSign ctermbg=235 guibg=#282828
+
 nmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
@@ -288,14 +307,13 @@ xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Mappings for CoCList
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
+nnoremap <silent><nowait> <space>e  :<C-u>CocFzfList extensions<cr>
+nnoremap <silent><nowait> <space>c  :<C-u>CocFzfList commands<cr>
+nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
+nnoremap <silent><nowait> <space>s  :<C-u>CocFzfList -I symbols<cr>
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
