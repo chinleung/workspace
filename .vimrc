@@ -3,7 +3,6 @@
 call plug#begin('~/.vim/plugins')
 
 " Global Features
-Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ervandew/supertab'
@@ -34,6 +33,8 @@ Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile && yarn run build'}
@@ -197,13 +198,6 @@ map <Leader>sv :source $MYVIMRC<cr>
 
 " =============== Highlights ===============
 
-" GitGutter
-let g:gitgutter_sign_modified_removed = '*'
-hi GitGutterAdd guibg=#282828 ctermbg=235 guifg=#b8bb26 ctermfg=142
-hi GitGutterChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
-hi GitGutterDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167
-hi GitGutterChangeDelete guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108
-
 " UI
 hi CursorLineNr guibg=#282828 ctermbg=235
 hi! SignColumn guibg=#282828 ctermbg=235
@@ -278,12 +272,6 @@ augroup AutoCommands
     " Strip end of line
     autocmd BufWritePre *.php,*.py,*.js,*.css,*.txt,*.md,*.rb :call <SID>StripEOFLines()
 
-    " GitGutter
-    autocmd BufWritePost * execute 'GitGutter'
-    autocmd BufEnter * execute 'GitGutter'
-    autocmd BufEnter * sign define DefaultColumnSign
-    autocmd BufEnter * execute 'sign place 9999 line=1 name=DefaultColumnSign buffer=' . bufnr('')
-
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
@@ -298,6 +286,12 @@ hi CocWarningSign ctermbg=235 guibg=#282828
 hi CocInfoSign ctermbg=235 guibg=#282828
 hi CocHintSign ctermbg=235 guibg=#282828
 
+" coc-git
+hi DiffAdd guibg=#282828 ctermbg=235 guifg=#b8bb26 ctermfg=142 cterm=NONE gui=NONE
+hi DiffChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108 cterm=NONE gui=NONE
+hi DiffDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167 cterm=NONE gui=NONE
+
+" Basic mappings
 nmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
@@ -307,9 +301,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> D :call <SID>show_documentation()<CR>
-nnoremap <silent><nowait> <leader>a :<C-u>CocFzfList actions<cr>
 
-" Mappings for CoCList
+" Mappings for lists
+nnoremap <silent><nowait> <leader>a :<C-u>CocFzfList actions<cr>
 nnoremap <silent><nowait> <space>d :<C-u>CocFzfList diagnostics<cr>
 nnoremap <silent><nowait> <space>e :<C-u>CocFzfList extensions<cr>
 nnoremap <silent><nowait> <space>c :<C-u>CocFzfList commands<cr>

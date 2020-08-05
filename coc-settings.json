@@ -1,6 +1,9 @@
 {
     "diagnostic.errorSign": "❗️",
+    "diagnostic.hintSign": "ℹ",
     "diagnostic.warningSign": "🔸",
+    "git.changedSign.text": "*",
+    "git.removedSign.text": "-",
     "phpls.path": "/usr/local/Cellar/node/14.1.0/lib/node_modules/intelephense",
     "suggest.enablePreview": true,
     "suggest.numberSelect": true,
