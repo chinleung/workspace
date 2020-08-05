@@ -232,6 +232,9 @@ let $FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print 
 " PHP CS Fixer
 let g:php_cs_fixer_config_file=$HOME."/.workspace-config/.php_cs.dist"
 
+" SuperTab configuration
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Vim Test
 let test#neovim#term_position = "vert botright 81"
 let test#php#phpunit#executable = 'php artisan test'
