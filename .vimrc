@@ -294,7 +294,7 @@ hi CocWarningSign ctermbg=235 guibg=#282828
 hi CocInfoSign ctermbg=235 guibg=#282828
 hi CocHintSign ctermbg=235 guibg=#282828
 
-nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gn <Plug>(coc-diagnostic-prev)
@@ -303,17 +303,16 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> D :call <SID>show_documentation()<CR>
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+nnoremap <silent><nowait> <leader>a :<C-u>CocFzfList actions<cr>
 
 " Mappings for CoCList
-nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
-nnoremap <silent><nowait> <space>e  :<C-u>CocFzfList extensions<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocFzfList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
-nnoremap <silent><nowait> <space>s  :<C-u>CocFzfList -I symbols<cr>
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>d :<C-u>CocFzfList diagnostics<cr>
+nnoremap <silent><nowait> <space>e :<C-u>CocFzfList extensions<cr>
+nnoremap <silent><nowait> <space>c :<C-u>CocFzfList commands<cr>
+nnoremap <silent><nowait> <space>o :<C-u>CocFzfList outline<cr>
+nnoremap <silent><nowait> <space>s :<C-u>CocFzfList -I symbols<cr>
+nnoremap <silent><nowait> <space>j :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>k :<C-u>CocPrev<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
