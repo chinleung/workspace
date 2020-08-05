@@ -34,7 +34,6 @@ call plug#end()
 
 " =============== Basic Configuration ===============
 
-" set completeopt=longest,menuone
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set guicursor=a:hor20-Cursor
 set hidden
