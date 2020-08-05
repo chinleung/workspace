@@ -4,6 +4,7 @@ The configurations of my workspace.
 
 ## Dependencies
 
+- [Bat](https://github.com/sharkdp/bat#installation)
 - [Color LS](https://github.com/athityakumar/colorls#installation)
 
 ## Contents
