@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugins')
 " Global Features
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'chrisbra/Colorizer'
 Plug 'ervandew/supertab'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
@@ -33,6 +34,7 @@ Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile && yarn run build'}
@@ -274,6 +276,9 @@ augroup AutoCommands
 
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
+
+    " Refresh git
+    autocmd CursorHold * CocCommand git.refresh
 augroup END
 
 " =============== COC ===============
@@ -301,9 +306,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> D :call <SID>show_documentation()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Mappings for lists
-nnoremap <silent><nowait> <leader>a :<C-u>CocFzfList actions<cr>
+nnoremap <silent><nowait> <space>a :<C-u>CocFzfList actions<cr>
 nnoremap <silent><nowait> <space>d :<C-u>CocFzfList diagnostics<cr>
 nnoremap <silent><nowait> <space>e :<C-u>CocFzfList extensions<cr>
 nnoremap <silent><nowait> <space>c :<C-u>CocFzfList commands<cr>
