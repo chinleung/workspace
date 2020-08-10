@@ -217,6 +217,9 @@ let g:airline#extensions#ale#enabled = 1
 " Emmet
 let g:user_emmet_leader_key='<Leader>'
 
+" Ferret
+nmap <leader>s <Plug>(FerretAck)
+
 " FZF
 let g:fzf_action = {
     \ 'enter': 'tab split',
