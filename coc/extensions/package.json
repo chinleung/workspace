@@ -1,6 +1,1 @@
-{
-  "dependencies": {
-    "coc-phpls": ">=2.1.10",
-    "coc-actions": ">=1.4.1"
-  }
-}
+{"dependencies":{}}

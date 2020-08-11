@@ -32,8 +32,10 @@ Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 
 " COC Packages
 Plug 'antoinemadec/coc-fzf'
+Plug 'iamcco/coc-actions', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'junegunn/fzf.vim'
+Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
@@ -196,7 +198,7 @@ tmap <C-o> <C-\><C-n>
 
 " Vim Configurations
 map <Leader><Leader>ev :tabedit $MYVIMRC<cr>
-map <Leader>sv :source $MYVIMRC<cr>
+map <Leader><Leader>sv :source $MYVIMRC<cr>
 
 " =============== Highlights ===============
 
