@@ -14,7 +14,9 @@ return PhpCsFixer\Config::create()
         ],
         'blank_line_after_opening_tag' => true,
         'concat_space' => true,
-        'is_null' => true,
+        'is_null' => [
+            'use_yoda_style' => false,
+        ],
         'linebreak_after_opening_tag' => true,
         'lowercase_cast' => true,
         'no_short_bool_cast' => true,
