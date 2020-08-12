@@ -2,14 +2,26 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->exclude('vendor')
-    ->in(__DIR__)
-;
+    ->in(__DIR__);
 
 return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,
+        'array_indentation' => true,
+        'array_syntax' => [
+            'syntax' => 'short',
+        ],
+        'blank_line_after_opening_tag' => true,
+        'concat_space' => true,
+        'is_null' => true,
+        'linebreak_after_opening_tag' => true,
+        'lowercase_cast' => true,
         'no_unused_imports' => true,
+        'no_short_echo_tag' => true,
+        'nullable_type_declaration_for_default_null_value' => [
+            'use_nullable_type_declaration' => false,
+        ],
         'ordered_imports' => true,
     ])
-    ->setFinder($finder)
-;
+    ->setFinder($finder);
