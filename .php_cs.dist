@@ -17,8 +17,10 @@ return PhpCsFixer\Config::create()
         'is_null' => true,
         'linebreak_after_opening_tag' => true,
         'lowercase_cast' => true,
-        'no_unused_imports' => true,
         'no_short_echo_tag' => true,
+        'no_unneeded_control_parentheses' => true,
+        'no_unused_imports' => true,
+        'no_whitespace_in_blank_line' => true,
         'nullable_type_declaration_for_default_null_value' => [
             'use_nullable_type_declaration' => false,
         ],
