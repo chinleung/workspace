@@ -14,6 +14,7 @@ return PhpCsFixer\Config::create()
         ],
         'binary_operator_spaces' => true,
         'blank_line_after_opening_tag' => true,
+        'cast_spaces' => true,
         'concat_space' => true,
         'is_null' => true,
         'linebreak_after_opening_tag' => true,
