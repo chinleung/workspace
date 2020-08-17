@@ -23,6 +23,10 @@ Plug 'wincent/ferret'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'css', 'scss', 'json', 'markdown', 'vue', 'yaml', 'html']
+  \ }
 
 " PHP Packages
 Plug 'arnaud-lb/vim-php-namespace'
@@ -217,7 +221,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#ale#enabled = 1
 
 " Emmet
-let g:user_emmet_leader_key='<Leader>'
+let g:user_emmet_leader_key='<Leader>e'
 
 " Ferret
 nmap <leader>s <Plug>(FerretAck)
@@ -269,6 +273,8 @@ endfunction
 
 augroup AutoCommands
     autocmd!
+    " Prettier
+    autocmd BufWritePost *.js,*.html,*.vue silent PrettierAsync
 
     " PHP CS Fixer
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
