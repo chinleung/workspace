@@ -1,4 +1,8 @@
 {
+    "eslint.autoFixOnSave": true,
+    "eslint.options": {
+        "configFile": "/Users/chin/.workspace-config/.eslintrc.json"
+    },
     "diagnostic.errorSign": "❗️",
     "diagnostic.hintSign": "ℹ",
     "diagnostic.warningSign": "🔸",

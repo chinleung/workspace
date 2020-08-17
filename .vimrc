@@ -23,10 +23,6 @@ Plug 'wincent/ferret'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'css', 'scss', 'json', 'markdown', 'vue', 'yaml', 'html']
-  \ }
 
 " PHP Packages
 Plug 'arnaud-lb/vim-php-namespace'
@@ -41,6 +37,7 @@ Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn ru
 Plug 'junegunn/fzf.vim'
 Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile && yarn run build'}
