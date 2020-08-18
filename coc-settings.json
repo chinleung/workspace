@@ -1,5 +1,8 @@
 {
     "eslint.autoFixOnSave": true,
+    "eslint.filetypes": [
+        "js", "vue"
+    ],
     "diagnostic.errorSign": "❗️",
     "diagnostic.hintSign": "ℹ",
     "diagnostic.warningSign": "🔸",
