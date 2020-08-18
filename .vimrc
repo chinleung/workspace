@@ -270,8 +270,6 @@ endfunction
 
 augroup AutoCommands
     autocmd!
-    " Prettier
-    autocmd BufWritePost *.js,*.html,*.vue silent PrettierAsync
 
     " PHP CS Fixer
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
