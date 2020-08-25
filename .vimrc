@@ -31,7 +31,7 @@ Plug 'mattn/emmet-vim'
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 
 " COC Packages
-Plug 'antoinemadec/coc-fzf'
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'iamcco/coc-actions', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'junegunn/fzf.vim'
@@ -128,6 +128,7 @@ nmap <Leader>la :split \| terminal php artisan<space>
 nmap <Leader>lm :split \| terminal php artisan make:
 nmap <Leader>ln :split \| terminal php artisan nova:
 nmap <Leader>lt :split \| terminal php artisan tinker<cr>i
+nmap <Leader><Leader>mm :split \| terminal php artisan migrate<cr>i
 nmap <Leader><Leader>mrs :split \| terminal php artisan migrate:refresh --seed<cr>i
 nmap <Leader><Leader>mfs :split \| terminal php artisan migrate:fresh --seed<cr>i
 nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
@@ -218,7 +219,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#ale#enabled = 1
 
 " Emmet
-let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_leader_key='<leader>e'
 
 " Ferret
 nmap <leader>s <Plug>(FerretAck)
