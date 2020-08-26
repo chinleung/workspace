@@ -22,7 +22,6 @@ Plug 'wincent/ferret'
 " Global Styling
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sheerun/vim-polyglot'
 
 " PHP Packages
 Plug 'arnaud-lb/vim-php-namespace'
@@ -85,6 +84,7 @@ if has('termguicolors')
 endif
 
 set background=dark
+let g:gruvbox_italic = 1
 colorscheme gruvbox
 
 " =============== COC ===============
@@ -128,6 +128,7 @@ nmap <Leader>la :split \| terminal php artisan<space>
 nmap <Leader>lm :split \| terminal php artisan make:
 nmap <Leader>ln :split \| terminal php artisan nova:
 nmap <Leader>lt :split \| terminal php artisan tinker<cr>i
+nmap <Leader><Leader>ta :split \| terminal php artisan test --colors<cr>
 nmap <Leader><Leader>mm :split \| terminal php artisan migrate<cr>i
 nmap <Leader><Leader>mrs :split \| terminal php artisan migrate:refresh --seed<cr>i
 nmap <Leader><Leader>mfs :split \| terminal php artisan migrate:fresh --seed<cr>i
