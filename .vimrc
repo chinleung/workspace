@@ -87,12 +87,6 @@ set background=dark
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 
-" =============== COC ===============
-
-set shortmess+=c
-set signcolumn=yes
-set updatetime=300
-
 " =============== Mappings ===============
 
 " Buffer
@@ -291,7 +285,10 @@ augroup END
 
 " =============== COC ===============
 
+set shortmess+=c
+set signcolumn=yes
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set updatetime=300
 
 hi CocErrorLine guibg=#ce2c28
 hi CocErrorSign ctermbg=235 guibg=#282828
