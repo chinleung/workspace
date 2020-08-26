@@ -27,6 +27,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 
 " COC Packages
