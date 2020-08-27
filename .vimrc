@@ -23,11 +23,16 @@ Plug 'wincent/ferret'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 
+" Syntax
+"Plug 'leafoftree/vim-vue-plugin'
+"Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
+"Plug 'StanAngeloff/php.vim', {'for': 'php'}
+
 " PHP Packages
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
-Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 
 " COC Packages
@@ -43,6 +48,7 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run bui
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'weirongxu/coc-calc', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 call plug#end()
@@ -86,6 +92,28 @@ endif
 
 set background=dark
 colorscheme gruvbox
+
+" JavaScript Conceal
+set conceallevel=1
+let g:javascript_conceal_function = "ƒ"
+let g:javascript_conceal_null = "ø"
+let g:javascript_conceal_this = "@"
+let g:javascript_conceal_return = "↪"
+let g:javascript_conceal_undefined = "¿"
+let g:javascript_conceal_NaN = "ℕ"
+let g:javascript_conceal_static = "•"
+let g:javascript_conceal_super = "Ω"
+let g:javascript_conceal_arrow_function = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "ƒ"
+let g:javascript_conceal_underscore_arrow_function = "ƒ"
+let g:javascript_conceal_double_equal = "≈"
+let g:javascript_conceal_triple_equal = "≡"
+let g:javascript_conceal_or_operator = "∨"
+let g:javascript_conceal_and_operator = "∧"
+let g:javascript_conceal_greater_equal_operator = "≥"
+let g:javascript_conceal_less_equal_operator = "≤"
+let g:javascript_conceal_not_equal_operator = "≠"
+let g:javascript_conceal_not_strict_equal_operator = "≢"
 
 " =============== Mappings ===============
 
