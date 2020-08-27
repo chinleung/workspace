@@ -41,7 +41,7 @@ alias a='clear && php artisan'
 alias mf='php artisan migrate:fresh'
 alias mfs='php artisan migrate:fresh --seed'
 alias mrs='php artisan migrate:refresh --seed'
-alias tinker='clear && cd ~/Projects/so && php artisan tinker'
+alias tinker='clear && php ~/Projects/so/artisan tinker'
 alias tinx='clear && php artisan tinx'
 
 # Change the color of the listing
