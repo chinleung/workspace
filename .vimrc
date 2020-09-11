@@ -31,6 +31,7 @@ Plug 'sheerun/vim-polyglot'
 
 " PHP Packages
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
@@ -190,7 +191,7 @@ nmap <C-L> <C-W><C-L>
 " Terminal mode
 map <Leader><Leader>ts :split \| terminal<cr>i
 map <Leader><Leader>tv :vsplit \| terminal<cr>i
-map <Leader><Leader>te :split \| terminal<space>
+map <Leader><Leader>tc :split \| terminal<space>
 
 " UltiSnips
 map <Leader>es :UltiSnipsEdit<cr>
