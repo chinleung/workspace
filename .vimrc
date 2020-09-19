@@ -34,6 +34,7 @@ Plug 'arnaud-lb/vim-php-namespace'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
+Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 
 " COC Packages
@@ -172,6 +173,9 @@ map K gg
 
 " Remove search highlight
 map <Leader><esc> :nohlsearch<cr>
+
+" PHPActor
+nmap <leader>mv :PhpactorMoveFile<cr>
 
 " Tab configuration
 nnoremap th :tabprev<CR>
