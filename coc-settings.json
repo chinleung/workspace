@@ -1,14 +1,14 @@
 {
     "eslint.autoFixOnSave": true,
     "eslint.filetypes": [
-        "js", "vue"
+        "javascript", "vue"
     ],
     "diagnostic.errorSign": "❗️",
     "diagnostic.hintSign": "ℹ",
     "diagnostic.warningSign": "🔸",
     "git.changedSign.text": "*",
     "git.removedSign.text": "-",
-    "phpls.path": "/usr/local/Cellar/node/14.1.0/lib/node_modules/intelephense",
+    "phpls.path": "/usr/local/bin/intelephense",
     "suggest.enablePreview": true,
     "suggest.triggerAfterInsertEnter": true
 }
