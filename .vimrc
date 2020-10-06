@@ -52,6 +52,7 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run bui
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'weirongxu/coc-calc', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 call plug#end()
 
@@ -162,8 +163,10 @@ nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr
 nmap <Leader><tab> ddko
 imap <Leader><tab> <esc>kddko
 
-" Prepend a <tab>
+" Quick wins
 nmap <tab> Hi<tab><esc>
+imap ;; <Esc>A;<Esc>
+imap ,, <Esc>A,<Esc>
 
 " Remap shift on homerow
 map H ^
@@ -348,9 +351,10 @@ nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<C
 
 " Mappings for lists
 nnoremap <silent><nowait> <space>a :<C-u>CocFzfList actions<cr>
+nnoremap <silent><nowait> <space>c :<C-u>CocFzfList commands<cr>
 nnoremap <silent><nowait> <space>d :<C-u>CocFzfList diagnostics<cr>
 nnoremap <silent><nowait> <space>e :<C-u>CocFzfList extensions<cr>
-nnoremap <silent><nowait> <space>c :<C-u>CocFzfList commands<cr>
+nnoremap <silent><nowait> <space>f :<C-u>CocCommand explorer<cr>
 nnoremap <silent><nowait> <space>o :<C-u>CocFzfList outline<cr>
 nnoremap <silent><nowait> <space>s :<C-u>CocFzfList -I symbols<cr>
 nnoremap <silent><nowait> <space>j :<C-u>CocNext<CR>
