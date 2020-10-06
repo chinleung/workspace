@@ -14,18 +14,11 @@ sh ~/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh
 # Alias
 alias vim='nvim $1'
 alias ll='clear && colorls -1 -A --dark'
-alias weather='curl -4 http://wttr.in'
 alias p='phpunit'
 alias pf='phpunit --filter $1'
 alias so='cd ~/Desktop/Projects/so/'
-alias b='blink1-tool --off'
 alias es='vim ~/.zshrc'
 alias ss='source ~/.zshrc'
-alias bs='clear && browser-sync start --proxy https://${PWD##*/}.test --no-notify --https --files="**/*.php" --ignore="vendor"'
-
-# WordPress alias
-alias t='cd wp-content/themes/${PWD##*/}'
-alias r='cd ../../..';
 
 # Git Alias
 alias gp='git pull'
@@ -48,31 +41,23 @@ alias tinx='clear && php artisan tinx'
 export CLICOLOR=1
 export LSCOLORS=cxexcxdxbxegedabagacad
 
-# Laravel
+# Paths
 export PATH=~/.composer/vendor/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
 
 # Function to update the title of the currenttab
 function title {
     echo -ne "\033]0;"$*"\007"
 }
 
-# Alias PHPUnit to trigger Blink1
-alias phpunit='function __phpunit() {
-    OUTPUT="$(blink1-tool --list)"
-    EXPECTED="no blink(1) devices found"
-    if [ "$OUTPUT" = "$EXPECTED" ]
-    then
-        phpunit "$@"
-    else
-        blink1-tool --rgb=8080ff && phpunit "$@" && blink1-tool --green --blink 3 || blink1-tool --red --blink 3
-    fi
-}; __phpunit'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ###-tns-completion-start-###
-if [ -f /Users/chin/.tnsrc ]; then 
-    source /Users/chin/.tnsrc 
+if [ -f /Users/chin/.tnsrc ]; then
+    source /Users/chin/.tnsrc
 fi
 ###-tns-completion-end-###
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export GEM_HOME="$HOME/.gem"
