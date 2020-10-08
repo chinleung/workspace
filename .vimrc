@@ -346,7 +346,6 @@ nmap <silent> gp <Plug>(coc-diagnostic-next)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>qf  <plug>(coc-fix-current)
 nnoremap <silent> D :call <SID>show_documentation()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
