@@ -194,6 +194,11 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+nmap <Leader><up> <c-w>+
+nmap <Leader><down> <c-w>-
+nmap <Leader><left> <c-w><
+nmap <Leader><right> <c-w>>
+nmap <Leader>= <c-w>=
 
 " Terminal mode
 map <Leader><Leader>ts :split \| terminal<cr>i
