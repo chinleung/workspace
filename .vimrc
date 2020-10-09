@@ -190,14 +190,16 @@ nnoremap to :tabo<CR>
 nmap <Leader><Leader>lt :split \| terminal php ~/Projects/so/artisan tinker<cr>i
 
 " Split Management
+nmap <Leader>hs :split<cr>
+nmap <Leader>vs :vsplit<cr>
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 nmap <Leader><up> <c-w>+
 nmap <Leader><down> <c-w>-
-nmap <Leader><left> <c-w><
-nmap <Leader><right> <c-w>>
+nmap <Leader><left> <c-w>>
+nmap <Leader><right> <c-w><
 nmap <Leader>= <c-w>=
 
 " Terminal mode
@@ -211,10 +213,6 @@ map <Leader>es :UltiSnipsEdit<cr>
 " Moving lines
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
-
-" Splits
-nmap <Leader>hs :split<cr>
-nmap <Leader>vs :vsplit<cr>
 
 " Fugitive
 map <Leader>ga :silent Git add %<cr>
