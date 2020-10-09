@@ -341,7 +341,7 @@ hi DiffChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108 cterm=NONE gui
 hi DiffDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167 cterm=NONE gui=NONE
 
 " Basic mappings
-nmap <leader>f <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gn <Plug>(coc-diagnostic-prev)
