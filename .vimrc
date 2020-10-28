@@ -155,6 +155,7 @@ nmap <Leader>ln :split \| terminal php artisan nova:
 nmap <Leader>lt :split \| terminal php artisan tinker<cr>i
 nmap <Leader><Leader>ta :split \| terminal php artisan test --colors<cr>
 nmap <Leader><Leader>mm :split \| terminal php artisan migrate<cr>i
+nmap <Leader><Leader>mrb :split \| terminal php artisan migrate:rollback<cr>i
 nmap <Leader><Leader>mrs :split \| terminal php artisan migrate:refresh --seed<cr>i
 nmap <Leader><Leader>mfs :split \| terminal php artisan migrate:fresh --seed<cr>i
 nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
