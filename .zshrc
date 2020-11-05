@@ -14,8 +14,7 @@ sh ~/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh
 # Alias
 alias vim='nvim $1'
 alias ll='clear && colorls -1 -A --dark'
-alias p='phpunit'
-alias pf='phpunit --filter $1'
+alias rm='trash'
 alias so='cd ~/Desktop/Projects/so/'
 alias es='vim ~/.zshrc'
 alias ss='source ~/.zshrc'
