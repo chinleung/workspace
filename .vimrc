@@ -135,16 +135,6 @@ nmap <Leader>cr :split \| terminal composer require<space>
 " Copy to clipboard
 vnoremap <Leader>y "+y
 
-" Disable arrows
-noremap <Up> <nop>
-noremap <Left> <nop>
-noremap <Down> <nop>
-noremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Left> <nop>
-inoremap <Down> <nop>
-inoremap <Right> <nop>
-
 " FZF
 map <Leader>/ :FZF --reverse<cr>
 
