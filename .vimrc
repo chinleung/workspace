@@ -129,8 +129,8 @@ map <Leader>w :w<cr>
 map <Leader>qw :wq<cr>
 
 " Composer
-nmap <Leader>co :split \| terminal composer<space>
-nmap <Leader>cr :split \| terminal composer require<space>
+nmap <Leader><Leader>cc :split \| terminal composer<space>
+nmap <Leader><Leader>cr :split \| terminal composer require<space>
 
 " Copy to clipboard
 vnoremap <Leader>y "+y
@@ -308,6 +308,7 @@ augroup AutoCommands
 
     " Load custom syntax highlight
     autocmd FileType php call PhpSyntaxOverride()
+    autocmd FileType php syntax sync fromstart
 
     " Refresh git
     autocmd CursorHold * CocCommand git.refresh
