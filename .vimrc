@@ -341,8 +341,9 @@ nmap <silent> gp <Plug>(coc-diagnostic-next)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 nnoremap <silent> D :call <SID>show_documentation()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Mappings for lists
 nnoremap <silent><nowait> <space>a :<C-u>CocFzfList actions<cr>
