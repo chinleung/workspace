@@ -3,6 +3,7 @@
 call plug#begin('~/.vim/plugins')
 
 " Global Features
+Plug 'ap/vim-buftabline'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'chrisbra/Colorizer'
@@ -121,12 +122,14 @@ let g:javascript_conceal_not_strict_equal_operator = "≢"
 " =============== Mappings ===============
 
 " Buffer
-map <Leader>qt :q!<cr>
 map <Leader>qa :qa<cr>
 map <Leader>qb :bd!<cr>
 map <Leader>r :edit<cr>
 map <Leader>w :w<cr>
 map <Leader>qw :wq<cr>
+nnoremap th :bprev<CR>
+nnoremap tl :bnext<CR>
+nnoremap tn :enew<CR>
 
 " Composer
 nmap <Leader><Leader>cc :split \| terminal composer<space>
@@ -170,12 +173,6 @@ map <Leader><esc> :nohlsearch<cr>
 
 " PHPActor
 nmap <leader>mv :PhpactorMoveFile<cr>
-
-" Tab configuration
-nnoremap th :tabprev<CR>
-nnoremap tl :tabnext<CR>
-nnoremap tn :tabnew<CR>
-nnoremap to :tabo<CR>
 
 " Tinker
 nmap <Leader><Leader>lt :split \| terminal php ~/Projects/so/artisan tinker<cr>i
@@ -251,7 +248,7 @@ nmap <leader>s <Plug>(FerretAck)
 
 " FZF
 let g:fzf_action = {
-    \ 'enter': 'tab split',
+    \ 'enter': 'edit',
     \ 'space': 'edit'
     \ }
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'top' } }
