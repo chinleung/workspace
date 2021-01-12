@@ -36,6 +36,9 @@ alias mrs='php artisan migrate:refresh --seed'
 alias tinker='clear && php ~/Projects/so/artisan tinker'
 alias tinx='clear && php artisan tinx'
 
+# WordPress Alias
+alias wp-update='wp core update && wp plugin update --all && wp theme update --all && wp language core update && wp language plugin update --all && wp language theme update --all'
+
 # Change the color of the listing
 export CLICOLOR=1
 export LSCOLORS=cxexcxdxbxegedabagacad
