@@ -50,6 +50,7 @@ Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile && yarn run buil
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'weirongxu/coc-calc', {'do': 'yarn install --frozen-lockfile && yarn run build'}
@@ -340,6 +341,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>b :CocList buffers<cr>
 nnoremap <silent> D :call <SID>show_documentation()<CR>
 
 " Mappings for lists

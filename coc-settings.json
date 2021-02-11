@@ -8,7 +8,14 @@
     "diagnostic.warningSign": "🔸",
     "git.changedSign.text": "*",
     "git.removedSign.text": "-",
+    "list.insertMappings": {
+        "<C-d>": "action:delete"
+    },
+    "list.normalMappings": {
+        "d": "action:delete"
+    },
     "phpls.path": "/usr/local/bin/intelephense",
+    "session.restartOnSessionLoad": true,
     "suggest.enablePreview": true,
     "suggest.triggerAfterInsertEnter": true
 }
