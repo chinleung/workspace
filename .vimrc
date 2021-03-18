@@ -329,8 +329,8 @@ hi CocInfoSign ctermbg=235 guibg=#282828
 hi CocHintSign ctermbg=235 guibg=#282828
 
 " coc-git
-hi DiffAdd guibg=#282828 ctermbg=235 guifg=#b8bb26 ctermfg=142 cterm=NONE gui=NONE
-hi DiffChange guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=108 cterm=NONE gui=NONE
+hi DiffAdd guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=142 cterm=NONE gui=NONE
+hi DiffChange guibg=#282828 ctermbg=235 guifg=#fdba48 ctermfg=108 cterm=NONE gui=NONE
 hi DiffDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167 cterm=NONE gui=NONE
 
 " Basic mappings

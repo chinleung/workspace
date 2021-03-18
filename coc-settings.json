@@ -8,9 +8,9 @@
     "diagnostic.warningSign": "🔸",
     "git.addedSign.text": "┃",
     "git.changedSign.text": "┃",
+    "git.changeRemovedSign.text": "▔",
     "git.removedSign.text": "▁",
     "git.topRemovedSign.text": "▔",
-    "git.changeRemovedSign.text": "▔",
     "list.insertMappings": {
         "<C-d>": "action:delete"
     },
