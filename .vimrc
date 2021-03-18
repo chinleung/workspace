@@ -140,6 +140,7 @@ nmap <Leader><Leader>cr :split \| terminal composer require<space>
 vnoremap <Leader>y "+y
 
 " FZF
+nmap <c-_> :BLines<cr>
 map <Leader>/ :FZF --reverse<cr>
 
 " Laravel
@@ -207,10 +208,10 @@ nnoremap <leader>j :m+<cr>==
 map <Leader>ga :silent Git add %<cr>
 map <Leader>gw :Gwrite<cr>
 map <Leader>gs :Gstatus<cr>
-map <Leader>gc :Gcommit<cr>
+map <Leader>gc :Git commit<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gp :Gpull<cr>
-map <Leader>gg :Gpush<cr>
+map <Leader>gg :Git push<cr>
 map <Leader>gm :Git mergetool<cr>
 
 " Vim Test
@@ -239,7 +240,6 @@ hi TabLineSel guibg=#282828 ctermfg=yellow
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#ale#enabled = 1
 
 " Emmet
 let g:user_emmet_leader_key='<leader>e'
@@ -250,10 +250,13 @@ nmap <leader>s <Plug>(FerretAck)
 " FZF
 let g:fzf_action = {
     \ 'enter': 'edit',
-    \ 'space': 'edit'
     \ }
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'top' } }
 let $FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+
+" PHPActor
+let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
+let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'
 
 " PHP CS Fixer
 let g:php_cs_fixer_config_file=$HOME."/.workspace-config/.php_cs.dist"

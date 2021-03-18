@@ -6,8 +6,11 @@
     "diagnostic.errorSign": "❗️",
     "diagnostic.hintSign": "ℹ",
     "diagnostic.warningSign": "🔸",
-    "git.changedSign.text": "*",
-    "git.removedSign.text": "-",
+    "git.addedSign.text": "┃",
+    "git.changedSign.text": "┃",
+    "git.removedSign.text": "▁",
+    "git.topRemovedSign.text": "▔",
+    "git.changeRemovedSign.text": "▔",
     "list.insertMappings": {
         "<C-d>": "action:delete"
     },
@@ -15,6 +18,10 @@
         "d": "action:delete"
     },
     "phpls.path": "/usr/local/bin/intelephense",
+    "suggest.completionItemKindLabels": {
+        "function": "\uf794",
+        "method": "\uf794"
+    },
     "session.restartOnSessionLoad": true,
     "suggest.enablePreview": true,
     "suggest.triggerAfterInsertEnter": true
