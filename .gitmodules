@@ -1,4 +1,4 @@
-[submodule "dotbot"]
-	path = dotbot
+[submodule "git/submodules/dotbot"]
+	path = git/submodules/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
