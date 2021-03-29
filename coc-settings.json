@@ -3,9 +3,9 @@
     "eslint.filetypes": [
         "javascript", "vue"
     ],
-    "diagnostic.errorSign": "❗️",
-    "diagnostic.hintSign": "ℹ",
-    "diagnostic.warningSign": "🔸",
+    "diagnostic.errorSign": "»",
+    "diagnostic.hintSign": "»",
+    "diagnostic.warningSign": "»",
     "git.addedSign.text": "┃",
     "git.changedSign.text": "┃",
     "git.changeRemovedSign.text": "▔",
@@ -15,7 +15,7 @@
         "<C-d>": "action:delete"
     },
     "list.normalMappings": {
-        "d": "action:delete"
+        "<BS>": "action:delete"
     },
     "phpls.path": "/usr/local/bin/intelephense",
     "suggest.completionItemKindLabels": {
