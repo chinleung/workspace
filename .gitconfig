@@ -2,9 +2,8 @@
 	email = hello@chinleung.com
 	name = Chin Leung
 [core]
-	excludesfile = /Users/chin/.gitignore
+	excludesfile = /Users/chin/workspace/.gitignore
 	editor = /usr/local/bin/nvim
-	hooksPath = /Users/chin/.workspace-config/.hooks
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
