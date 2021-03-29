@@ -70,7 +70,6 @@ set nocursorline
 set novisualbell
 set nowrap
 set number
-set showtabline=2
 set splitbelow
 set splitright
 set synmaxcol=0 cc=81
@@ -323,10 +322,10 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set updatetime=300
 
 hi CocErrorLine guibg=#ce2c28
-hi CocErrorSign ctermbg=235 guibg=#282828
-hi CocWarningSign ctermbg=235 guibg=#282828
+hi CocErrorSign ctermbg=235 guibg=#282828 guifg=#fb4934
+hi CocWarningSign ctermbg=235 guibg=#282828 guifg=#fdba48
 hi CocInfoSign ctermbg=235 guibg=#282828
-hi CocHintSign ctermbg=235 guibg=#282828
+hi CocHintSign ctermbg=235 guibg=#282828 guifg=#82a498
 
 " coc-git
 hi DiffAdd guibg=#282828 ctermbg=235 guifg=#8ec07c ctermfg=142 cterm=NONE gui=NONE
