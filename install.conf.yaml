@@ -1,0 +1,63 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      quiet: true
+- shell:
+  - description: Validating sudo credentials
+    command: "sudo --validate"
+- clean: ['~']
+- link:
+    ~/.ackrc: ack/config
+    ~/.composer/composer.json: composer/composer.json
+    ~/.config/nvim/coc-settings.json: coc/settings.json
+    ~/.config/colorls/dark_colors.yaml: colorls/config.yaml
+    ~/.config/nvim/init.vim: vim/init.vim
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore
+    ~/.vim/ultisnips: vim/snippets
+    ~/.zshrc: zsh/zshrc
+- create:
+    - ~/Projects
+    - ~/.config/nvim/undo
+- shell:
+  - description: Hushing login
+    command: "[ -f ~/.hushlogin ] || touch ~/.hushlogin"
+  - description: Clearing password policies
+    command: "sudo pwpolicy -clearaccountpolicies"
+  - description: Telling gatekeeper to allow unidentified developers
+    command: "sudo spctl --master-disable"
+  - description: Installing brew
+    command: "[ -x \"$(which brew)\" ] || arch -x86_64 /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+  - description: Updating brew
+    command: "arch -x86_64 brew update"
+  - description: Installing brewfile bundle
+    command: "arch -x86_64 brew bundle"
+    stdout: true
+    stderr: true
+  - description: Removing old brew files
+    command: "arch -x86_64 brew cleanup"
+  - description: Unlinking php 8.0
+    command: "arch -x86_64 brew unlink php"
+  - description: Linking php 7.4
+    command: "arch -x86_64 brew link --force php@7.4"
+  - description: Adding zsh to list of acceptable shells
+    command: "[[ \"$(ag $(which zsh) /etc/shells)\" ]] || sudo sh -c \"echo $(which zsh) >> /etc/shells\""
+  - description: Making zsh the default shell
+    command: "sudo chsh -s $(which zsh)"
+  - description: Installing vim-plug
+    command: "[ -f ~/.vim/autoload/plug.vim ] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  - description: Installing vim plugins
+    command: "vim +PlugInstall +qa"
+  - description: Installing/updating global composer dependencies
+    command: "sh composer/global_update"
+  - description: Initializing valet
+    command: "sudo valet install"
+  - description: Trust valet
+    command: "sudo valet trust"
+  - description: Parking valet on code directory
+    command: "valet park ~/Projects"
+  - description: Clearing sudo credential cache
+    command: "sudo --reset-timestamp"

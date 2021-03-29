@@ -18,6 +18,7 @@ alias rm='trash'
 alias so='cd ~/Desktop/Projects/so/'
 alias es='vim ~/.zshrc'
 alias ss='source ~/.zshrc'
+alias stocks='curl https://terminal-stocks.herokuapp.com/GME,AMC,RKT,SKT,UWMC,TSLA,MTRX.V'
 
 # Git Alias
 alias gp='git pull'
