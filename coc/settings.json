@@ -3,9 +3,9 @@
     "eslint.filetypes": [
         "javascript", "vue"
     ],
-    "diagnostic.errorSign": "»",
-    "diagnostic.hintSign": "»",
-    "diagnostic.warningSign": "»",
+    "diagnostic.errorSign": "→",
+    "diagnostic.hintSign": "→",
+    "diagnostic.warningSign": "→",
     "git.addedSign.text": "┃",
     "git.changedSign.text": "┃",
     "git.changeRemovedSign.text": "▔",
