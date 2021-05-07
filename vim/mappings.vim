@@ -112,10 +112,10 @@ map <Leader><Leader>tc :split \| terminal<space>
 " Mappings: vim-fugitive
 map <Leader>ga :silent Git add %<cr>
 map <Leader>gw :Gwrite<cr>
-map <Leader>gs :Gstatus<cr>
+map <Leader>gs :Git<cr>
 map <Leader>gc :Git commit<cr>
 map <Leader>gd :Gdiff<cr>
-map <Leader>gp :Gpull<cr>
+map <Leader>gp :Git pull<cr>
 map <Leader>gg :Git push<cr>
 map <Leader>gm :Git mergetool<cr>
 
