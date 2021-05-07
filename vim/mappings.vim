@@ -110,7 +110,7 @@ map <Leader><Leader>tv :vsplit \| terminal<cr>i
 map <Leader><Leader>tc :split \| terminal<space>
 
 " Mappings: vim-fugitive
-map <Leader>ga :silent Git add %<cr>
+map <Leader>ga :Git commit --amend --reset-author<cr>
 map <Leader>gw :Gwrite<cr>
 map <Leader>gs :Git<cr>
 map <Leader>gc :Git commit<cr>
