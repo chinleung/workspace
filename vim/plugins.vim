@@ -25,7 +25,8 @@ Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
 Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
-Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
+"Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
+Plug 'aeke/vim-php-cs-fixer', {'for': 'php'}
 
 " Styling
 Plug 'morhetz/gruvbox'
@@ -51,3 +52,6 @@ Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile && yarn run
 Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'weirongxu/coc-calc', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+
+" Spotify
+Plug 'HendrikPetertje/vimify'
