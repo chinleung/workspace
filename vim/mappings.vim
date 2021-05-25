@@ -75,6 +75,7 @@ nmap <Leader><tab> ddko
 imap <Leader><tab> <esc>kddko
 
 " Mappings: phpactor
+nmap <leader>ec viwb<ESC>i\<ESC>l:PhpactorClassExpand<CR>e
 nmap <leader>mv :PhpactorMoveFile<cr>
 
 " Quick wins
@@ -108,9 +109,6 @@ nmap <Leader>= <c-w>=
 map <Leader><Leader>ts :split \| terminal<cr>i
 map <Leader><Leader>tv :vsplit \| terminal<cr>i
 map <Leader><Leader>tc :split \| terminal<space>
-
-" Mappings: ToggleHiddenAll
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 " Mappings: vim-fugitive
 map <Leader>ga :Git commit --amend --reset-author<cr>
