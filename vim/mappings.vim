@@ -109,6 +109,9 @@ map <Leader><Leader>ts :split \| terminal<cr>i
 map <Leader><Leader>tv :vsplit \| terminal<cr>i
 map <Leader><Leader>tc :split \| terminal<space>
 
+" Mappings: ToggleHiddenAll
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
 " Mappings: vim-fugitive
 map <Leader>ga :Git commit --amend --reset-author<cr>
 map <Leader>gw :Gwrite<cr>
