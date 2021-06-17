@@ -12,6 +12,8 @@
 - link:
     ~/.ackrc: ack/config
     ~/.composer/composer.json: composer/composer.json
+    ~/.config/bat: bat
+    ~/.config/coc: coc
     ~/.config/colorls/dark_colors.yaml: colorls/config.yaml
     ~/.config/nvim/after: vim/after
     ~/.config/nvim/coc-settings.json: coc/settings.json
