@@ -14,6 +14,7 @@ let g:coc_global_extensions = [
     \ 'coc-phpls',
     \ 'coc-snippets',
     \ 'coc-sql',
+    \ 'coc-svg',
     \ 'coc-tailwindcss',
     \ 'https://github.com/rodrigore/coc-tailwind-intellisense',
     \ 'coc-vetur'
