@@ -21,7 +21,7 @@ nmap <silent> gr <Plug>(coc-references)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>b :CocList buffers<cr>
-nnoremap <silent> D :call <SID>ShowDocumentation<CR>
+nnoremap <silent> D :call ShowDocumentation()<CR>
 nnoremap <silent><nowait> <space>a :<C-u>CocFzfList actions<cr>
 nnoremap <silent><nowait> <space>c :<C-u>CocFzfList commands<cr>
 nnoremap <silent><nowait> <space>d :<C-u>CocFzfList diagnostics<cr>
@@ -77,6 +77,7 @@ imap <Leader><tab> <esc>kddko
 " Mappings: phpactor
 nmap <leader>ec viwb<ESC>i\<ESC>l:PhpactorClassExpand<CR>e
 nmap <leader>mv :PhpactorMoveFile<cr>
+vmap <leader>ev :PhpactorExtractExpression<CR>
 
 " Quick wins
 nmap <tab> Hi<tab><esc>
