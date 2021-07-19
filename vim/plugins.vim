@@ -4,10 +4,6 @@ Plug 'jesseleite/vim-sourcery'
 " COC
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
-" Database
-Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui'
-
 " Global Features
 Plug 'ap/vim-buftabline'
 Plug 'bling/vim-airline'
