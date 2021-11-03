@@ -1,10 +1,11 @@
 
 " Mappings: buffer
-map <Leader>qa :qa<cr>
-map <Leader>qb :bd!<cr>
+nmap <Leader>qa :bufdo bd<cr>
+nmap <Leader>qb :bd!<cr>
+nmap <Leader>qv :q<cr>
+map <Leader>qw :wq<cr>
 map <Leader>r :edit<cr>
 map <Leader>w :w<cr>
-map <Leader>qw :wq<cr>
 nnoremap th :bprev<CR>
 nnoremap tl :bnext<CR>
 nnoremap tn :enew<CR>
