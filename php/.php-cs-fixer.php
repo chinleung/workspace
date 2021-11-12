@@ -4,7 +4,9 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('vendor')
     ->in(__DIR__);
 
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+
+return $config
     ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,
@@ -32,6 +34,7 @@ return PhpCsFixer\Config::create()
         ],
         'cast_spaces' => true,
         'concat_space' => true,
+        'echo_tag_syntax' => true,
         'explicit_indirect_variable' => true,
         'explicit_string_variable' => true,
         'fully_qualified_strict_types' => true,
@@ -51,7 +54,6 @@ return PhpCsFixer\Config::create()
         'no_leading_namespace_whitespace' => true,
         'no_mixed_echo_print' => true,
         'no_short_bool_cast' => true,
-        'no_short_echo_tag' => true,
         'no_singleline_whitespace_before_semicolons' => true,
         'no_spaces_around_offset' => true,
         'no_unneeded_control_parentheses' => true,
@@ -81,7 +83,7 @@ return PhpCsFixer\Config::create()
         'static_lambda' => true,
         'ternary_operator_spaces' => true,
         'ternary_to_null_coalescing' => true,
-        'trailing_comma_in_multiline_array' => true,
+        'trailing_comma_in_multiline' => true,
         'unary_operator_spaces' => true,
         'whitespace_after_comma_in_array' => true,
         'yoda_style' => [
