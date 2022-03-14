@@ -55,7 +55,8 @@ augroup AutoCommands
     autocmd!
 
     " PHP CS Fixer
-    autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+    autocmd BufWritePost *.php silent! CocCommand php-cs-fixer.fix
+    autocmd BufWritePost *.php silent! call PhpSyntaxOverride()
 
     " Sort PHP Namespaces
     autocmd BufWritePost *.php silent! call PhpSortUse()
