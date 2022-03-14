@@ -17,6 +17,7 @@
     "list.normalMappings": {
         "<BS>": "action:delete"
     },
+    "php-cs-fixer.config": "/Users/chin/workspace/php/.php-cs-fixer.php",
     "phpls.path": "/usr/local/bin/intelephense",
     "suggest.completionItemKindLabels": {
         "function": "\uf794",
