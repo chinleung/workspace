@@ -30,11 +30,21 @@ Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
 Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 "Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
-Plug 'aeke/vim-php-cs-fixer', {'for': 'php'}
+"Plug 'aeke/vim-php-cs-fixer', {'for': 'php'}
 
 " Styling
 Plug 'morhetz/gruvbox'
-Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+
+" 🐙 Octo
+function! SetupOcto()
+    require "octo".setup();
+endfunction
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'pwntester/octo.nvim', {'config': function('SetupOcto')}
