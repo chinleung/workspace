@@ -193,6 +193,20 @@ factory($1::class)->make([
 ])${4:;}
 endsnippet
 
+snippet state "Laravel Factory State"
+/**
+ * Indicates $4.
+ *
+ * @return static
+ */
+public function $1(): self
+{
+	return $this->state([
+		'$2' => $3,
+	]);
+}
+endsnippet
+
 ######################################################
 # Laravel Migration Snippets
 ######################################################
@@ -226,34 +240,23 @@ endsnippet
 
 snippet fillable "Eloquent Fillable Attribute"
 /**
- * The list of attributes that are mass assignable.
+ * The attributes that are mass assignable.
  *
- * @var string[]
+ * * @var array<int, string>
  */
-protected $fillable = [
+protected \$fillable = [
 	'$1',
 ];
 endsnippet
 
 snippet casts "Eloquent Casts Attribute"
 /**
- * The attributes that should be casted to another type.
+ * The attributes that should be cast.
  *
- * @var array
+ * @var array<string, string>
  */
-protected $casts = [
-	'$1' => '$2',
-];
-endsnippet
-
-snippet dates "Eloquent dates property"
-/**
- * The attributes that should be mutated to dates.
- *
- * @var array
- */
-protected $dates = [
-	'$1', $2
+protected \$casts = [
+	'$1' => '$2',$3
 ];
 endsnippet
 
@@ -275,25 +278,25 @@ endsnippet
 
 snippet belongsTo "Laravel BelongsTo Relation"
 /**
- * Relationship with the ${3:$1}s table.
+ * $3
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
  */
 public function ${1:belongsTo}(): BelongsTo
 {
-	return $this->belongsTo(${2:Model}::class);
+	return \$this->belongsTo(${2:Model}::class);
 }
 endsnippet
 
 snippet belongsToMany "Laravel BelongsToMany Relation"
 /**
- * Relationship with the ${3:$1} table.
+ * $3
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
  */
 public function ${1:belongsToMany}(): BelongsToMany
 {
-	return $this->belongsToMany(${2:Model}::class);
+	return \$this->belongsToMany(${2:Model}::class);
 }
 endsnippet
 
@@ -311,13 +314,13 @@ endsnippet
 
 snippet hasMany "Laravel HasMany Relation"
 /**
- * Relationship with the ${3:$1} table.
+ * $3
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasMany
  */
 public function ${1:hasMany}(): HasMany
 {
-	return $this->hasMany(${2:Model}::class);
+	return \$this->hasMany(${2:Model}::class);
 }
 endsnippet
 
@@ -347,25 +350,25 @@ endsnippet
 
 snippet morphMany "Laravel MorphMany Relation"
 /**
- * Relationship with the ${4:$1} table.
+ * $4
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphMany
  */
 public function ${1:morphMany}(): MorphMany
 {
-	return $this->morphMany(${2:Model}::class, ${3:'model'});
+	return \$this->morphMany(${2:Model}::class, ${3:'model'});
 }
 endsnippet
 
 snippet morphTo "Laravel MorphTo Relation"
 /**
- * Retrieve the ${2:$1} object instance.
+ * $3
  *
  * @return \Illuminate\Database\Eloquent\Relations\MorphTo
  */
 public function ${1:morphTo}(): MorphTo
 {
-	return $this->morphTo();
+	return \$this->morphTo();
 }
 endsnippet
 
@@ -408,6 +411,35 @@ protected function sendRequest(array $payload = []): TestResponse
 endsnippet
 
 ######################################################
+# Laravel Observer Snippets
+######################################################
+snippet creating "Laravel observer creating method"
+/**
+ * Triggered before creating the ${3:$2}.
+ *
+ * @param  \App\Models\\$1  \$$2
+ * @return void
+ */
+public function creating($1 \$${2:model}): void
+{
+	$4
+}
+endsnippet
+
+snippet updating "Laravel observer updating method"
+/**
+ * Triggered before updating the ${3:instance}.
+ *
+ * @param  \App\Models\\$1  \$$2
+ * @return void
+ */
+public function updating($1 \$${2:model}): void
+{
+	$4
+}
+endsnippet
+
+######################################################
 # Spatie Snippets
 ######################################################
 
@@ -415,9 +447,9 @@ snippet translatable "Spatie Translatable Attribute"
 /**
  * The list of attributes that are translatable.
  *
- * @var array
+ * @var array<int, string>
  */
-public $translatable = [
+public \$translatable = [
 	'$1',
 ];
 endsnippet
