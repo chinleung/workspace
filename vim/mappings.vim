@@ -69,6 +69,9 @@ nmap <Leader><Leader>mfs :split \| terminal php artisan migrate:fresh --seed<cr>
 nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
 nmap <Leader><Leader>lt :split \| terminal php ~/Projects/so/artisan tinker<cr>i
 
+" Mappings: composer
+nmap <Leader><Leader>ni :split \| terminal npm install<space>
+
 " Line Movement
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
