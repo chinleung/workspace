@@ -1,4 +1,7 @@
 {
+    "coc.preferences.formatOnSaveFiletypes": [
+        "php"
+    ],
     "eslint.autoFixOnSave": true,
     "eslint.filetypes": [
         "javascript", "vue"
@@ -11,6 +14,7 @@
     "git.changeRemovedSign.text": "▔",
     "git.removedSign.text": "▁",
     "git.topRemovedSign.text": "▔",
+    "intelephense.format.enable": false,
     "list.insertMappings": {
         "<C-d>": "action:delete"
     },
@@ -18,6 +22,7 @@
         "<BS>": "action:delete"
     },
     "php-cs-fixer.config": "/Users/chin/workspace/php/.php-cs-fixer.php",
+    "php-cs-fixer.enableFormatProvider": true,
     "phpls.path": "/usr/local/bin/intelephense",
     "suggest.completionItemKindLabels": {
         "function": "\uf794",
