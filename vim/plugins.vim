@@ -28,7 +28,7 @@ Plug 'arnaud-lb/vim-php-namespace'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }
 Plug 'chinleung/vim-pretty-php', {'for': 'php'}
 Plug 'mattn/emmet-vim'
-Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 "Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 "Plug 'aeke/vim-php-cs-fixer', {'for': 'php'}
 
