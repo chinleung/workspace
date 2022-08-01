@@ -8,7 +8,6 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'ap/vim-buftabline'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'chrisbra/Colorizer'
 Plug 'ervandew/supertab'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
@@ -16,6 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'rhysd/clever-f.vim'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'terryma/vim-multiple-cursors'
