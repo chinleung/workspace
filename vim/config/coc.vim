@@ -1,5 +1,6 @@
 " Config: coc.nvim
 let g:coc_global_extensions = [
+    \ '@yaegassy/coc-intelephense',
     \ 'coc-actions',
     \ 'coc-calc',
     \ 'coc-css',
@@ -11,7 +12,6 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-lists',
     \ 'coc-pairs',
-    \ 'coc-phpls',
     \ 'coc-snippets',
     \ 'coc-sql',
     \ 'coc-svg',
