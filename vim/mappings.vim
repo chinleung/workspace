@@ -33,14 +33,8 @@ nnoremap <silent><nowait> <space>s :<C-u>CocFzfList -I symbols<cr>
 nnoremap <silent><nowait> <space>j :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k :<C-u>CocPrev<CR>
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+" Use <cr> to confirm completion
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 " Mappings: composer
 nmap <Leader><Leader>cc :split \| terminal composer<space>
