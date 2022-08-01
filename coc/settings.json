@@ -3,9 +3,6 @@
         "php"
     ],
     "eslint.autoFixOnSave": true,
-    "eslint.filetypes": [
-        "javascript", "vue"
-    ],
     "diagnostic.errorSign": "→",
     "diagnostic.hintSign": "→",
     "diagnostic.warningSign": "→",
@@ -15,6 +12,7 @@
     "git.removedSign.text": "▁",
     "git.topRemovedSign.text": "▔",
     "intelephense.format.enable": false,
+    "intelephense.path": "/usr/local/bin/intelephense",
     "list.insertMappings": {
         "<C-d>": "action:delete"
     },
@@ -23,12 +21,10 @@
     },
     "php-cs-fixer.config": "/Users/chin/workspace/php/.php-cs-fixer.php",
     "php-cs-fixer.enableFormatProvider": true,
-    "phpls.path": "/usr/local/bin/intelephense",
     "suggest.completionItemKindLabels": {
         "function": "\uf794",
         "method": "\uf794"
     },
     "session.restartOnSessionLoad": true,
-    "suggest.enablePreview": true,
     "suggest.triggerAfterInsertEnter": true
 }
