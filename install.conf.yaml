@@ -94,5 +94,8 @@
   - description: Parking Valet on code directory
     command: "valet park ~/Projects"
 
+  - description: Install colorls
+    command: "gem install colorls"
+
   - description: Clearing sudo credential cache
     command: "sudo --reset-timestamp"
