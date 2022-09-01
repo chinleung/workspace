@@ -64,7 +64,7 @@
     command: "vim +PlugInstall +qa"
 
   - description: Installing/updating global composer dependencies
-    command: "sh composer/global_update"
+    command: "composer global update"
 
   - description: Initializing valet
     command: "sudo valet install"
