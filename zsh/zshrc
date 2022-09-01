@@ -9,7 +9,7 @@ export VISUAL='vim'
 
 # Change to gruvbox theme
 prompt gruvbox
-sh ~/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh
+sh ~/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
 
 # Alias
 alias vim='nvim $1'
@@ -45,9 +45,11 @@ export CLICOLOR=1
 export LSCOLORS=cxexcxdxbxegedabagacad
 
 # Paths
-export PATH=~/.composer/vendor/bin:$PATH
+export PATH=$PATH:~/.composer/vendor/bin
 export NODE_PATH=/usr/local/lib/node_modules:$PATH
 export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+export GEM_HOME="$HOME/.gem"
+export PATH="/$HOME/.gem/bin:/usr/local/opt/ruby/bin:$PATH"
 
 # Function to update the title of the currenttab
 function title {
@@ -61,6 +63,3 @@ if [ -f /Users/chin/.tnsrc ]; then
     source /Users/chin/.tnsrc
 fi
 ###-tns-completion-end-###
-
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export GEM_HOME="$HOME/.gem"
