@@ -1,13 +1,14 @@
 {
     "require": {
-        "laravel/valet": "^2.7",
-        "tightenco/takeout": "^1.0",
+        "laravel/valet": "^3.0",
+        "tightenco/takeout": "^2.0",
         "swooinc/installer": "^2.1",
         "laravel/installer": "^4.0",
         "laravel-zero/installer": "^2.4",
         "wp-cli/wp-cli-bundle": "^2.4",
         "laravel/vapor-cli": "^1.19",
-        "friendsofphp/php-cs-fixer": "^3.2"
+        "friendsofphp/php-cs-fixer": "^3.2",
+        "laravel/forge-cli": "^1.4"
     },
     "repositories": [
         {
