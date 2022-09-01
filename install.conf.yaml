@@ -21,6 +21,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.vim/ultisnips: vim/snippets
+    ~/.zpreztorc: zsh/zprezto/runcoms/.zpreztorc
     ~/.zshrc: zsh/zshrc
 - create:
     - ~/Projects
