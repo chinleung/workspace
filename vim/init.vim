@@ -1,5 +1,5 @@
 " Source plugins
-call plug#begin()
+call plug#begin('~/.vim/plugged')
     source ~/workspace/vim/plugins.vim
 call plug#end()
 
