@@ -52,6 +52,9 @@
   - description: Removing old brew files
     command: "brew cleanup"
 
+  - description: "Link Node"
+    command: "brew link node"
+
   - description: Adding zsh to list of acceptable shells
     command: "[[ \"$(ag $(which zsh) /etc/shells)\" ]] || sudo sh -c \"echo $(which zsh) >> /etc/shells\""
 
@@ -60,6 +63,21 @@
 
   - description: Installing vim-plug
     command: "[ -f ~/.vim/autoload/plug.vim ] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+  - description: Install Neovim Perl provider
+    command: cpan -i Neovim::Ext
+
+  - description: Install Neovim Python provider
+    command: "pip3 install neovim"
+
+  - description: Install Neovim Node provider
+    command: "npm install -g neovim"
+
+  - description: Install Neovim Ruby provider
+    command: "gem install neovim"
+
+  - description: Install Neovim ruby provider
+    command: "gem install neovim"
 
   - description: Installing Vim plugins
     command: "vim +PlugInstall +qa"
