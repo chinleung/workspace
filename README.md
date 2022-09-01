@@ -5,6 +5,7 @@ The configurations of my workspace.
 ## Installation
 
 ```
+python -m pip3 install dotbot
 git clone https://github.com/chinleung/workspace.git ~/workspace
 ~/workspace/install
 ```
