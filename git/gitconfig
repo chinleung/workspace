@@ -10,7 +10,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [alias]
-	clean-branches = !git branch | egrep -v \"(master|\\*)\" | xargs git branch -D
+	clean-branches = !git branch | egrep -v \"(main|\\*)\" | xargs git branch -D
 [init]
     defaultBranch = main
 [pull]
