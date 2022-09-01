@@ -16,11 +16,12 @@
     ~/.config/coc: coc
     ~/.config/colorls/dark_colors.yaml: colorls/config.yaml
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
-    ~/.config/nvim/after: vim/after
-    ~/.config/nvim/coc-settings.json: coc/settings.json
-    ~/.config/nvim/init.vim: vim/init.vim
+    ~/.config/nvim: ~/.vim
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+    ~/.vim/after: vim/after
+    ~/.vim/coc-settings.json: coc/settings.json
+    ~/.vim/init.vim: vim/init.vim
     ~/.vim/ultisnips: vim/snippets
     ~/.zpreztorc: zsh/zprezto/runcoms/.zpreztorc
     ~/.zshrc: zsh/zshrc
