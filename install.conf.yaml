@@ -16,7 +16,7 @@
     ~/.config/coc: coc
     ~/.config/colorls/dark_colors.yaml: colorls/config.yaml
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
-    ~/.config/nvim: ~/.vim
+    ~/.config/nvim: vim
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.vim/after: vim/after
