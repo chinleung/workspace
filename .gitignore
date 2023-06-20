@@ -7,3 +7,9 @@ tags.temp
 # Coc
 /coc/*
 !/coc/settings.json
+
+# Vim
+/vim/autoload
+/vim/plugged
+/vim/sessions/
+/vim/undo
