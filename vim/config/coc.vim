@@ -1,6 +1,7 @@
 " Config: coc.nvim
 let g:coc_global_extensions = [
     \ '@yaegassy/coc-intelephense',
+    \ '@yaegassy/coc-tailwindcss3',
     \ 'coc-actions',
     \ 'coc-calc',
     \ 'coc-css',
@@ -15,7 +16,5 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-sql',
     \ 'coc-svg',
-    \ 'coc-tailwindcss',
-    \ 'https://github.com/rodrigore/coc-tailwind-intellisense',
     \ 'coc-vetur'
 \ ]
