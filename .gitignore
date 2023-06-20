@@ -10,6 +10,7 @@ tags.temp
 
 # Vim
 /vim/autoload
+/vim/coc-settings.json
 /vim/plugged
 /vim/sessions/
 /vim/undo
