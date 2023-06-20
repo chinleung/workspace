@@ -13,6 +13,7 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-lists',
     \ 'coc-pairs',
+    \ 'coc-php-cs-fixer',
     \ 'coc-snippets',
     \ 'coc-sql',
     \ 'coc-svg',
