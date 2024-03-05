@@ -38,7 +38,11 @@ return $config
         'echo_tag_syntax' => true,
         'explicit_indirect_variable' => true,
         'explicit_string_variable' => true,
-        'fully_qualified_strict_types' => true,
+        'fully_qualified_strict_types' => [
+            'import_symbols' => true,
+            'leading_backslash_in_global_namespace' => true,
+            'phpdoc_tags' => false,
+        ],
         'function_typehint_space' => true,
         'indentation_type' => true,
         'is_null' => true,
@@ -72,6 +76,18 @@ return $config
         'ordered_interfaces' => true,
         'ordered_traits' => true,
         'phpdoc_indent' => true,
+        'phpdoc_order' => [
+            'param',
+            'return',
+            'throws',
+        ],
+        'phpdoc_param_order' => true,
+        'phpdoc_trim_consecutive_blank_line_separation' => true,
+        'phpdoc_types' => true,
+        'phpdoc_types_order' => [
+            'null_adjustment' => 'always_last',
+        ],
+        'phpdoc_var_without_name' => true,
         'php_unit_method_casing' => [
             'case' => 'snake_case',
         ],
