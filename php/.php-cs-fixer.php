@@ -40,8 +40,11 @@ return $config
         'explicit_string_variable' => true,
         'fully_qualified_strict_types' => [
             'import_symbols' => true,
-            'leading_backslash_in_global_namespace' => true,
-            'phpdoc_tags' => false,
+            'leading_backslash_in_global_namespace' => false,
+            'phpdoc_tags' => [
+                'param' => true,
+                'return' => true,
+            ],
         ],
         'function_typehint_space' => true,
         'indentation_type' => true,
@@ -77,9 +80,11 @@ return $config
         'ordered_traits' => true,
         'phpdoc_indent' => true,
         'phpdoc_order' => [
-            'param',
-            'return',
-            'throws',
+            'order' => [
+                'param',
+                'return',
+                'throws',
+            ],
         ],
         'phpdoc_param_order' => true,
         'phpdoc_trim_consecutive_blank_line_separation' => true,
