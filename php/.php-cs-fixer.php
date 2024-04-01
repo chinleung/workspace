@@ -56,6 +56,10 @@ return $config
         'method_chaining_indentation' => true,
         'multiline_whitespace_before_semicolons' => true,
         'native_function_casing' => true,
+        'new_with_parentheses' => [
+            'anonymous_class' => false,
+            'named_class' => false,
+        ],
         'no_empty_statement' => true,
         'no_extra_blank_lines' => true,
         'no_leading_import_slash' => true,
