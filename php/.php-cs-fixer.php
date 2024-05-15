@@ -34,6 +34,7 @@ return $config
         ],
         'cast_spaces' => true,
         'class_attributes_separation' => true,
+        'class_reference_name_casing' => true,
         'concat_space' => true,
         'echo_tag_syntax' => true,
         'explicit_indirect_variable' => true,
