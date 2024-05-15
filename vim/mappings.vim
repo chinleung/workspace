@@ -51,17 +51,18 @@ nmap <c-_> :BLines<cr>
 map <Leader>/ :FZF --reverse<cr>
 
 " Mappings: laravel
-nmap <Leader>la :split \| terminal php artisan<space>
-nmap <Leader>lm :split \| terminal php artisan make:
-nmap <Leader>ln :split \| terminal php artisan nova:
-nmap <Leader>lt :split \| terminal php artisan tinker<cr>i
-nmap <Leader><Leader>ta :split \| terminal php artisan test --colors<cr>
-nmap <Leader><Leader>mm :split \| terminal php artisan migrate<cr>i
-nmap <Leader><Leader>mrb :split \| terminal php artisan migrate:rollback<cr>i
-nmap <Leader><Leader>mrs :split \| terminal php artisan migrate:refresh --seed<cr>i
-nmap <Leader><Leader>mfs :split \| terminal php artisan migrate:fresh --seed<cr>i
+nmap <Leader>la :split \| terminal valet php artisan<space>
+nmap <Leader>lm :split \| terminal valet php artisan make:
+nmap <Leader>ln :split \| terminal valet php artisan nova:
+nmap <Leader>lt :split \| terminal valet php artisan tinker<cr>i
+nmap <Leader><Leader>hs :terminal valet php artisan horizon<cr>
 nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
-nmap <Leader><Leader>lt :split \| terminal php ~/Projects/so/artisan tinker<cr>i
+nmap <Leader><Leader>mm :split \| terminal valet php artisan migrate<cr>i
+nmap <Leader><Leader>mrb :split \| terminal valet php artisan migrate:rollback<cr>i
+nmap <Leader><Leader>mrs :split \| terminal valet php artisan migrate:refresh --seed<cr>i
+nmap <Leader><Leader>mfs :split \| terminal valet php artisan migrate:fresh --seed<cr>i
+nmap <Leader><Leader>lt :split \| terminal cd ~/Projects/so && valet php artisan tinker<cr>i
+nmap <Leader><Leader>ta :split \| terminal valet php artisan test --colors<cr>
 
 " Mappings: composer
 nmap <Leader><Leader>ni :split \| terminal npm install<space>
