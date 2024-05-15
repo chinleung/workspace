@@ -51,6 +51,40 @@ function! ShowDocumentation()
   endif
 endfunction
 
+function! StartBuilds()
+    if ! filereadable('package.json')
+        return
+    endif
+
+    let content = readfile('package.json')
+    let scripts = get(json_decode(content), 'scripts')
+
+    if (get(scripts, 'watch') != '0')
+        terminal npm run watch
+    elseif (get(scripts, 'dev') != '0')
+        terminal npm run dev
+    endif
+
+    if (match(content, '"vite"') != -1)
+        file Vite
+    elseif (match(content, '"laravel-mix"') != -1)
+        file Mix
+    endif
+endfunction
+
+function! StartHorizon()
+    if ! filereadable('artisan')
+        return
+    endif
+
+    let packages = readfile('composer.json')
+
+    if (match(packages, 'laravel\/horizon') != -1)
+        terminal valet php artisan horizon
+        file Horizon
+    endif
+endfunction
+
 augroup AutoCommands
     autocmd!
 
@@ -63,4 +97,8 @@ augroup AutoCommands
 
     " Refresh git
     autocmd CursorHold * CocCommand git.refresh
+
+    " Start Horizon and Vite builds automatically
+    autocmd VimEnter * call StartHorizon()
+    autocmd VimEnter * call StartBuilds()
 augroup END
