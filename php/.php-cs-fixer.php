@@ -43,8 +43,8 @@ return $config
             'import_symbols' => true,
             'leading_backslash_in_global_namespace' => false,
             'phpdoc_tags' => [
-                'param' => true,
-                'return' => true,
+                'param',
+                'return',
             ],
         ],
         'function_typehint_space' => true,
