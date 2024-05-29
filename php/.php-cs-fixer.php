@@ -42,10 +42,7 @@ return $config
         'fully_qualified_strict_types' => [
             'import_symbols' => true,
             'leading_backslash_in_global_namespace' => false,
-            'phpdoc_tags' => [
-                'param',
-                'return',
-            ],
+            'phpdoc_tags' => [],
         ],
         'function_typehint_space' => true,
         'indentation_type' => true,
