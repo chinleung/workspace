@@ -23,6 +23,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'wincent/ferret'
 
+" Copilot
+"Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+
 " PHP
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'captbaritone/better-indent-support-for-php-with-html', { 'for': 'php' }

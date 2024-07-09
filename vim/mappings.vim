@@ -37,8 +37,8 @@ nnoremap <silent><nowait> <space>k :<C-u>CocPrev<CR>
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 " Mappings: composer
-nmap <Leader><Leader>cc :split \| terminal composer<space>
-nmap <Leader><Leader>cr :split \| terminal composer require<space>
+nmap <Leader><Leader>cc :split \| terminal valet composer<space>
+nmap <Leader><Leader>cr :split \| terminal valet composer require<space>
 
 " Copy to clipboard
 vnoremap <Leader>y "+y
@@ -50,11 +50,16 @@ nmap <leader>s <Plug>(FerretAck)
 nmap <c-_> :BLines<cr>
 map <Leader>/ :FZF --reverse<cr>
 
+" Mappings: Github Copilot
+nmap <leader>ct :CopilotChatToggle<cr>
+nmap <leader>cx :CopilotChatReset<cr>
+
 " Mappings: laravel
 nmap <Leader>la :split \| terminal valet php artisan<space>
 nmap <Leader>lm :split \| terminal valet php artisan make:
 nmap <Leader>ln :split \| terminal valet php artisan nova:
 nmap <Leader>lt :split \| terminal valet php artisan tinker<cr>i
+nmap <Leader><Leader>hr <Leader>bHorizon<c-d>
 nmap <Leader><Leader>hs :terminal valet php artisan horizon<cr>
 nmap <leader><leader>i18n :!php artisan lang:js public/js/i18n.js --quiet<cr><cr>
 nmap <Leader><Leader>mm :split \| terminal valet php artisan migrate<cr>i
