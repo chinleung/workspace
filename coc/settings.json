@@ -12,7 +12,7 @@
     "git.removedSign.text": "▁",
     "git.topRemovedSign.text": "▔",
     "intelephense.format.enable": false,
-    "intelephense.path": "/usr/local/bin/intelephense",
+    "intelephense.path": "/opt/homebrew/bin/intelephense",
     "list.insertMappings": {
         "<C-d>": "action:delete"
     },
