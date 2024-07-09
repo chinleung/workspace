@@ -85,6 +85,19 @@ function! StartHorizon()
     endif
 endfunction
 
+function! StartReverb()
+    if ! filereadable('artisan')
+        return
+    endif
+
+    let packages = readfile('composer.json')
+
+    if (match(packages, 'laravel\/reverb') != -1)
+        terminal valet php artisan reverb:start --debug
+        file Reverb
+    endif
+endfunction
+
 augroup AutoCommands
     autocmd!
 
@@ -101,4 +114,5 @@ augroup AutoCommands
     " Start Horizon and Vite builds automatically
     autocmd VimEnter * call StartHorizon()
     autocmd VimEnter * call StartBuilds()
+    autocmd VimEnter * call StartReverb()
 augroup END
