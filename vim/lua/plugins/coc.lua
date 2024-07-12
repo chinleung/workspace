@@ -1,8 +1,8 @@
 -- Confirm the selection if the completion menu is visible
 function confirm_coc_selection()
-    if vim.fn.exists('coc#pum#visible()') == 1 then
+    if vim.fn.exists('*coc#pum#visible') == 1 then
         if vim.fn.eval('coc#pum#visible()') == 1 then
-            return vim.fn["coc#_select_confirm"]()
+            return vim.fn["coc#pum#confirm"]()
         end
     else
         return "\n"
@@ -55,7 +55,6 @@ return {
         }
     end,
     keys = {
-        { '<leader>a', ':Telescope coc code_actions<cr>', { noremap = true, silent = true } },
         { '<space>f', ':<C-u>CocCommand explorer<cr>', { noremap = true, nowait = true, silent = true } },
         { 'gd', '<Plug>(coc-definition)', { noremap = true, silent = true } },
         { 'gp', '<Plug>(coc-diagnostic-prev)', { noremap = true, silent = true } },

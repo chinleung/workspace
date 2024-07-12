@@ -10,7 +10,6 @@ return {
         },
     },
     keys = {
-        { '<space>a', ':Telescope coc code_actions<cr>', { noremap = true, nowait = true, silent = true } },
         { '<space>e', ':Telescope coc extensions<cr>', { noremap = true, nowait = true, silent = true } },
     },
 }
