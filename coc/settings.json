@@ -23,9 +23,6 @@
     "php-cs-fixer.config": "/Users/chin/workspace/php/.php-cs-fixer.php",
     "php-cs-fixer.toolPath": "/Users/chin/.composer/vendor/bin/php-cs-fixer",
     "session.restartOnSessionLoad": true,
-    "snippets.ultisnips.directories": [
-        "/Users/chin/workspace/vim/snippets"
-    ],
     "suggest.completionItemKindLabels": {
         "function": "\uf794",
         "method": "\uf794"

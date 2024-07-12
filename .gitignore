@@ -1,3 +1,4 @@
+# General stuff
 tags
 tags.lock
 tags.temp
@@ -7,10 +8,3 @@ tags.temp
 # Coc
 /coc/*
 !/coc/settings.json
-
-# Vim
-/vim/autoload
-/vim/coc-settings.json
-/vim/plugged
-/vim/sessions/
-/vim/undo

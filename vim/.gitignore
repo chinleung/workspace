@@ -1,0 +1,10 @@
+# Directories
+/bin/
+/etc/
+/include/
+/lib/
+/sessions/
+/share/
+/undo/
+
+coc-settings.json
