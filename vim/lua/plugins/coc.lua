@@ -27,7 +27,7 @@ return {
         vim.api.nvim_set_keymap('i', '<cr>', 'v:lua.confirm_coc_selection()', { expr = true, noremap = true, silent = true })
 
         -- Update the highlight
-        vim.cmd('hi CocErrorLine guibg=#ce2c28')
+        -- vim.cmd('hi CocErrorLine guibg=#ce2c28')
         vim.cmd('hi CocErrorSign ctermbg=235 guibg=#282828 guifg=#fb4934')
         vim.cmd('hi CocWarningSign ctermbg=235 guibg=#282828 guifg=#fdba48')
         vim.cmd('hi CocInfoSign ctermbg=235 guibg=#282828')
@@ -55,7 +55,7 @@ return {
         }
     end,
     keys = {
-        { '<leader>a', '<Plug>(coc-codeaction-selected)', { noremap = true, silent = true } },
+        { '<leader>a', ':Telescope coc code_actions<cr>', { noremap = true, silent = true } },
         { '<space>f', ':<C-u>CocCommand explorer<cr>', { noremap = true, nowait = true, silent = true } },
         { 'gd', '<Plug>(coc-definition)', { noremap = true, silent = true } },
         { 'gp', '<Plug>(coc-diagnostic-prev)', { noremap = true, silent = true } },
