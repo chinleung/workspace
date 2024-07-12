@@ -19,10 +19,8 @@
     ~/.config/nvim: vim
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
-    ~/.vim/after: vim/after
     ~/.vim/coc-settings.json: coc/settings.json
-    ~/.vim/init.vim: vim/init.vim
-    ~/.vim/ultisnips: vim/snippets
+    ~/.vim/init.lua: vim/init.lua
     ~/.zpreztorc: zsh/zprezto/runcoms/.zpreztorc
     ~/.zshrc: zsh/zshrc
 - create:
