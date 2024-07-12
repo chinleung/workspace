@@ -10,7 +10,7 @@ return {
             '<m-q>',
             desc = 'Quick chat',
             function ()
-                local input = vim.fn.input('Quick chat: ')
+                local input = vim.fn.input('Question')
 
                 if input ~= '' then
                     require('CopilotChat').ask(input, {
