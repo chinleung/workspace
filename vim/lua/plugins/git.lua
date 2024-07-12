@@ -11,7 +11,7 @@ return {
         { "<leader>gc", ":Git commit<cr>" },
         { "<leader>gd", ":Git diff<cr>" },
         { "<leader>gg", ":Git push<cr>" },
-        { "<leader>gp", ":Git pull" },
+        { "<leader>gp", ":Git pull<cr>" },
         { "<leader>gs", ":Git<cr>" },
         { "<leader>gw", ":Gwrite<cr>" },
     },
