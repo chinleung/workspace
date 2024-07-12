@@ -29,9 +29,10 @@ return {
         -- Update the highlight
         -- vim.cmd('hi CocErrorLine guibg=#ce2c28')
         vim.cmd('hi CocErrorSign ctermbg=235 guibg=#282828 guifg=#fb4934')
-        vim.cmd('hi CocWarningSign ctermbg=235 guibg=#282828 guifg=#fdba48')
-        vim.cmd('hi CocInfoSign ctermbg=235 guibg=#282828')
+        vim.cmd('hi FgCocErrorFloatBgCocFloating guifg=#fb4934')
         vim.cmd('hi CocHintSign ctermbg=235 guibg=#282828 guifg=#82a498')
+        vim.cmd('hi CocInfoSign ctermbg=235 guibg=#282828')
+        vim.cmd('hi CocWarningSign ctermbg=235 guibg=#282828 guifg=#fdba48')
 
         vim.g.coc_global_extensions = {
             '@yaegassy/coc-intelephense',

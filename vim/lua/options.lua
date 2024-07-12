@@ -16,7 +16,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.softtabstop = 4
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.statusline:prepend('%{coc#status()}%{get(b:,"coc_current_function","")}')
+-- vim.opt.statusline:prepend('%{coc#status()}%{get(b:,"coc_current_function","")}')
 vim.opt.swapfile = false
 vim.opt.synmaxcol = 0
 vim.opt.tabstop = 4
