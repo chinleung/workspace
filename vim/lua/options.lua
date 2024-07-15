@@ -8,6 +8,7 @@ vim.opt.guicursor = 'a:hor20-Cursor'
 vim.opt.hidden = true
 vim.opt.lazyredraw = false
 vim.opt.mouse = ''
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shell = 'zsh'
 vim.opt.shiftwidth = 4
