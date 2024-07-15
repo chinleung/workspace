@@ -10,9 +10,9 @@ return {
         { "<leader>ga", ":Git commit --amend --reset-author<cr>" },
         { "<leader>gc", ":Git commit<cr>" },
         { "<leader>gd", ":Git diff<cr>" },
-        { "<leader>gg", ":Git push<cr>" },
-        { "<leader>gp", ":Git pull<cr>" },
+        { "<leader>gg", ":Git push<cr>", { silent = true } },
+        { "<leader>gp", ":Git pull<cr>", { silent = true } },
         { "<leader>gs", ":Git<cr>" },
-        { "<leader>gw", ":Gwrite<cr>" },
+        { "<leader>gw", ":Gwrite<cr>", { silent = true } },
     },
 }
