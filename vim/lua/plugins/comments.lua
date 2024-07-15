@@ -2,6 +2,11 @@ return {
     'tpope/vim-commentary',
     lazy = false,
     keys = {
-        { '<leader>cc', ':Commentary<cr>', mode = { 'i', 'v' }, { silent = true } },
+        {
+            '<leader>ct',
+            ':Commentary<cr>',
+            mode = { 'n', 'v' },
+            { silent = true }
+        },
     },
 }
