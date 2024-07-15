@@ -18,6 +18,11 @@ return {
                 search_down = {
                     icon = ' ',
                 },
+                terminal = {
+                    view = 'cmdline_input',
+                    icon = ' ',
+                    pattern = '^:split | terminal',
+                }
             },
         },
     },
