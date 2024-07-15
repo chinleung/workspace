@@ -58,11 +58,11 @@ return {
         }
     end,
     keys = {
+        { '<leader>rn', '<Plug>(coc-rename)', { noremap = true, silent = true } },
         { '<space>f', ':<C-u>CocCommand explorer<cr>', { noremap = true, nowait = true, silent = true } },
         { 'gd', '<Plug>(coc-definition)', { noremap = true, silent = true } },
         { 'gp', '<Plug>(coc-diagnostic-prev)', { noremap = true, silent = true } },
         { 'gn', '<Plug>(coc-diagnostic-next)', { noremap = true, silent = true } },
-        { 'rn', '<Plug>(coc-rename)', { noremap = true, silent = true } },
         { 'D', ':call v:lua.show_documentation()<CR>', { noremap = true, silent = true } },
     },
 }
