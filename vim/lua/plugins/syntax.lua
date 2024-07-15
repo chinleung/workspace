@@ -1,24 +1,39 @@
 return {
-    'sheerun/vim-polyglot',
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
     config = function ()
-        vim.g.javascript_conceal_function = "ƒ"
-        vim.g.javascript_conceal_null = "ø"
-        vim.g.javascript_conceal_this = "@"
-        vim.g.javascript_conceal_return = "↪"
-        vim.g.javascript_conceal_undefined = "¿"
-        vim.g.javascript_conceal_NaN = "ℕ"
-        vim.g.javascript_conceal_static = "•"
-        vim.g.javascript_conceal_super = "Ω"
-        vim.g.javascript_conceal_arrow_function = "⇒"
-        vim.g.javascript_conceal_noarg_arrow_function = "ƒ"
-        vim.g.javascript_conceal_underscore_arrow_function = "ƒ"
-        vim.g.javascript_conceal_double_equal = "≈"
-        vim.g.javascript_conceal_triple_equal = "≡"
-        vim.g.javascript_conceal_or_operator = "∨"
-        vim.g.javascript_conceal_and_operator = "∧"
-        vim.g.javascript_conceal_greater_equal_operator = "≥"
-        vim.g.javascript_conceal_less_equal_operator = "≤"
-        vim.g.javascript_conceal_not_equal_operator = "≠"
-        vim.g.javascript_conceal_not_strict_equal_operator = "≢"
+        require('nvim-treesitter.configs').setup{
+            highlight = {
+                enable = true,
+            },
+            indent = {
+                enable = true,
+            },
+        }
+
+        -- Set the characters that are concealed to white
+        vim.cmd('hi Conceal NONE')
+        vim.cmd('hi link Conceal GruvboxWhite')
+
+        -- PHP
+        vim.cmd('hi link @constructor.php GruvboxWhite')
+        vim.cmd('hi link @function.call.php GruvboxGreen')
+        vim.cmd('hi link @function.method.call.php GruvboxWhite')
+        vim.cmd('hi link @function.method.php GruvboxWhite')
+        vim.cmd('hi link @keyword.modifier.php GruvboxYellow')
+        vim.cmd('hi link @keyword.import.php GruvboxAqua')
+        vim.cmd('hi link @module.php GruvboxWhite')
+        vim.cmd('hi link @null.php GruvboxYellow')
+        vim.cmd('hi link @punctuation.bracket.php GruvboxOrange')
+        vim.cmd('hi link @punctuation.delimiter.php GruvboxWhite')
+        vim.cmd('hi link @type.builtin.php GruvboxYellow')
+        vim.cmd('hi link @type.definition.php GruvboxWhite')
+        vim.cmd('hi link @type.php GruvboxWhite')
+        vim.cmd('hi link @type.static.php GruvboxOrange')
+        vim.cmd('hi link @string.php GruvboxGreen')
+        vim.cmd('hi link @variable.builtin.php GruvboxBlue')
+        vim.cmd('hi link @variable.member.php GruvboxWhite')
+        vim.cmd('hi link @variable.parameter.php GruvboxBlue')
+        vim.cmd('hi link @variable.php GruvboxBlue')
     end,
 }

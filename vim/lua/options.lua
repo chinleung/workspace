@@ -1,7 +1,7 @@
 vim.opt.background = 'dark'
 vim.opt.backup = false
 vim.opt.cc = '81'
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
 vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.guicursor = 'a:hor20-Cursor'

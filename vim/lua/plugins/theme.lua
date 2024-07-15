@@ -5,6 +5,10 @@ return {
     config = function ()
         vim.cmd([[colorscheme gruvbox]])
 
+        -- Add the definition of the white colour
+        vim.cmd('hi GruvboxWhite ctermfg=223 guifg=#ebdbb2')
+
+        -- UI improvement
         vim.cmd('hi CursorLineNr guibg=#282828 ctermbg=235')
         vim.cmd('hi NormalFloat guibg=#3c3836')
         vim.cmd('hi! SignColumn guibg=#282828 ctermbg=235')
