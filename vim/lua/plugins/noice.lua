@@ -18,6 +18,20 @@ return {
                 search_down = {
                     icon = ' ',
                 },
+                laravel = {
+                    view = 'cmdline_input',
+                    icon = '󰫐 ',
+                    icon_hl_group = 'GruvboxRed',
+                    pattern = 'valet php artisan',
+                    opts = {
+                        win_options = {
+                            winhighlight = {
+                                FloatBorder = 'GruvboxRed',
+                                FloatTitle = 'GruvboxRed',
+                            }
+                        },
+                    },
+                },
                 terminal = {
                     view = 'cmdline_input',
                     icon = ' ',
