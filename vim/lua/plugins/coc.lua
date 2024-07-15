@@ -3,6 +3,8 @@ function confirm_coc_selection()
     if vim.fn.exists('*coc#pum#visible') == 1 then
         if vim.fn.eval('coc#pum#visible()') == 1 then
             return vim.fn["coc#pum#confirm"]()
+        else
+            return "\n"
         end
     else
         return "\n"
