@@ -2,7 +2,7 @@ return {
     'morhetz/gruvbox',
     lazy = false,
     priority = 1000,
-    config = function () 
+    config = function ()
         vim.cmd([[colorscheme gruvbox]])
 
         vim.cmd('hi CursorLineNr guibg=#282828 ctermbg=235')
