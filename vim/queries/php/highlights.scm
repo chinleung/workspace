@@ -5,6 +5,13 @@
   scope: (name) @type.static
   name: (name) @function.method.call)
 
+(class_constant_access_expression
+  (name) @type.static)
+
+(class_constant_access_expression
+  (name) @keyword.class
+  (#match? @keyword.class "^class$"))
+
 ; Conceals
 ("||" @conceal (#set! conceal "∨"))
 ("&&" @conceal (#set! conceal "∧"))

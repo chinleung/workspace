@@ -15,6 +15,9 @@ return {
         vim.cmd('hi Conceal NONE')
         vim.cmd('hi link Conceal GruvboxWhite')
 
+        -- Global
+        vim.cmd('hi link @operator GruvboxWhite')
+
         -- PHP
         vim.cmd('hi link @constructor.php GruvboxWhite')
         vim.cmd('hi link @function.call.php GruvboxGreen')
