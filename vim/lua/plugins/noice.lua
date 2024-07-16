@@ -9,7 +9,16 @@ return {
         cmdline = {
             format = {
                 cmdline = {
-                    title = ' Command ',
+                    title = 'Command',
+                    icon_hl_group = 'GruvboxBlue',
+                    opts = {
+                        win_options = {
+                            winhighlight = {
+                                FloatBorder = 'GruvboxBlue',
+                                FloatTitle = 'GruvboxBlue',
+                            }
+                        },
+                    },
                 },
                 input = {
                     view = 'cmdline_input',
