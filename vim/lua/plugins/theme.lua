@@ -1,18 +1,34 @@
 return {
-    'morhetz/gruvbox',
+    'ellisonleao/gruvbox.nvim',
     lazy = false,
     priority = 1000,
     config = function ()
+        require('gruvbox').setup({
+            overrides = {
+                CursorLineNr = {
+                    bg = '#282828',
+                },
+                GruvboxWhite = {
+                    bg = '#282828',
+                    fg = '#ebdbb2',
+                },
+                NormalFloat = {
+                    bg = '#3c3836',
+                },
+                SignColumn = {
+                    bg = '#282828',
+                },
+                TabLineFill = {
+                    bg = '#282828',
+                },
+                TabLineSel = {
+                    fg = '#fabd2f',
+                    bg = '#282828',
+                    bold = true,
+                },
+            }
+        })
+
         vim.cmd([[colorscheme gruvbox]])
-
-        -- Add the definition of the white colour
-        vim.cmd('hi GruvboxWhite ctermfg=223 guifg=#ebdbb2')
-
-        -- UI improvement
-        vim.cmd('hi CursorLineNr guibg=#282828 ctermbg=235')
-        vim.cmd('hi NormalFloat guibg=#3c3836')
-        vim.cmd('hi! SignColumn guibg=#282828 ctermbg=235')
-        vim.cmd('hi TabLineFill guibg=#282828 ctermbg=235')
-        vim.cmd('hi TabLineSel guibg=#282828 ctermfg=yellow')
     end,
 }
