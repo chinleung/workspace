@@ -30,5 +30,9 @@ return {
         })
 
         vim.cmd([[colorscheme gruvbox]])
+
+        -- Telescope
+        vim.cmd('hi link TelescopeMatching GruvboxRed')
+        vim.cmd('hi link TelescopeSelection GruvboxYellowBold')
     end,
 }
