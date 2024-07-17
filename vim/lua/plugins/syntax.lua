@@ -26,6 +26,7 @@ return {
         vim.cmd('hi link @keyword.modifier.php GruvboxYellow')
         vim.cmd('hi link @keyword.import.php GruvboxAqua')
         vim.cmd('hi link @keyword.parent.php GruvboxYellow')
+        vim.cmd('hi link @keyword.type.php GruvboxAqua')
         vim.cmd('hi link @module.php GruvboxWhite')
         vim.cmd('hi link @null.php GruvboxYellow')
         vim.cmd('hi link @punctuation.bracket.php GruvboxOrange')
