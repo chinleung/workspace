@@ -56,6 +56,9 @@ return {
             'coc-svg',
             'coc-vetur',
         }
+
+        vim.cmd('hi link CocHintFloat GruvboxYellow')
+        vim.cmd('hi link CocHintHighlight GruvboxYellowUnderline')
     end,
     keys = {
         { '<leader>rn', '<Plug>(coc-rename)', { noremap = true, silent = true } },
