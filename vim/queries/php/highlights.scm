@@ -17,6 +17,16 @@
 (scoped_call_expression
   scope: (relative_scope) @keyword.parent)
 
+; Fix the colour of __construct
+(scoped_call_expression
+  (name) @function.call.constructor
+  (#match? @function.call.constructor "__construct"))
+
+; Fix the colour of magic methods
+(method_declaration
+  (name) @function.method.magic
+  (#match? @function.method.magic "__construct|__invoke"))
+
 ; Conceals
 ("||" @conceal (#set! conceal "∨"))
 ("&&" @conceal (#set! conceal "∧"))

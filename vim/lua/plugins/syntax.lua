@@ -21,7 +21,9 @@ return {
         -- PHP
         vim.cmd('hi link @constructor.php GruvboxWhite')
         vim.cmd('hi link @function.call.php GruvboxGreen')
+        vim.cmd('hi link @function.call.constructor.php GruvboxRed')
         vim.cmd('hi link @function.method.call.php GruvboxWhite')
+        vim.cmd('hi link @function.method.magic.php GruvboxRed')
         vim.cmd('hi link @function.method.php GruvboxWhite')
         vim.cmd('hi link @keyword.modifier.php GruvboxYellow')
         vim.cmd('hi link @keyword.import.php GruvboxAqua')
