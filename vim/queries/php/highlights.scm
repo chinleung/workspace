@@ -5,12 +5,17 @@
   scope: (name) @type.static
   name: (name) @function.method.call)
 
+; Fix colour of static FQCN calls (User::class)
 (class_constant_access_expression
   (name) @type.static)
 
 (class_constant_access_expression
   (name) @keyword.class
   (#match? @keyword.class "^class$"))
+
+; Fix the colour of the parent keyword
+(scoped_call_expression
+  scope: (relative_scope) @keyword.parent)
 
 ; Conceals
 ("||" @conceal (#set! conceal "∨"))
