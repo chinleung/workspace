@@ -51,12 +51,12 @@ function start_builds()
             elseif scripts.dev ~= nil then
                 vim.cmd('terminal npm run dev')
             end
-        end
 
-        if string.match(content, '"vite"') then
-            vim.cmd('file Vite')
-        elseif string.match(content, '"laravel-mix"') then
-            vim.cmd('file Mix')
+            if string.match(content, '"vite"') then
+                vim.cmd('file Vite')
+            elseif string.match(content, '"laravel%-mix"') then
+                vim.cmd('file Mix')
+            end
         end
     end
 end
