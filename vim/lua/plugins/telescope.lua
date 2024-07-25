@@ -31,8 +31,31 @@ return {
                     i = {
                         ['<esc>'] = actions.close,
                     }
+                },
+            },
+            pickers = {
+                find_files = {
+                    file_ignore_patterns = {
+                        '^.git/',
+                    },
+                    hidden = true,
+                    no_ignore = true,
+                },
+                live_grep = {
+                    additional_args = function (opts)
+                        return {
+                            '--hidden',
+                            '--no-ignore',
+                        }
+                    end,
+                    glob_pattern = {
+                        '!.env.example',
+                        '!.git/',
+                        '!composer.lock',
+                        '!package-lock.json',
+                    },
                 }
-            }
+            },
         }
 
         vim.api.nvim_set_keymap(
