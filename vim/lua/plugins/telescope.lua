@@ -30,6 +30,24 @@ return {
                 mappings = {
                     i = {
                         ['<esc>'] = actions.close,
+                        ['<cr>'] = function (buffer)
+                            local actions = require('telescope.actions')
+                            local state = require('telescope.actions.state')
+                            local picker = state.get_current_picker(buffer)
+                            local selections = picker:get_multi_selection()
+
+                            if vim.tbl_isempty(selections) then
+                                actions.select_default(buffer)
+                            else
+                                actions.close(buffer)
+
+                                for _, entry in pairs(selections) do
+                                    if entry.path ~= nil then
+                                        vim.cmd(string.format('edit %s', entry.path))
+                                    end
+                                end
+                            end
+                        end
                     }
                 },
             },
@@ -37,6 +55,8 @@ return {
                 find_files = {
                     file_ignore_patterns = {
                         '^.git/',
+                        '^.phpunit.result.cache',
+                        '^public/build/',
                     },
                     hidden = true,
                     no_ignore = true,
