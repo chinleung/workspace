@@ -31,6 +31,7 @@ return {
         vim.cmd('hi link @keyword.type.php GruvboxAqua')
         vim.cmd('hi link @module.php GruvboxWhite')
         vim.cmd('hi link @null.php GruvboxYellow')
+        vim.cmd('hi link @parameter.type.php GruvboxYellow')
         vim.cmd('hi link @punctuation.bracket.php GruvboxOrange')
         vim.cmd('hi link @punctuation.delimiter.php GruvboxWhite')
         vim.cmd('hi link @type.builtin.php GruvboxYellow')

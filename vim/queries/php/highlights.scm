@@ -27,6 +27,13 @@
   (name) @function.method.magic
   (#match? @function.method.magic "__construct|__invoke"))
 
+; Fix the colour of class parameters
+(method_declaration
+  (formal_parameters
+    (simple_parameter
+      type: (named_type
+        (name) @parameter.type))))
+
 ; Conceals
 ("||" @conceal (#set! conceal "∨"))
 ("&&" @conceal (#set! conceal "∧"))
