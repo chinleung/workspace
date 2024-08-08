@@ -34,6 +34,11 @@
       type: (named_type
         (name) @parameter.type))))
 
+; Fix the colour of arguments name
+(arguments
+  (argument
+    name: (name) @argument.name))
+
 ; Conceals
 ("||" @conceal (#set! conceal "∨"))
 ("&&" @conceal (#set! conceal "∧"))

@@ -19,6 +19,7 @@ return {
         vim.cmd('hi link @operator GruvboxWhite')
 
         -- PHP
+        vim.cmd('hi link @argument.name.php GruvboxWhite')
         vim.cmd('hi link @constructor.php GruvboxWhite')
         vim.cmd('hi link @function.call.php GruvboxGreen')
         vim.cmd('hi link @function.call.constructor.php GruvboxRed')
