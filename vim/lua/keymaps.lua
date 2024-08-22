@@ -1,14 +1,14 @@
 
 -- Buffer
-vim.keymap.set('n', '<leader>qa', ':bufdo bd<cr>')
-vim.keymap.set('n', '<leader>qb', ':bd!<cr>')
-vim.keymap.set('n', '<leader>qv', ':q<cr>')
-vim.keymap.set({ 'n', 'v' }, '<leader>qw', ':wq<cr>')
-vim.keymap.set({ 'n', 'v' }, '<leader>r', ':edit<cr>')
-vim.keymap.set({ 'n', 'v' }, '<leader>w', ':w<cr>')
-vim.keymap.set('n', 'tn', ':enew<cr>')
-vim.keymap.set('n', '<tab>', ':bnext<cr>')
-vim.keymap.set('n', '<s-tab>', ':bprev<cr>')
+vim.keymap.set('n', '<leader>qa', ':bufdo bd<cr>', { silent = true })
+vim.keymap.set('n', '<leader>qb', ':bd!<cr>', { silent = true })
+vim.keymap.set('n', '<leader>qv', ':q<cr>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>qw', ':wq<cr>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>r', ':edit<cr>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>w', ':w<cr>', { silent = true })
+vim.keymap.set('n', 'tn', ':enew<cr>', { silent = true })
+vim.keymap.set('n', '<tab>', ':bnext<cr>', { silent = true })
+vim.keymap.set('n', '<s-tab>', ':bprev<cr>', { silent = true })
 
 -- Composer
 vim.keymap.set('n', '<leader><leader>cc', ':split | terminal composer<space>')
@@ -17,6 +17,9 @@ vim.keymap.set('n', '<leader><leader>cr', ':split | terminal composer require<sp
 
 -- Copy to clipboard
 vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
+
+-- Folds
+vim.keymap.set('n', '~', 'za')
 
 -- Laravel
 vim.keymap.set('n', '<leader>la', ':split | terminal valet php artisan<space>')
@@ -62,5 +65,6 @@ vim.keymap.set('n', '<leader><right>', '<c-w>>')
 vim.keymap.set('n', '<leader>=', '<c-w>=')
 
 -- Terminal management
+vim.keymap.set('n', '<leader><leader>tc', ':split | terminal<space>')
 vim.keymap.set('n', '<leader><leader>ts', ':split | terminal<space><cr>i')
 vim.keymap.set('n', '<leader><leader>tv', ':vsplit | terminal<cr>i')
