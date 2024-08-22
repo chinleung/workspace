@@ -1,11 +1,5 @@
 {
-  "Ansi 5 Color" : {
-    "Red Component" : 0.69803929328918457,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.52156859636306763,
-    "Alpha Component" : 1,
-    "Green Component" : 0.3999999463558197
-  },
+  "ASCII Ligatures" : true,
   "Working Directory" : "\/Users\/chin",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -401,8 +395,8 @@
     "Green Component" : 0.15686270594596863
   },
   "Blur" : false,
+  "Normal Font" : "FiraCodeNF-Ret 18",
   "Vertical Spacing" : 2,
-  "Normal Font" : "DankMonoNerdFontCompleteM-Regular 18",
   "Ansi 7 Color" : {
     "Red Component" : 0.66274517774581909,
     "Color Space" : "sRGB",
@@ -413,7 +407,7 @@
   "Space" : 0,
   "Command" : "zsh --login",
   "Terminal Type" : "xterm-256color",
-  "Horizontal Spacing" : 1.01,
+  "Horizontal Spacing" : 1,
   "Tab Color" : {
     "Red Component" : 0.99607855081558228,
     "Color Space" : "sRGB",
@@ -421,7 +415,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.99607843160629272
   },
-  "Option Key Sends" : 0,
+  "Option Key Sends" : 2,
   "Blink Allowed" : false,
   "Ansi 15 Color" : {
     "Red Component" : 0.92549020051956177,
@@ -448,7 +442,8 @@
     "Green Component" : 0.15686270594596863
   },
   "Screen" : -1,
-  "Non Ascii Font" : "DankMonoNerdFontComplete-Regular 18",
+  "Initial Use Transparency" : true,
+  "Non Ascii Font" : "FiraCodeNF-Ret 18",
   "Ansi 13 Color" : {
     "Red Component" : 0.83529418706893921,
     "Color Space" : "sRGB",
@@ -459,6 +454,12 @@
   "Columns" : 80,
   "Visual Bell" : true,
   "Custom Directory" : "Recycle",
-  "Thin Strokes" : 4,
-  "ASCII Ligatures" : true
+  "Ansi 5 Color" : {
+    "Red Component" : 0.69803929328918457,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.52156859636306763,
+    "Alpha Component" : 1,
+    "Green Component" : 0.3999999463558197
+  },
+  "Thin Strokes" : 4
 }
