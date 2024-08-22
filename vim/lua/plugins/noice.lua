@@ -20,6 +20,20 @@ return {
                         },
                     },
                 },
+                git = {
+                    view = 'cmdline_input',
+                    icon = '󰊢 ',
+                    icon_hl_group = 'GruvboxGreen',
+                    pattern = 'Git',
+                    opts = {
+                        win_options = {
+                            winhighlight = {
+                                FloatBorder = 'GruvboxGreen',
+                                FloatTitle = 'GruvboxGreen',
+                            }
+                        },
+                    },
+                },
                 input = {
                     view = 'cmdline_input',
                     icon = '󰥻 ',
