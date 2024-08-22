@@ -56,6 +56,7 @@ return {
                     file_ignore_patterns = {
                         '^.git/',
                         '^.phpunit.result.cache',
+                        '^.DS_Store',
                         '^public/build/',
                     },
                     hidden = true,
@@ -71,6 +72,7 @@ return {
                     glob_pattern = {
                         '!.env.example',
                         '!.git/',
+                        '!.DS_Store',
                         '!composer.lock',
                         '!package-lock.json',
                     },
