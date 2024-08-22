@@ -19,5 +19,6 @@ function! Fold(lnum)
         return '1'
     endif
 
-    return nvim_treesitter#foldexpr()
+    " return nvim_treesitter#foldexpr()
+    return 0
 endfunction
