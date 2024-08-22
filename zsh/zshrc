@@ -9,7 +9,7 @@ export VISUAL='vim'
 
 # Change to gruvbox theme
 prompt gruvbox
-sh ~/.local/share/nvim/lazy/gruvbox/gruvbox_256palette_osx.sh
+sh ~/workspace/gruvbox_256palette_osx.sh
 
 # Alias
 alias vim='nvim $1'
