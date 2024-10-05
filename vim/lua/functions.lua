@@ -1,5 +1,6 @@
 
 local group = vim.api.nvim_create_augroup('AutoCommands', { clear = true })
+local phpcsfixer = '/Users/chin/.composer/vendor/bin/php-cs-fixer'
 
 vim.api.nvim_create_autocmd('VimEnter', {
     group = group,
@@ -12,9 +13,20 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
 vim.api.nvim_create_autocmd('BufWritePre', {
     group = group,
-    pattern = '*.php,*.py,*.js,*.css,*.txt,*.md,*.rb',
+    pattern = '*.py,*.js,*.css,*.txt,*.md,*.rb',
     callback = function ()
         vim.cmd('lua strip_end_of_file_lines()')
+    end,
+})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+    group = group,
+    pattern = '*.php',
+    callback = function ()
+        local file = vim.fn.expand('%')
+
+        vim.cmd('silent !'..phpcsfixer..' fix --config ~/workspace/php/.php-cs-fixer.php --allow-risky=yes '..file)
+        vim.cmd('edit!')
     end,
 })
 
