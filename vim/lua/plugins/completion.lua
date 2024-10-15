@@ -22,7 +22,7 @@ return {
             },
             mapping = {
                 ['<down>'] = cmp.mapping.select_next_item(),
-                ['<tab>'] = cmp.mapping.confirm({
+                ['<cr>'] = cmp.mapping.confirm({
                     select = true,
                 }),
                 ['<up>'] = cmp.mapping.select_prev_item(),
