@@ -11,6 +11,22 @@ vim.api.nvim_create_autocmd('VimEnter', {
     end,
 })
 
+vim.api.nvim_create_autocmd('BufWinLeave', {
+    group = group,
+    pattern = '*.php',
+    command = 'mkview'
+})
+
+vim.api.nvim_create_autocmd('BufReadPost', {
+    group = group,
+    pattern = '*.php',
+    callback = function ()
+        vim.defer_fn(function ()
+            vim.cmd('silent! loadview')
+        end, 50)
+    end,
+})
+
 vim.api.nvim_create_autocmd('BufWritePre', {
     group = group,
     pattern = '*.py,*.js,*.css,*.txt,*.md,*.rb',
