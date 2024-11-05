@@ -22,15 +22,23 @@ return {
                 }),
             },
             mapping = {
-                ['<down>'] = cmp.mapping.select_next_item(),
                 ['<cr>'] = cmp.mapping.confirm({
                     select = true,
                 }),
+                ['<down>'] = cmp.mapping.select_next_item(),
+                ['<s-tab>'] = cmp.mapping.select_prev_item(),
+                ['<tab>'] = cmp.mapping.select_next_item(),
                 ['<up>'] = cmp.mapping.select_prev_item(),
+            },
+            snippet = {
+                expand = function (args)
+                    vim.snippet.expand(args.body)
+                end,
             },
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'buffer' },
+                { name = 'snippets' },
                 { name = 'emoji' },
             })
         })

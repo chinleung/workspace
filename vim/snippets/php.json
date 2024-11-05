@@ -1,0 +1,83 @@
+{
+    "Laravel's casts attribute": {
+        "prefix": ["casts"],
+        "body": [
+            "/**",
+            " * The attributes that should be cast.",
+            " */",
+            "protected \\$casts = [",
+            "    '${1:attribute}' => '${2:type}',",
+            "];"
+        ]
+    },
+    "Laravel's fillable attribute": {
+        "prefix": ["fillable"],
+        "body": [
+            "/**",
+            " * The attributes that are mass assignable.",
+            " */",
+            "protected \\$fillable = [",
+            "    '${1:attribute}',",
+            "];"
+        ]
+    },
+    "Laravel's translatable attribute": {
+        "prefix": ["translatable"],
+        "body": [
+            "/**",
+            " * The attributes that should be translatable.",
+            " */",
+            "protected \\$translatable = [",
+            "    '${1:attribute}',",
+            "];"
+        ]
+    },
+    "Laravel's belongs to relation": {
+        "prefix": ["belongsTo"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "protected function ${1:name}(): BelongsTo",
+            "{",
+            "    return \\$this->belongsTo(${4:Model}::class);",
+            "}"
+        ]
+    },
+    "Laravel's has one relation": {
+        "prefix": ["hasOne"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "protected function ${1:name}(): HasOne",
+            "{",
+            "    return \\$this->hasOne(${4:Model}::class);",
+            "}"
+        ]
+    },
+    "Public function": {
+        "prefix": ["public"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "public function ${1:name}(): ${2:void}",
+            "{",
+            "    ${4}",
+            "}"
+        ]
+    },
+    "Protected function": {
+        "prefix": ["protected"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "protected function ${1:name}(): ${2:void}",
+            "{",
+            "    ${4}",
+            "}"
+        ]
+    }
+}
