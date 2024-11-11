@@ -17,7 +17,6 @@ return {
     },
     opts = {
         options = {
-            theme = 'gruvbox',
             component_separators = {
                 right = '',
             }
