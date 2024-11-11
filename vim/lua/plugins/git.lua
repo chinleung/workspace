@@ -6,14 +6,18 @@ return {
         vim.cmd('hi DiffChange guibg=#282828 ctermbg=235 guifg=#fdba48 ctermfg=108 cterm=NONE gui=NONE')
         vim.cmd('hi DiffDelete guibg=#282828 ctermbg=235 guifg=#fb4934 ctermfg=167 cterm=NONE gui=NONE')
 
+        local sign = {
+            add = { text = '┃' },
+            change = { text = '┃' },
+            delete = { text = '▁' },
+            topdelete = { text = '▔' },
+            changedelete = { text = '▔' },
+            untracked = { text = '┃' },
+        }
+
         require('gitsigns').setup({
-            signs = {
-                add = { text = '┃' },
-                change = { text = '┃' },
-                delete = { text = '▁' },
-                topdelete = { text = '▔' },
-                changedelete = { text = '▔' },
-            },
+            signs = signs,
+            signs_staged = signs,
         })
     end,
     dependencies = {
