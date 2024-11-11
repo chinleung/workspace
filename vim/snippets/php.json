@@ -38,9 +38,33 @@
             "/**",
             " * ${3:description}",
             " */",
-            "protected function ${1:name}(): BelongsTo",
+            "public function ${1:name}(): BelongsTo",
             "{",
             "    return \\$this->belongsTo(${4:Model}::class);",
+            "}"
+        ]
+    },
+    "Laravel's belongs to many relation": {
+        "prefix": ["belongsToMany"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "public function ${1:name}(): BelongsToMany",
+            "{",
+            "    return \\$this->belongsTo(${4:Model}::class);",
+            "}"
+        ]
+    },
+    "Laravel's has many relation": {
+        "prefix": ["hasMany"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "public function ${1:name}(): HasMany",
+            "{",
+            "    return \\$this->hasMany(${4:Model}::class);",
             "}"
         ]
     },
@@ -50,9 +74,33 @@
             "/**",
             " * ${3:description}",
             " */",
-            "protected function ${1:name}(): HasOne",
+            "public function ${1:name}(): HasOne",
             "{",
             "    return \\$this->hasOne(${4:Model}::class);",
+            "}"
+        ]
+    },
+    "Laravel's morph to relation": {
+        "prefix": ["morphTo"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "public function ${1:name}(): MorphTo",
+            "{",
+            "    return \\$this->morphTo();",
+            "}"
+        ]
+    },
+    "Laravel's morph to many relation": {
+        "prefix": ["morphToMany"],
+        "body": [
+            "/**",
+            " * ${3:description}",
+            " */",
+            "public function ${1:name}(): MorphToMany",
+            "{",
+            "    return \\$this->morphToMany(${4:Model}::class, '${5:slug}');",
             "}"
         ]
     },
