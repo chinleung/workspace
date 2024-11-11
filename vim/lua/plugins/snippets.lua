@@ -9,7 +9,7 @@ return {
     },
     keys = {
         {
-            '<Tab>',
+            '<c-j>',
             function()
                 if vim.snippet.active({ direction = 1 }) then
                     vim.schedule(function()
@@ -24,7 +24,7 @@ return {
             mode = 'i',
         },
         {
-            '<Tab>',
+            '<c-j>',
             function()
                 vim.schedule(function()
                     vim.snippet.jump(1)
@@ -35,7 +35,7 @@ return {
             mode = 's',
         },
         {
-            '<S-Tab>',
+            '<c-k>',
             function()
                 if vim.snippet.active({ direction = -1 }) then
                     vim.schedule(function()
