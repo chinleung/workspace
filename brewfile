@@ -52,7 +52,6 @@ brew "php@8.1"
 brew "php@8.2", link: true
 brew "pinentry-mac"
 brew "prettier"
-brew "python@3.8"
 brew "python@3.9"
 brew "ripgrep"
 brew "sdl2"
