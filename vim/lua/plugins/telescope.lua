@@ -58,6 +58,7 @@ return {
                         '^.phpunit.result.cache',
                         '^.DS_Store',
                         '^public/build/',
+                        '^storage/debugbar/',
                     },
                     hidden = true,
                     no_ignore = true,
@@ -75,6 +76,7 @@ return {
                         '!.DS_Store',
                         '!composer.lock',
                         '!package-lock.json',
+                        '!storage/debugbar/',
                     },
                 }
             },

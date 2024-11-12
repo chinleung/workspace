@@ -11,9 +11,9 @@ vim.keymap.set('n', '<tab>', ':bnext<cr>', { silent = true })
 vim.keymap.set('n', '<s-tab>', ':bprev<cr>', { silent = true })
 
 -- Composer
-vim.keymap.set('n', '<leader><leader>cc', ':split | terminal composer<space>')
-vim.keymap.set('n', '<leader><leader>ci', ':split | terminal composer install<space>')
-vim.keymap.set('n', '<leader><leader>cr', ':split | terminal composer require<space>')
+vim.keymap.set('n', '<leader><leader>cc', ':split | terminal valet composer<space>')
+vim.keymap.set('n', '<leader><leader>ci', ':split | terminal valet composer install<space>')
+vim.keymap.set('n', '<leader><leader>cr', ':split | terminal valet composer require<space>')
 
 -- Copy to clipboard
 vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })

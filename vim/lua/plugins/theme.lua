@@ -31,6 +31,14 @@ return {
 
         vim.cmd([[colorscheme gruvbox]])
 
+        -- Diagnostics
+        vim.cmd('hi link DiagnosticInfo GruvboxAqua')
+        vim.cmd('hi link DiagnosticFloatingInfo GruvboxAqua')
+        vim.cmd('hi link DiagnosticVirtualTextInfo GruvboxAqua')
+        vim.cmd('hi link DiagnosticHint GruvboxBlue')
+        vim.cmd('hi link DiagnosticFloatingHint GruvboxBlue')
+        vim.cmd('hi link DiagnosticVirtualTextHint GruvboxBlue')
+
         -- Telescope
         vim.cmd('hi link TelescopeMatching GruvboxRed')
         vim.cmd('hi link TelescopeSelection GruvboxYellowBold')
