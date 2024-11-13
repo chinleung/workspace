@@ -144,3 +144,8 @@ function strip_end_of_file_lines()
     vim.fn.setreg('/', save_search)
     vim.api.nvim_win_set_cursor(0, {line, col})
 end
+
+-- Generate a UUID
+function generate_uuid()
+    return vim.fn.system('uuidgen'):gsub('\n', '')
+end

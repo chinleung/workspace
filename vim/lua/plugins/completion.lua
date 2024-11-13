@@ -11,6 +11,8 @@ return {
         local cmp = require('cmp')
         local lspkind = require('lspkind')
 
+        cmp.register_source('uuid', require('sources.uuid'))
+
         cmp.setup({
             formatting = {
                 format = lspkind.cmp_format({
@@ -40,6 +42,7 @@ return {
                 { name = 'buffer' },
                 { name = 'snippets' },
                 { name = 'emoji' },
+                { name = 'uuid', priority = 100 },
             })
         })
 
