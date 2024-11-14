@@ -8,6 +8,10 @@ return {
                 -- Disable formatting
                 client.server_capabilities.documentFormattingProvider = false
 
+                client.server_capabilities.renameProvider = {
+                    prepareProvider = true
+                }
+
                 -- Set up keymaps
                 local options = { noremap = true, silent = true }
 
