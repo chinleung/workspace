@@ -5,9 +5,8 @@ return {
 
         lsp.intelephense.setup({
             on_attach = function (client, buffer)
-                -- Disable formatting
+                -- Configure the server capabilities
                 client.server_capabilities.documentFormattingProvider = false
-
                 client.server_capabilities.renameProvider = {
                     prepareProvider = true
                 }
@@ -19,7 +18,9 @@ return {
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gn', '<cmd>lua vim.diagnostic.goto_next({ float = false })<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gp', '<cmd>lua vim.diagnostic.goto_prev({ float = false })<cr>', options)
-                vim.api.nvim_buf_set_keymap(buffer, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', options)
+                vim.api.nvim_buf_set_keymap(buffer, 'n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', options)
+                vim.api.nvim_buf_set_keymap(buffer, 'n', 'gs', '<cmd>lua require("telescope.builtin").lsp_document_symbols()<cr>', options)
+                vim.api.nvim_buf_set_keymap(buffer, 'n', 'gS', '<cmd>lua require("telescope.builtin").lsp_workspace_symbols()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'D', '<cmd>lua vim.lsp.buf.hover()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', '<leader>a', '<Cmd>lua vim.lsp.buf.code_action()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<cr>', options)
