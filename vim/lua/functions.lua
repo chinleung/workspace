@@ -147,5 +147,5 @@ end
 
 -- Generate a UUID
 function generate_uuid()
-    return vim.fn.system('uuidgen'):gsub('\n', '')
+    return vim.fn.system('uuidgen'):gsub('\n', ''):lower()
 end
