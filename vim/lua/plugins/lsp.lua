@@ -14,7 +14,7 @@ return {
                 -- Set up keymaps
                 local options = { noremap = true, silent = true }
 
-                vim.api.nvim_buf_set_keymap(buffer, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', options)
+                vim.api.nvim_buf_set_keymap(buffer, 'n', 'gd', '<cmd>lua require("telescope.builtin").lsp_definitions<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gn', '<cmd>lua vim.diagnostic.goto_next({ float = false })<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gp', '<cmd>lua vim.diagnostic.goto_prev({ float = false })<cr>', options)
