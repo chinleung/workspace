@@ -21,6 +21,7 @@ return {
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gs', '<cmd>lua require("telescope.builtin").lsp_document_symbols()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'gS', '<cmd>lua require("telescope.builtin").lsp_workspace_symbols()<cr>', options)
+                vim.api.nvim_buf_set_keymap(buffer, 'n', 'dl', '<cmd>lua require("telescope.builtin").diagnostics()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', 'D', '<cmd>lua vim.lsp.buf.hover()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', '<leader>a', '<Cmd>lua vim.lsp.buf.code_action()<cr>', options)
                 vim.api.nvim_buf_set_keymap(buffer, 'n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<cr>', options)
