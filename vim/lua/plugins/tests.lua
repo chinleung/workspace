@@ -9,7 +9,7 @@ return {
     },
     init = function ()
         vim.g['test#neovim#term_position'] = 'vert botright 81'
-        vim.g['test#php#phpunit#executable'] = 'php artisan test'
+        vim.g['test#php#phpunit#executable'] = 'valet php artisan test'
         vim.g['test#strategy'] = 'neovim'
     end,
 }
