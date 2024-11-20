@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
         local file = vim.fn.expand('%')
 
         vim.cmd('mkview')
-        vim.cmd('silent !'..phpcsfixer..' fix --config ~/workspace/php/.php-cs-fixer.php --allow-risky=yes '..file)
+        vim.cmd('silent !'..phpcsfixer..' fix --config=$HOME/workspace/php/.php-cs-fixer.php --allow-risky=yes '..file)
         vim.cmd('edit!')
         vim.cmd('loadview')
     end,
