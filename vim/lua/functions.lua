@@ -1,6 +1,5 @@
 
 local group = vim.api.nvim_create_augroup('AutoCommands', { clear = true })
-local phpcsfixer = '/Users/chin/.composer/vendor/bin/php-cs-fixer'
 
 vim.api.nvim_create_autocmd('VimEnter', {
     group = group,
@@ -42,7 +41,18 @@ vim.api.nvim_create_autocmd('BufWritePost', {
         local file = vim.fn.expand('%')
 
         vim.cmd('mkview')
-        vim.cmd('silent !'..phpcsfixer..' fix --config=$HOME/workspace/php/.php-cs-fixer.php --allow-risky=yes '..file)
+
+        -- Runs PHP CS Fixer if Pint is not available
+        if vim.fn.filereadable('./vendor/bin/pint') == 0 then
+            local phpcsfixer = '$HOME/.composer/vendor/bin/php-cs-fixer'
+
+            vim.cmd('silent !'..phpcsfixer..' fix --config=$HOME/workspace/php/.php-cs-fixer.php --allow-risky=yes '..file)
+        else
+            local pint = './vendor/bin/pint '..file
+
+            vim.cmd('silent !'..pint)
+        end
+
         vim.cmd('edit!')
         vim.cmd('loadview')
     end,
