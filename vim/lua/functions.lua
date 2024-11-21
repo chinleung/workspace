@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
         vim.cmd('lua start_horizon()')
         vim.cmd('lua start_builds()')
         vim.cmd('lua start_reverb()')
+        vim.cmd('lua start_octane()')
     end,
 })
 
@@ -121,6 +122,28 @@ function start_horizon()
         end
     end
 end
+
+-- Start Octane
+function start_octane()
+    local artisan = io.open('artisan', 'r')
+
+    if artisan ~= nil then
+        io.close(artisan)
+
+        local packages = io.open('composer.json', 'r')
+
+        if packages ~= nil then
+            local content = packages:read('*all')
+            packages:close()
+
+            if string.match(content, 'laravel/octane') then
+                vim.cmd('terminal valet php artisan octane:start')
+                vim.cmd('file Octane')
+            end
+        end
+    end
+end
+
 
 -- Start Reverb
 function start_reverb()
