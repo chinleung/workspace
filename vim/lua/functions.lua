@@ -137,7 +137,7 @@ function start_octane()
             packages:close()
 
             if string.match(content, 'laravel/octane') then
-                vim.cmd('terminal valet php artisan octane:start')
+                vim.cmd('terminal valet php artisan octane:start --watch')
                 vim.cmd('file Octane')
             end
         end
