@@ -12,6 +12,7 @@ return {
                 'regex',
                 'vim',
                 'vimdoc',
+                'vue',
             },
             highlight = {
                 enable = true,
