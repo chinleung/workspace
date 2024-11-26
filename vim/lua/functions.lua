@@ -159,7 +159,17 @@ function start_reverb()
             packages:close()
 
             if string.match(content, 'laravel/reverb') then
-                vim.cmd('terminal valet php artisan reverb:start --debug')
+                local env_file = io.open('.env', 'r')
+                local env = env_file:read('*all')
+                local port = env:match('REVERB_PORT=(%d+)')
+
+                env_file:close()
+
+                if port == nil then
+                    port = 8080
+                end
+
+                vim.cmd('terminal valet php artisan reverb:start --debug --port='..port)
                 vim.cmd('file Reverb')
             end
         end
