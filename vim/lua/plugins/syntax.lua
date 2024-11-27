@@ -5,6 +5,8 @@ return {
         require('nvim-treesitter.configs').setup{
             ensure_installed = {
                 'bash',
+                'html',
+                'javascript',
                 'markdown',
                 'markdown_inline',
                 'php',
