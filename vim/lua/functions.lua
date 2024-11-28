@@ -192,3 +192,16 @@ end
 function generate_uuid()
     return vim.fn.system('uuidgen'):gsub('\n', ''):lower()
 end
+
+-- Toggle the folds with TreeSitter
+function toggle_folds()
+    local current = vim.g.fold_with_treesitter
+
+    if current == 1 then
+        vim.g.fold_with_treesitter = 0
+    else
+        vim.g.fold_with_treesitter = 1
+    end
+
+    vim.cmd('normal! zx')
+end

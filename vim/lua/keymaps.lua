@@ -19,7 +19,9 @@ vim.keymap.set('n', '<leader><leader>cr', ':split | terminal valet composer requ
 vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
 
 -- Folds
-vim.keymap.set('n', '~', 'za')
+vim.keymap.set('n', '`', 'za')
+vim.keymap.set('n', '~', 'zA')
+vim.keymap.set('n', '<leader>ft', ':lua toggle_folds()<cr>')
 
 -- Laravel
 vim.keymap.set('n', '<leader>la', ':split | terminal valet php artisan<space>')
@@ -68,3 +70,7 @@ vim.keymap.set('n', '<leader>=', '<c-w>=')
 vim.keymap.set('n', '<leader><leader>tc', ':split | terminal<space>')
 vim.keymap.set('n', '<leader><leader>ts', ':split | terminal<space><cr>i')
 vim.keymap.set('n', '<leader><leader>tv', ':vsplit | terminal<cr>i')
+
+-- UUID
+vim.api.nvim_set_keymap("n", "<leader>u", [[:lua vim.api.nvim_put({tostring(vim.fn.system('uuidgen'):gsub('\n', ''))}, 'l', true, true)<CR>]], { noremap = true, silent = true })
+

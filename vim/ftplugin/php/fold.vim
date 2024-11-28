@@ -1,5 +1,6 @@
 set foldmethod=expr
 set foldexpr=Fold(v:lnum)
+let g:fold_with_treesitter = 1
 
 function! Fold(lnum)
     let line = getline(a:lnum)
@@ -19,5 +20,9 @@ function! Fold(lnum)
         return '1'
     endif
 
-    return nvim_treesitter#foldexpr()
+    if g:fold_with_treesitter == 1
+        return nvim_treesitter#foldexpr()
+    endif
+
+    return 0
 endfunction
