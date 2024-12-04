@@ -1,6 +1,5 @@
 set foldmethod=expr
 set foldexpr=Fold(v:lnum)
-let g:fold_with_treesitter = 1
 
 function! Fold(lnum)
     let line = getline(a:lnum)
