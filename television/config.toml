@@ -1,0 +1,7 @@
+[ui]
+show_help_bar = false
+theme = 'gruvbox-dark'
+use_nerd_font_icons = true
+
+[previewers.file]
+theme = 'gruvbox-dark'
