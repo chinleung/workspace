@@ -52,7 +52,7 @@
             " */",
             "public function ${1:name}(): BelongsToMany",
             "{",
-            "    return \\$this->belongsTo(${4:Model}::class);",
+            "    return \\$this->belongsToMany(${4:Model}::class);",
             "}"
         ]
     },
