@@ -194,7 +194,7 @@ function generate_uuid()
 end
 
 -- Toggle the folds with TreeSitter
-vim.g.fold_with_treesitter = 1
+vim.g.fold_with_treesitter = 0
 function toggle_folds()
     local current = vim.g.fold_with_treesitter
 
