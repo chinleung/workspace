@@ -50,8 +50,8 @@ vim.keymap.set({'n', 'v' }, 'J', 'G')
 vim.keymap.set({'n', 'v' }, 'K', 'gg')
 vim.keymap.set({'n', 'v' }, 'L', '$')
 
--- Remove highlighted search
-vim.keymap.set({ 'n', 'v' }, '<leader><esc>', ':nohlsearch<cr>')
+-- Remove highlighted search and dismiss Noice notifications
+vim.keymap.set({ 'n', 'v' }, '<leader><esc>', ':nohlsearch<cr>:NoiceDismiss<cr>', { silent = true })
 
 -- Split management
 vim.keymap.set('n', '<leader>hs', vim.cmd.split, { silent = true })
