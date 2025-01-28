@@ -2,6 +2,11 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local tab_bar_enabled = false
 
+config.enable_tab_bar = tab_bar_enabled
+config.font = wezterm.font("FiraCode Nerd Font")
+config.font_size = 18
+config.line_height = 1.8
+
 config.colors = {
     background = '#272727',
     cursor_bg = '#a59a86',
@@ -64,12 +69,27 @@ config.keys = {
         key = 'Enter',
         mods = 'OPT',
         action = wezterm.action.SendString("\x1b\r"),
-    }
+    },
+    {
+        key = 'LeftArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendString("\x1bb"),
+    },
+    {
+        key = 'RightArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendString("\x1bf"),
+    },
+    {
+        key = 'UpArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendString("\x1bp"),
+    },
+    {
+        key = 'DownArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendString("\x1bn"),
+    },
 }
-
-config.enable_tab_bar = tab_bar_enabled
-config.font = wezterm.font("FiraCode Nerd Font")
-config.font_size = 18
-config.line_height = 2
 
 return config
