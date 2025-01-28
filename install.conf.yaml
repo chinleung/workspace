@@ -21,6 +21,7 @@
     ~/.gitignore: git/gitignore
     ~/.vim/coc-settings.json: coc/settings.json
     ~/.vim/init.lua: vim/init.lua
+    ~/.wezterm.lua: wezterm/config.lua
     ~/.zpreztorc: zsh/zprezto/runcoms/.zpreztorc
     ~/.zshrc: zsh/zshrc
 - create:
