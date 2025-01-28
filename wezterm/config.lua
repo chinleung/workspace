@@ -54,6 +54,16 @@ config.keys = {
         action = wezterm.action.CloseCurrentPane({
             confirm = true
         }),
+    },
+    {
+        key = 'Backspace',
+        mods = 'OPT',
+        action = wezterm.action.SendString("\x17"),
+    },
+    {
+        key = 'Enter',
+        mods = 'OPT',
+        action = wezterm.action.SendString("\x1b\r"),
     }
 }
 
