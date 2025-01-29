@@ -92,4 +92,11 @@ config.keys = {
     },
 }
 
+config.window_padding = {
+    bottom = 0,
+    left = 0,
+    right = 0,
+    top = "5px",
+}
+
 return config
