@@ -92,6 +92,8 @@ config.keys = {
     },
 }
 
+config.underline_thickness = "2px"
+
 config.window_padding = {
     bottom = "0px",
     left = "10px",

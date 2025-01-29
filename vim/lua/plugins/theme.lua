@@ -31,6 +31,8 @@ return {
 
         vim.cmd([[colorscheme gruvbox]])
 
+        vim.cmd('hi GruvboxRedUnderline gui=underline')
+
         -- Diagnostics
         vim.cmd('hi link DiagnosticInfo GruvboxAqua')
         vim.cmd('hi link DiagnosticFloatingInfo GruvboxAqua')
