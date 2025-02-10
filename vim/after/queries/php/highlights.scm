@@ -42,7 +42,7 @@
 ; Conceals
 ("||" @conceal (#set! conceal "∨"))
 ("&&" @conceal (#set! conceal "∧"))
-("!" @conceal (#set! conceal "❗️"))
+("!" @conceal @operator.exclamation (#set! conceal "󱈸"))
 ("<=" @conceal (#set! conceal "≤"))
 (">=" @conceal (#set! conceal "≥"))
 ("!=" @conceal (#set! conceal "≠"))
@@ -58,5 +58,5 @@
 ((null) @null @conceal (#set! conceal "∅"))
 ("parent" @conceal (#set! conceal "Ω"))
 ("return" @conceal (#set! conceal "↪"))
-((boolean) @conceal @boolean.true (#eq? @boolean.true "true") (#set! conceal "👍🏼"))
-((boolean) @conceal @boolean.false (#eq? @boolean.false "false") (#set! conceal "👎🏼"))
+((boolean) @conceal @boolean.true (#eq? @boolean.true "true") (#set! conceal ""))
+((boolean) @conceal @boolean.false (#eq? @boolean.false "false") (#set! conceal ""))
