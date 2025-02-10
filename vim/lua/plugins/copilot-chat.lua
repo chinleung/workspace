@@ -10,13 +10,18 @@ return {
             '<m-q>',
             desc = 'Quick chat',
             function ()
-                local input = vim.fn.input('Question')
+                input({
+                    prompt = 'Question',
+                    callback = function (question)
+                        if question == '' then
+                            return
+                        end
 
-                if input ~= '' then
-                    require('CopilotChat').ask(input, {
-                        selection = require('CopilotChat.select').buffers,
-                    })
-                end
+                        require('CopilotChat').ask(question, {
+                            selection = require('CopilotChat.select').buffers,
+                        })
+                    end,
+                })
             end,
         },
         {

@@ -1,9 +1,22 @@
+function input(options)
+    local callback = options.callback
+    options.callback = nil
+
+    local success, result = pcall(vim.fn.input, options)
+
+    if not success then
+        return
+    end
+
+    callback(result)
+end
 
 local group = vim.api.nvim_create_augroup('AutoCommands', { clear = true })
 
 vim.api.nvim_create_autocmd('VimEnter', {
     group = group,
     callback = function ()
+        -- TODO: Check if COMMIT_EDITMSG or MERGE_MSG exists. If it does, skip the following
         vim.cmd('lua start_horizon()')
         vim.cmd('lua start_builds()')
         vim.cmd('lua start_reverb()')
