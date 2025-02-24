@@ -80,10 +80,9 @@ return {
                 live_blame = {
                     enabled = true,
                     format = function (blame, git_config)
-                        local config_author = git_config['user.name']
                         local author = blame.author
 
-                        if config_author == author then
+                        if author == 'Chin' then
                             author = 'You'
                         end
 
@@ -108,11 +107,13 @@ return {
                             counter = counter + 1
                         end
                         local commit_message = blame.commit_message
+
                         if not blame.committed then
                             author = 'You'
                             commit_message = 'Uncommitted changes'
                             return string.format(' %s • %s', author, commit_message)
                         end
+
                         local max_commit_message_length = 255
 
                         if #commit_message > max_commit_message_length then
@@ -120,7 +121,8 @@ return {
                         end
 
                         return string.format(
-                            ' %s, %s • %s',
+                            ' %s • %s, %s • %s',
+                            blame.commit_hash:sub(1, 8),
                             author,
                             string.format(
                                 '%s %s ago',
