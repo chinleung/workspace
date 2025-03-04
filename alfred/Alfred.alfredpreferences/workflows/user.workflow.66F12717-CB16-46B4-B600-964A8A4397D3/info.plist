@@ -150,7 +150,7 @@ For example setting the value of `branch` variable on the right to `9.x` will se
 	<key>variables</key>
 	<dict>
 		<key>branch</key>
-		<string>11.x</string>
+		<string>12.x</string>
 	</dict>
 	<key>version</key>
 	<string>0.3.3</string>
