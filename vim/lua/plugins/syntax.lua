@@ -1,5 +1,8 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+        'fei6409/log-highlight.nvim',
+    },
     build = ':TSUpdate',
     config = function ()
         require('nvim-treesitter.parsers').get_parser_configs().blade = {
