@@ -1,4 +1,13 @@
 {
+    "Laravel's builder attribute": {
+        "prefix": ["builder"],
+        "body": [
+            "/**",
+            " * The Eloquent query builder class to use for the model.",
+            " */",
+            "protected static string \\$builder = ${1:class}::class;"
+        ]
+    },
     "Laravel's casts attribute": {
         "prefix": ["casts"],
         "body": [
@@ -8,6 +17,15 @@
             "protected \\$casts = [",
             "    '${1:attribute}' => '${2:type}',",
             "];"
+        ]
+    },
+    "Laravel's collection attribute": {
+        "prefix": ["collection"],
+        "body": [
+            "/**",
+            " * The Eloquent collection class to use for the model.",
+            " */",
+            "protected static string \\$collectionClass = ${1:class}::class;"
         ]
     },
     "Laravel's fillable attribute": {
