@@ -48,21 +48,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end,
 })
 
-vim.api.nvim_create_autocmd('CursorHold', {
-    group = group,
-    pattern = '*',
-    callback = function ()
-        vim.cmd('lua refresh_git_status()')
-    end,
-})
-
--- Refresh the git status
-function refresh_git_status()
-    if vim.fn.exists('CocCommand') == 1 then
-        vim.fn.CocCommand('git.refresh')
-    end
-end
-
 -- Start Vite/Mix builds
 function start_builds()
     local json = require 'dkjson'
