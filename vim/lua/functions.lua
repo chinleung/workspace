@@ -48,30 +48,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end,
 })
 
-vim.api.nvim_create_autocmd('BufWritePost', {
-    group = group,
-    pattern = '*.php',
-    callback = function ()
-        local file = vim.fn.expand('%')
-
-        vim.cmd('mkview')
-
-        -- Runs PHP CS Fixer if Pint is not available
-        if vim.fn.filereadable('./vendor/bin/pint') == 0 then
-            local phpcsfixer = '$HOME/.composer/vendor/bin/php-cs-fixer'
-
-            vim.cmd('silent !'..phpcsfixer..' fix --config=$HOME/workspace/php/.php-cs-fixer.php --allow-risky=yes '..file)
-        else
-            local pint = './vendor/bin/pint '..file
-
-            vim.cmd('silent !'..pint)
-        end
-
-        vim.cmd('edit!')
-        vim.cmd('loadview')
-    end,
-})
-
 vim.api.nvim_create_autocmd('CursorHold', {
     group = group,
     pattern = '*',
