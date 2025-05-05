@@ -7,7 +7,8 @@ return {
     opts = {
         ensure_installed = {
             'intelephense',
-            'vue-language-server',
+            'tsserver',
+            'volar',
         },
         automatic_installation = true,
     },
