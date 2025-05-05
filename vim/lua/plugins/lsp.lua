@@ -63,6 +63,9 @@ return {
                     [vim.diagnostic.severity.HINT]  = '→',
                 },
             },
+            virtual_text = {
+                position = 'above',
+            },
         })
         vim.cmd('hi DiagnosticSignError ctermbg=235 guibg=#282828 guifg=#fb4934')
         vim.cmd('hi DiagnosticSignWarn ctermbg=235 guibg=#282828 guifg=#fdba48')
