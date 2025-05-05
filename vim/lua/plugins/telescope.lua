@@ -1,12 +1,5 @@
 local telescope = require('telescope')
 
--- Show the available code actions with a custom prompt title
-function show_coc_actions()
-    telescope.extensions.coc.code_actions{
-        prompt_title = 'Action',
-    }
-end
-
 return {
     'nvim-telescope/telescope.nvim',
     lazy = false,
@@ -22,7 +15,6 @@ return {
     config = function ()
         local actions = require('telescope.actions')
 
-        telescope.load_extension('coc')
         telescope.load_extension('ui-select')
 
         telescope.setup{
@@ -81,15 +73,5 @@ return {
                 }
             },
         }
-
-        vim.api.nvim_set_keymap(
-            'n',
-            '<leader>a',
-            ':lua show_coc_actions()<cr>',
-            {
-                noremap = true,
-                silent = true,
-            }
-        )
     end,
 }

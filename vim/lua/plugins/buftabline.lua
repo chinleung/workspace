@@ -1,3 +1,0 @@
-return {
-    'ap/vim-buftabline',
-}
