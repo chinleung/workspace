@@ -24,6 +24,16 @@ vim.api.nvim_create_autocmd('VimEnter', {
     end,
 })
 
+vim.api.nvim_create_autocmd('VimLeave', {
+    group = group,
+    callback = function ()
+        os.remove('.builds.lock')
+        os.remove('.horizon.lock')
+        os.remove('.reverb.lock')
+        os.remove('.octane.lock')
+    end,
+})
+
 vim.api.nvim_create_autocmd('BufWinLeave', {
     group = group,
     pattern = '*.php',
@@ -50,6 +60,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 -- Start Vite/Mix builds
 function start_builds()
+    local lock = '.builds.lock'
+
+    if vim.fn.filereadable(lock) == 1 then
+        return
+    end
+
     if vim.loop.fs_stat('node_modules') == nil then
         return
     end
@@ -76,12 +92,20 @@ function start_builds()
             elseif string.match(content, '"laravel%-mix"') then
                 vim.cmd('file Mix')
             end
+
+            io.open(lock, 'w'):close()
         end
     end
 end
 
 -- Start Horizon
 function start_horizon()
+    local lock = '.horizon.lock'
+
+    if vim.fn.filereadable(lock) == 1 then
+        return
+    end
+
     local artisan = io.open('artisan', 'r')
 
     if artisan ~= nil then
@@ -96,6 +120,7 @@ function start_horizon()
             if string.match(content, 'laravel/horizon') then
                 vim.cmd('terminal valet php artisan horizon')
                 vim.cmd('file Horizon')
+                io.open(lock, 'w'):close()
             end
         end
     end
@@ -103,6 +128,12 @@ end
 
 -- Start Octane
 function start_octane()
+    local lock = '.octane.lock'
+
+    if vim.fn.filereadable(lock) == 1 then
+        return
+    end
+
     local artisan = io.open('artisan', 'r')
 
     if artisan ~= nil then
@@ -117,6 +148,7 @@ function start_octane()
             if string.match(content, 'laravel/octane') then
                 vim.cmd('terminal valet php artisan octane:start --watch')
                 vim.cmd('file Octane')
+                io.open(lock, 'w'):close()
             end
         end
     end
@@ -125,6 +157,12 @@ end
 
 -- Start Reverb
 function start_reverb()
+    local lock = '.reverb.lock'
+
+    if vim.fn.filereadable(lock) == 1 then
+        return
+    end
+
     local artisan = io.open('artisan', 'r')
 
     if artisan ~= nil then
@@ -149,6 +187,7 @@ function start_reverb()
 
                 vim.cmd('terminal valet php artisan reverb:start --debug --port='..port)
                 vim.cmd('file Reverb')
+                io.open(lock, 'w'):close()
             end
         end
     end

@@ -4,4 +4,8 @@ tags.temp
 .php_cs.cache
 .php-cs-fixer.cache
 .DS_Store
+.builds.lock
+.horizon.lock
+.octane.lock
+.reverb.lock
 
