@@ -50,6 +50,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 -- Start Vite/Mix builds
 function start_builds()
+    if vim.loop.fs_stat('node_modules') == nil then
+        return
+    end
+
     local json = require 'dkjson'
     local file = io.open('package.json', 'r')
 
