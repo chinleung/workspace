@@ -7,7 +7,7 @@ return {
     opts = {
         ensure_installed = {
             'intelephense',
-            'tsserver',
+            'ts_ls',
             'volar',
         },
         automatic_installation = true,
