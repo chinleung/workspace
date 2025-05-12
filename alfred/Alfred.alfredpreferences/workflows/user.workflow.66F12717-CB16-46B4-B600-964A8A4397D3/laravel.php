@@ -7,6 +7,8 @@ use Algolia\AlgoliaSearch\Support\UserAgent;
 
 require __DIR__ . '/vendor/autoload.php';
 
+error_reporting(E_ERROR);
+
 $query = $argv[1];
 
 preg_match('/^\h*?v?(master|(?:[\d]+)(?:\.[\d]+)?(?:\.[\dx]+)?)?\h*?(.*?)$/', $query, $matches);
