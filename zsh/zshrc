@@ -44,7 +44,7 @@ export CLICOLOR=1
 export LSCOLORS=cxexcxdxbxegedabagacad
 
 # Paths
-export PATH=/Applications/WezTerm.app/Contents/MacOS:/opt/homebrew/bin/:~/.composer/vendor/bin:/usr/local/lib/ruby/gems/2.6.0/bin:~/.gem/bin:/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/bin:/Applications/WezTerm.app/Contents/MacOS:/opt/homebrew/bin/:~/.composer/vendor/bin:/usr/local/lib/ruby/gems/2.6.0/bin:~/.gem/bin:/usr/local/opt/ruby/bin:~/Library/Python/3.9/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules:$PATH
 export GEM_HOME="$HOME/.gem"
 
