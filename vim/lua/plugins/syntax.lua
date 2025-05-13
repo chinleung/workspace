@@ -25,6 +25,7 @@ return {
                 'php',
                 'query',
                 'regex',
+                'typescript',
                 'vim',
                 'vimdoc',
                 'vue',
