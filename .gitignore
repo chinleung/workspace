@@ -4,7 +4,3 @@ tags.lock
 tags.temp
 .php_cs.cache
 .DS_Store
-
-# Coc
-/coc/*
-!/coc/settings.json
