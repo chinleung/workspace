@@ -19,6 +19,11 @@ return {
                 bg = '#282828',
                 fg = '#fb4934',
             },
+            error_selected = {
+                bg = '#282828',
+                fg = '#fabd2f',
+                italic = false,
+            },
             fill = {
                 bg = '#282828',
             },
