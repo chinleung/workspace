@@ -10,6 +10,7 @@ return {
             'ts_ls',
             'volar',
         },
+        automatic_enable = false,
         automatic_installation = true,
     },
 }
