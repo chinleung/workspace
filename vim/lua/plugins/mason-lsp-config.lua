@@ -8,7 +8,7 @@ return {
         ensure_installed = {
             'intelephense',
             'ts_ls',
-            'volar',
+            'vue_ls',
         },
         automatic_enable = false,
         automatic_installation = true,
