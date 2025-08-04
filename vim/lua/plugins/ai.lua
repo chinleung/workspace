@@ -1,9 +1,7 @@
 vim.keymap.set(
     'n',
     '<m-t>',
-    function()
-        require('codecompanion').toggle()
-    end,
+    ':CodeCompanionActions<cr>',
     { noremap = true, silent = true }
 )
 
