@@ -4,8 +4,6 @@ return {
         'williamboman/mason-lspconfig.nvim',
     },
     config = function ()
-        local lsp = require('lspconfig')
-
         local function on_attach(client, buffer)
             -- Configure the server capabilities
             client.server_capabilities.documentFormattingProvider = false
@@ -14,25 +12,25 @@ return {
             }
 
             -- Set up keymaps
-            local options = { noremap = true, silent = true }
+            local options = { buffer = buffer, noremap = true, silent = true }
 
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'gd', '<cmd>lua require("telescope.builtin").lsp_definitions()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'gn', '<cmd>lua vim.diagnostic.jump({ count = 1, float = true })<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'gp', '<cmd>lua vim.diagnostic.jump({ count = -1, float = true })<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'gS', '<cmd>lua require("telescope.builtin").lsp_workspace_symbols()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'dl', '<cmd>lua require("telescope.builtin").diagnostics()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', 'D', '<cmd>lua vim.lsp.buf.hover()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', '<leader>a', '<Cmd>lua vim.lsp.buf.code_action()<cr>', options)
-            vim.api.nvim_buf_set_keymap(buffer, 'n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<cr>', options)
+            vim.keymap.set('n', 'gd', '<cmd>lua require("telescope.builtin").lsp_definitions()<cr>', options)
+            vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', options)
+            vim.keymap.set('n', 'gn', '<cmd>lua vim.diagnostic.jump({ count = 1, float = true })<cr>', options)
+            vim.keymap.set('n', 'gp', '<cmd>lua vim.diagnostic.jump({ count = -1, float = true })<cr>', options)
+            vim.keymap.set('n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', options)
+            vim.keymap.set('n', 'gS', '<cmd>lua require("telescope.builtin").lsp_workspace_symbols()<cr>', options)
+            vim.keymap.set('n', 'dl', '<cmd>lua require("telescope.builtin").diagnostics()<cr>', options)
+            vim.keymap.set('n', 'D', '<cmd>lua vim.lsp.buf.hover()<cr>', options)
+            vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', options)
+            vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', options)
         end
 
-        lsp.intelephense.setup({
+        vim.lsp.config('intelephense', {
             on_attach = on_attach,
         })
 
-        lsp.ts_ls.setup({
+        vim.lsp.config('ts_ls', {
             filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
             init_options = {
                 plugins = {
@@ -46,7 +44,7 @@ return {
             on_attach = on_attach,
         })
 
-        lsp.volar.setup{}
+        vim.lsp.config('volar', {})
 
         -- Fix the diagnostics signs' styling
         vim.diagnostic.config({
