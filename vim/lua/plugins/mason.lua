@@ -1,4 +1,8 @@
 return {
-    'williamboman/mason.nvim',
-    config = true,
+  "mason-org/mason.nvim",
+  opts = {
+    ensure_installed = {
+      "phpstan",
+    },
+  },
 }

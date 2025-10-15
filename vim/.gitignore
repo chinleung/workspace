@@ -1,10 +1,8 @@
-# Directories
-/bin/
-/etc/
-/include/
-/lib/
-/sessions/
-/share/
-/undo/
-
-coc-settings.json
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
