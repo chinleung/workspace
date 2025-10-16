@@ -9,6 +9,9 @@ vim.cmd("hi link DiagnosticHint GruvboxBlue")
 vim.cmd("hi link DiagnosticFloatingHint GruvboxBlue")
 vim.cmd("hi link DiagnosticVirtualTextHint GruvboxBlue")
 
+-- Trouble
+vim.cmd("hi TroubleStatusline2 guibg=#3c3836")
+
 return {
   "ellisonleao/gruvbox.nvim",
   opts = {
