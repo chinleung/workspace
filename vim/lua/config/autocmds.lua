@@ -9,14 +9,6 @@
 
 local group = vim.api.nvim_create_augroup("AutoCommands", { clear = true })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  group = group,
-  callback = function()
-    -- TODO: Check if COMMIT_EDITMSG or MERGE_MSG exists. If it does, skip the following
-    vim.cmd('lua StartLaravel()')
-  end,
-})
-
 vim.api.nvim_create_autocmd("VimLeave", {
   group = group,
   callback = function()
@@ -95,10 +87,10 @@ function StartHorizon()
 end
 
 function StartLaravel()
-    vim.cmd("lua StartHorizon()")
-    vim.cmd("lua StartBuilds()")
-    vim.cmd("lua StartReverb()")
-    vim.cmd("lua StartOctane()")
+  vim.cmd("lua StartHorizon()")
+  vim.cmd("lua StartBuilds()")
+  vim.cmd("lua StartReverb()")
+  vim.cmd("lua StartOctane()")
 end
 
 -- Start Octane
@@ -152,7 +144,7 @@ function StartReverb()
         local env_file = io.open(".env", "r")
 
         if env_file == nil then
-            return
+          return
         end
 
         local env = env_file:read("*all")
