@@ -25,6 +25,9 @@ return {
       GruvboxAquaSign = {
         bg = "#282828",
       },
+      GruvboxRedSign = {
+        bg = "#282828",
+      },
       GruvboxWhite = {
         bg = "#282828",
         fg = "#ebdbb2",
