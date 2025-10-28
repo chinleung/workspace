@@ -21,12 +21,17 @@ vim.keymap.set("n", "`", "za")
 vim.keymap.set("n", "~", "zA")
 
 -- Laravel
-vim.keymap.set(
-  "n",
-  "<leader><leader>lm",
-  ":split | terminal valet php artisan make:",
-  { desc = "Make", silent = true }
-)
+vim.keymap.set("n", "<leader><leader>lm", function()
+  local command = vim.fn.input("php artisan make")
+
+  if command == "" then
+    return
+  end
+
+  vim.cmd("split | terminal valet php artisan make:" .. command)
+  vim.cmd("startinsert")
+end, { desc = "Make", silent = true })
+
 vim.keymap.set(
   "n",
   "<leader><leader>lt",
@@ -39,10 +44,10 @@ vim.keymap.set({ "n", "v" }, "H", "^")
 vim.keymap.set({ "n", "v" }, "J", "G")
 vim.keymap.set({ "n", "v" }, "K", "gg")
 vim.keymap.set({ "n", "v" }, "L", "$")
-vim.keymap.set('i', '<leader><tab>', '<esc>kddko')
+-- vim.keymap.set("i", "<leader><tab>", "<esc>kddko")
 
 -- npm
 vim.keymap.set("n", "<leader><leader>ni", ":split | terminal npm install<space>")
 
 -- Terminal
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
