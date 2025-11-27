@@ -9,6 +9,13 @@
 
 local group = vim.api.nvim_create_augroup("AutoCommands", { clear = true })
 
+vim.api.nvim_create_autocmd({ "BufRead" }, {
+  pattern = "*.neon",
+  callback = function()
+    vim.cmd([[ set ft=neon ]])
+  end,
+})
+
 vim.api.nvim_create_autocmd("VimLeave", {
   group = group,
   callback = function()
